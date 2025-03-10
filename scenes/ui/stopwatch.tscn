@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6pj62jmsxuly"]
+
+[ext_resource type="Script" uid="uid://u3b3fjvaoqro" path="res://scripts/ui_misc/stopwatch.gd" id="1_62mog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbw60"]
+
+[node name="Stopwatch" type="Panel"]
+offset_left = 368.0
+offset_top = 14.0
+offset_right = 536.0
+offset_bottom = 55.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wbw60")
+script = ExtResource("1_62mog")
+
+[node name="Seconds" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 5.0
+offset_right = 165.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 25
+text = "00"
+
+[node name="Minutes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 135.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 25
+text = "Zaman: 00:"
+horizontal_alignment = 2
+
+[node name="SecondTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="MinuteTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="SecondTimer" to="." method="_on_second_timer_timeout"]
+[connection signal="timeout" from="MinuteTimer" to="." method="_on_minute_timer_timeout"]

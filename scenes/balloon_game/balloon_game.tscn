@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://ilyfflhv00mq"]
+
+[ext_resource type="PackedScene" uid="uid://url5jnbdshav" path="res://scenes/balloon_game/balloon_spawner.tscn" id="1_84jfv"]
+[ext_resource type="Script" path="res://scripts/balloon_game/balloon_game.gd" id="1_gyfu8"]
+[ext_resource type="Script" uid="uid://wd7qkabgkqao" path="res://scripts/ui_misc/score_label.gd" id="3_es0xx"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_ilyxe"]
+[ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="5_5gwc7"]
+[ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/sun.tscn" id="6_leiqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leiqa"]
+bg_color = Color(0.244058, 0.715444, 9.62615e-07, 1)
+
+[node name="BalloonGame" type="Node2D"]
+script = ExtResource("1_gyfu8")
+
+[node name="STT" parent="." instance=ExtResource("5_5gwc7")]
+
+[node name="BalloonSpawner" parent="." instance=ExtResource("1_84jfv")]
+position = Vector2(270, 950)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -293.0
+offset_top = -191.0
+offset_right = 825.0
+offset_bottom = 1242.0
+mouse_filter = 2
+color = Color(0.495835, 0.810281, 0.988885, 1)
+
+[node name="Sun" parent="." instance=ExtResource("6_leiqa")]
+position = Vector2(78, 80)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 61.0
+offset_right = 120.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_ilyxe")
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("3_es0xx")
+
+[node name="GameTime" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 514.0
+offset_top = 185.0
+offset_right = 527.0
+offset_bottom = 792.0
+theme_type_variation = &"FullTime"
+theme_override_styles/fill = SubResource("StyleBoxFlat_leiqa")
+fill_mode = 3
+show_percentage = false
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 0.501961)
+
+[connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="timeout" from="GameTime" to="BalloonSpawner" method="_on_game_time_timeout"]

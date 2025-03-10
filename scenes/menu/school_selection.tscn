@@ -1,0 +1,173 @@
+[gd_scene load_steps=30 format=3 uid="uid://cm57mk8owsihn"]
+
+[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="1_f581e"]
+[ext_resource type="Script" uid="uid://dvfn2ygq38xqj" path="res://scripts/menu/school_selection.gd" id="1_g0xno"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_axn5k"]
+[ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_g0xno"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_hl4vc"]
+[ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="6_ltrp2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hl4vc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltrp2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7kwt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjef2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gibap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdq7w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1pmn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmaj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n6u64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7wqeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bulwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyue2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lej7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjomv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_komdc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1emwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ulw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68vus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtdas"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vumjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqkbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ejsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kclb"]
+
+[node name="SchoolSelection" type="Node2D"]
+script = ExtResource("1_g0xno")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(270, 480)
+texture = ExtResource("1_f581e")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 124.0
+offset_right = 468.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("5_hl4vc")
+theme_override_font_sizes/font_size = 30
+text = "Bugün kiminle oynuyoruz?"
+horizontal_alignment = 1
+
+[node name="Home" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 523.0
+offset_bottom = 522.0
+scale = Vector2(0.0799991, 0.0812476)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hl4vc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ltrp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g7kwt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kjef2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gibap")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rdq7w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f1pmn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fmaj2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n6u64")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7wqeu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bulwl")
+icon = ExtResource("2_axn5k")
+flat = true
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 5.0
+offset_right = 536.0
+offset_bottom = 61.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iyue2")
+icon = ExtResource("3_g0xno")
+flat = true
+expand_icon = true
+
+[node name="PreSchool" type="Button" parent="."]
+offset_left = 133.0
+offset_top = 293.0
+offset_right = 417.0
+offset_bottom = 372.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lej7e")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vjomv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_komdc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1emwl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1ulw1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_68vus")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gtdas")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vumjp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nqkbm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2ejsp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2kclb")
+icon = ExtResource("6_ltrp2")
+
+[node name="Label" type="Label" parent="PreSchool"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 15.0
+offset_right = 251.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("5_hl4vc")
+theme_override_font_sizes/font_size = 35
+text = "Okul Öncesi"
+autowrap_mode = 2
+
+[node name="ElementarySchool" type="Button" parent="."]
+offset_left = 136.0
+offset_top = 437.0
+offset_right = 420.0
+offset_bottom = 516.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lej7e")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vjomv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_komdc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1emwl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1ulw1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_68vus")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gtdas")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vumjp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nqkbm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2ejsp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2kclb")
+icon = ExtResource("6_ltrp2")
+
+[node name="Label" type="Label" parent="ElementarySchool"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 264.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("5_hl4vc")
+theme_override_font_sizes/font_size = 35
+text = "İlkokul"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 0.501961)
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PreSchool" to="." method="_on_pre_school_pressed"]
+[connection signal="pressed" from="ElementarySchool" to="." method="_on_elementary_school_pressed"]

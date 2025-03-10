@@ -1,0 +1,26 @@
+{
+  "set_1": {
+	"type": "object_naming",
+	"items": ["kalem", "mısır", "kedi", "tavuk", "limon"]
+  },
+  "set_2": {
+	"type": "object_naming",
+	"items": ["bulut", "inek", "aslan", "elma", "koltuk"]
+  },
+  "set_3": {
+	"type": "color_naming",
+	"items": ["mavi", "beyaz", "sarı", "kırmızı", "yeşil"]
+  },
+  "set_4": {
+	"type": "color_naming",
+	"items": ["mor", "siyah", "kırmızı", "yeşil", "sarı"]
+  },
+  "set_5": {
+	"type": "shape_naming",
+	"items": ["üçgen", "kare", "daire", "kalp", "yıldız"]
+  },
+  "set_6": {
+	"type": "shape_naming",
+	"items": ["kalp", "daire", "üçgen", "kare", "artı"]
+  }
+}

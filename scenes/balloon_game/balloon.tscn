@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxpjc4rbkdjns"]
+
+[ext_resource type="Script" uid="uid://bvywxvi3u0kom" path="res://scripts/balloon_game/balloon.gd" id="1_3a27j"]
+[ext_resource type="Texture2D" uid="uid://c6r6hk8d6adkr" path="res://assets/Images/ballon_game/balloon.png" id="1_7sdeg"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_lclrm"]
+[ext_resource type="AudioStream" uid="uid://bk5xo2xfocn3k" path="res://assets/Sounds/pop.wav" id="4_fyfma"]
+[ext_resource type="Texture2D" uid="uid://fbqv7c0vf4xe" path="res://assets/Images/misc/indicator.png" id="5_2gy1u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5ka1"]
+radius = 29.0
+height = 76.0
+
+[node name="Balloon" type="Area2D"]
+script = ExtResource("1_3a27j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 32)
+scale = Vector2(0.310762, 0.310762)
+texture = ExtResource("1_7sdeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_m5ka1")
+
+[node name="ItemImage" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="ItemText" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("3_lclrm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fyfma")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(19, -30)
+rotation = -0.245032
+texture = ExtResource("5_2gy1u")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

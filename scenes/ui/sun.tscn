@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://chc78sl8o0gt8"]
+
+[ext_resource type="Texture2D" uid="uid://ceok0bhvqdaoi" path="res://assets/Images/misc/sun.png" id="1_hke5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlbiv"]
+radius = 29.0172
+
+[node name="Sun" type="Area2D"]
+scale = Vector2(1.32, 1.32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.125, 0.0506744)
+scale = Vector2(0.585135, 0.585135)
+texture = ExtResource("1_hke5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, 0.0506744)
+shape = SubResource("CircleShape2D_jlbiv")

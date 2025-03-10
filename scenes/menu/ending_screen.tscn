@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0afag7stfnow"]
+
+[ext_resource type="Script" uid="uid://cju4m0b10nnq8" path="res://scripts/menu/ending_screen.gd" id="1_d0wfy"]
+[ext_resource type="Texture2D" uid="uid://bv8nygsg3ktf4" path="res://assets/Images/buttons/restart.png" id="1_xxlgv"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_flnaw"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_07rwl"]
+[ext_resource type="AudioStream" uid="uid://pyp1mpbsfp4n" path="res://assets/Sounds/game_over.mp3" id="5_ok3g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hd6s6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5byie"]
+
+[node name="EndingScreen" type="Node2D"]
+position = Vector2(132, 327)
+script = ExtResource("1_d0wfy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 264.0
+offset_bottom = 319.0
+color = Color(0.349947, 0.308483, 0.67862, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 58.0
+offset_top = 206.0
+offset_right = 543.0
+offset_bottom = 691.0
+scale = Vector2(0.0742149, 0.0781178)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hd6s6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hd6s6")
+icon = ExtResource("1_xxlgv")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Home" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 197.0
+offset_right = 209.0
+offset_bottom = 248.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5byie")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5byie")
+icon = ExtResource("2_flnaw")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Texts" type="VBoxContainer" parent="."]
+offset_left = 71.0
+offset_top = 55.0
+offset_right = 179.0
+offset_bottom = 150.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="GameOver" type="Label" parent="Texts"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07rwl")
+theme_override_font_sizes/font_size = 20
+text = "Oyun Bitti!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="Texts"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07rwl")
+text = "Puan: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Count" type="Label" parent="Texts"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07rwl")
+text = "Zaman: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ok3g7")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Quick Naming Project"
+run/main_scene="res://scenes/menu/main_menu.tscn"
+config/features=PackedStringArray("4.4", "Mobile")
+
+[audio]
+
+driver/enable_input=true
+
+[autoload]
+
+GameManager="*res://scenes/managers/game_manager.tscn"
+SetManager="*res://scripts/managers/set_manager.gd"
+AudioManager="*res://scenes/managers/audio_manager.tscn"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[rendering]
+
+renderer/rendering_method="mobile"

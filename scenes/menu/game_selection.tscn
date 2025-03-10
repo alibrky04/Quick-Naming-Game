@@ -1,0 +1,179 @@
+[gd_scene load_steps=25 format=3 uid="uid://dv3y81w74ddn5"]
+
+[ext_resource type="Script" uid="uid://6316pgk77wph" path="res://scripts/menu/game_selection.gd" id="1_5hamw"]
+[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="2_onis4"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_8sxrb"]
+[ext_resource type="Texture2D" uid="uid://bjqtpaugbbixl" path="res://assets/Images/ballon_game/balloon_game.png" id="3_ds4f7"]
+[ext_resource type="Texture2D" uid="uid://buxucqfr6hx20" path="res://assets/Images/misc/locked_game.png" id="4_dbsta"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="5_vpt28"]
+[ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="7_amktt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bjv0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xywub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ediwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efhaw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hjdt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33ufg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vuhj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6iveb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fly5y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eugma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmkka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oemg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3eu7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agxs6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmo24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4py2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_amktt"]
+
+[node name="GameSelection" type="Node2D"]
+script = ExtResource("1_5hamw")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(270, 480)
+texture = ExtResource("2_onis4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 134.0
+offset_right = 501.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("3_8sxrb")
+theme_override_font_sizes/font_size = 30
+text = "Oynamak istediğin oyunu seç!"
+
+[node name="Home" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 523.0
+offset_bottom = 522.0
+scale = Vector2(0.0799991, 0.0812476)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1bjv0")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xywub")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ediwa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_efhaw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5hjdt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_33ufg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7vuhj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6iveb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fly5y")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eugma")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wmkka")
+icon = ExtResource("5_vpt28")
+flat = true
+
+[node name="BalloonGameSelection" type="Button" parent="."]
+offset_left = 59.0
+offset_top = 224.0
+offset_right = 260.0
+offset_bottom = 425.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_agxs6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pmo24")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4py2v")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4py2v")
+action_mode = 0
+icon = ExtResource("3_ds4f7")
+flat = true
+
+[node name="Locked" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 471.0
+offset_right = 485.0
+offset_bottom = 673.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_agxs6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pmo24")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4py2v")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4py2v")
+action_mode = 0
+icon = ExtResource("4_dbsta")
+flat = true
+
+[node name="Locked2" type="Button" parent="."]
+offset_left = 59.0
+offset_top = 471.0
+offset_right = 261.0
+offset_bottom = 673.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_agxs6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pmo24")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4py2v")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4py2v")
+action_mode = 0
+icon = ExtResource("4_dbsta")
+flat = true
+
+[node name="Locked3" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 224.0
+offset_right = 485.0
+offset_bottom = 426.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_agxs6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pmo24")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4py2v")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j3eu7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4py2v")
+action_mode = 0
+icon = ExtResource("4_dbsta")
+flat = true
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 5.0
+offset_right = 536.0
+offset_bottom = 61.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_amktt")
+icon = ExtResource("7_amktt")
+flat = true
+expand_icon = true
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 0.501961)
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="BalloonGameSelection" to="." method="_on_balloon_game_selection_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

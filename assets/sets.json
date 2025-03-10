@@ -1,0 +1,50 @@
+{
+  "set_1": {
+	"type": "object_naming",
+	"items": ["kalem", "mısır", "kedi", "tavuk", "mısır", "kalem", "limon", "tavuk", "kalem", "limon", "tavuk", "kedi", "kalem", "limon", "tavuk", "limon", "mısır", "kalem", "limon", "kedi", "kalem", "mısır", "limon", "kalem", "mısır", "kedi", "limon", "tavuk", "kedi", "mısır", "limon", "tavuk", "kedi", "tavuk", "limon", "mısır", "kalem", "mısır", "tavuk", "kedi", "mısır", "kedi", "tavuk", "kedi", "mısır", "kalem", "kedi", "tavuk", "limon", "kalem"]
+  },
+  "set_2": {
+	"type": "object_naming",
+	"items": ["bulut", "inek", "aslan", "elma", "inek", "bulut", "sandalye", "elma", "bulut", "sandalye", "aslan", "inek", "sandalye", "aslan", "bulut", "inek", "elma", "sandalye", "bulut", "aslan", "sandalye", "bulut", "inek", "elma", "aslan", "inek", "bulut", "sandalye", "elma", "inek", "bulut", "sandalye", "elma", "bulut", "sandalye", "aslan", "inek", "sandalye", "aslan", "bulut", "inek", "elma", "sandalye", "bulut", "aslan", "sandalye", "bulut", "inek", "elma", "sandalye"]
+  },
+  "set_3": {
+	"type": "color_naming",
+	"items": ["mavi", "beyaz", "sarı", "kırmızı", "beyaz", "mavi", "yeşil", "kırmızı", "mavi", "yeşil", "sarı", "beyaz", "yeşil", "sarı", "mavi", "beyaz", "kırmızı", "yeşil", "mavi", "sarı", "yeşil", "mavi", "beyaz", "kırmızı", "sarı", "beyaz", "mavi", "yeşil", "kırmızı", "beyaz", "mavi", "yeşil", "kırmızı", "mavi", "yeşil", "sarı", "beyaz", "yeşil", "sarı", "mavi", "beyaz", "kırmızı", "yeşil", "mavi", "sarı", "yeşil", "mavi", "beyaz", "kırmızı", "yeşil"]
+  },
+  "set_4": {
+	"type": "color_naming",
+	"items": ["mor", "siyah", "kırmızı", "yeşil", "siyah", "mor", "sarı", "yeşil", "mor", "sarı", "kırmızı", "siyah", "sarı", "kırmızı", "mor", "siyah", "yeşil", "sarı", "mor", "kırmızı", "sarı", "mor", "siyah", "yeşil", "kırmızı", "siyah", "mor", "sarı", "yeşil", "siyah", "mor", "sarı", "yeşil", "mor", "sarı", "kırmızı", "siyah", "sarı", "kırmızı", "mor", "siyah", "yeşil", "sarı", "mor", "kırmızı", "sarı", "mor", "siyah", "yeşil", "sarı"]
+  },
+  "set_5": {
+	"type": "shape_naming",
+	"items": ["üçgen", "kare", "daire", "kalp", "kare", "üçgen", "yıldız", "kalp", "üçgen", "yıldız", "daire", "kare", "yıldız", "daire", "üçgen", "kare", "kalp", "yıldız", "üçgen", "daire", "yıldız", "üçgen", "kare", "kalp", "daire", "kare", "üçgen", "yıldız", "kalp", "kare", "üçgen", "yıldız", "kalp", "üçgen", "yıldız", "daire", "kare", "yıldız", "daire", "üçgen", "kare", "kalp", "yıldız", "üçgen", "daire", "yıldız", "üçgen", "kare", "kalp", "yıldız"]
+  },
+  "set_6": {
+	"type": "shape_naming",
+	"items": ["kalp", "daire", "üçgen", "kare", "daire", "kalp", "artı", "kare", "kalp", "artı", "üçgen", "daire", "artı", "üçgen", "kalp", "daire", "kare", "artı", "kalp", "üçgen", "artı", "kalp", "daire", "kare", "üçgen", "daire", "kalp", "artı", "kare", "daire", "kalp", "artı", "kare", "kalp", "artı", "üçgen", "daire", "artı", "üçgen", "kalp", "daire", "kare", "artı", "kalp", "üçgen", "artı", "kalp", "daire", "kare", "artı"]
+  },
+  "set_7": {
+	"type": "number_naming",
+	"items": ["bir", "dört", "dokuz", "iki", "dört", "bir", "yedi", "iki", "bir", "yedi", "dokuz", "dört", "yedi", "dokuz", "bir", "dört", "iki", "yedi", "bir", "dokuz", "yedi", "bir", "dört", "iki", "dokuz", "dört", "bir", "yedi", "iki", "dört", "bir", "yedi", "iki", "bir", "yedi", "dokuz", "dört", "yedi", "dokuz", "bir", "dört", "iki", "yedi", "bir", "dokuz", "yedi", "bir", "dört", "iki", "dokuz"]
+  },
+  "set_8": {
+	"type": "number_naming",
+	"items": ["bir", "üç", "sekiz", "beş", "üç", "bir", "sıfır", "beş", "bir", "sıfır", "sekiz", "üç", "sıfır", "sekiz", "bir", "üç", "beş", "sıfır", "bir", "sekiz", "sıfır", "bir", "üç", "beş", "sekiz", "üç", "bir", "sıfır", "beş", "üç", "bir", "sıfır", "beş", "bir", "sıfır", "sekiz", "üç", "sıfır", "sekiz", "bir", "üç", "beş", "sıfır", "bir", "sekiz", "sıfır", "bir", "üç", "beş", "sekiz"]
+  },
+  "set_9": {
+	"type": "letter_naming",
+	"items": ["t", "a", "n", "l", "a", "t", "s", "l", "t", "s", "l", "n", "t", "s", "l", "s", "l", "s", "a", "t", "s", "n", "t", "a", "s", "t", "a", "n", "s", "l", "n", "a", "s", "l", "n", "l", "s", "a", "t", "a", "l", "n", "a", "n", "l", "n", "a", "t", "n", "l"]
+  },
+  "set_10": {
+	"type": "letter_naming",
+	"items": ["t", "e", "m", "k", "e", "t", "z", "k", "t", "z", "m", "e", "z", "m", "t", "e", "k", "z", "t", "m", "z", "t", "e", "k", "m", "e", "t", "z", "k", "e", "t", "z", "k", "t", "z", "m", "e", "z", "m", "t", "e", "k", "z", "t", "m", "z", "t", "e", "k", "m"]
+  },
+  "set_11": {
+	"type": "word_naming",
+	"items": ["bir", "ol", "ve", "bu", "ol", "bir", "gibi", "bu", "bir", "gibi", "ve", "ol", "gibi", "ve", "bir", "ol", "bu", "gibi", "bir", "ve", "gibi", "bir", "ol", "bu", "ve", "ol", "bir", "gibi", "bu", "ol", "bir", "gibi", "bu", "bir", "gibi", "ve", "ol", "gibi", "ve", "bir", "ol", "bu", "gibi", "bir", "ve", "gibi", "bir", "ol", "bu", "ve"]
+  },
+  "set_12": {
+	"type": "word_naming",
+	"items": ["ve", "al", "yap", "ben", "al", "ve", "ara", "ben", "ve", "ara", "yap", "al", "ara", "yap", "ve", "al", "ben", "ara", "ve", "yap", "ara", "ve", "al", "ben", "yap", "al", "ve", "ara", "ben", "al", "ve", "ara", "ben", "ve", "ara", "yap", "al", "ara", "yap", "ve", "al", "ben", "ara", "ve", "yap", "ara", "ve", "al", "ben", "yap"]
+  }
+}
