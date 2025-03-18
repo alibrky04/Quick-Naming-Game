@@ -4,7 +4,7 @@ extends Node2D
 @onready var progress_bar = $ProgressBar
 @onready var game_time: Timer = $GameTime
 
-const total_time = 5
+const total_time = 60
 var remaining_time = total_time
 
 func _ready() -> void:

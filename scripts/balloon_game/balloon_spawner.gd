@@ -6,10 +6,14 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 var positionInArea: Vector2
-const itemGenerationRate = 1
+var itemGenerationSpeed = 180.0 / max(GameManager.itemSpeed, 0.01)
 
 func _ready() -> void:
-	timer.start(itemGenerationRate)
+	timer.start(itemGenerationSpeed)
+
+func _process(_delta: float) -> void:
+	itemGenerationSpeed = 180.0 / max(GameManager.itemSpeed, 0.01)
+	timer.wait_time = itemGenerationSpeed
 
 func _on_timer_timeout() -> void:
 	if !GameManager.lastItemGenerated:

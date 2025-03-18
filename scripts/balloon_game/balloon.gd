@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var item_image = $ItemImage
+@onready var color_image = $ColorImage
+@onready var shape_image = $ShapeImage
 @onready var item_text = $ItemText
 @onready var pop_sound: AudioStreamPlayer = $PopSound
 @onready var indicator: Sprite2D = $Indicator
@@ -34,8 +36,12 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		pop_balloon()
 
 func set_item(image_path: String):
-	if item_type == "object_naming" or item_type == "shape_naming" or item_type == "color_naming":
+	if item_type == "object_naming":
 		item_image.texture = load(image_path)
+	elif item_type == "shape_naming":
+		shape_image.texture = load(image_path)
+	elif item_type == "color_naming":
+		color_image.texture = load(image_path)
 	elif item_type == "number_naming":
 		item_text.text = GameManager.convert_to_number(item)
 	else:

@@ -12,6 +12,7 @@ var selected_set = {}
 
 var random_set = {}
 var last_four = []
+var last_picked = ""
 
 func _ready():
 	json_data = read_json(data_path)
@@ -40,13 +41,21 @@ func create_random_item():
 	last_four.append(word)
 	
 	if last_four.size() == random_set["items"].size():
+		last_picked = last_four[-1]
 		last_four = []
 	
 	return word
 func pick_word():
+	var word = ""
 	if last_four.size() > 0:
 		while true:
-			var word = random_set["items"][randi() % random_set["items"].size()]
+			word = random_set["items"][randi() % random_set["items"].size()]
 			if not last_four.has(word):
 				return word
-	return random_set["items"][randi() % random_set["items"].size()]
+	
+	word = random_set["items"][randi() % random_set["items"].size()]
+
+	while word == last_picked:
+		word = random_set["items"][randi() % random_set["items"].size()]
+	
+	return word

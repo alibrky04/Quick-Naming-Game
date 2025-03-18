@@ -385,6 +385,3 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 *.generated.props
-
-addons/
-samples/
