@@ -1,6 +1,11 @@
 extends Node2D
 
+@onready var profile: Label = $Profile
+
 signal return_back_signal()
+
+func _ready() -> void:
+	profile.text = "Hesap: " + GameManager.currentProfile
 
 func _on_cancel_pressed() -> void:
 	queue_free()

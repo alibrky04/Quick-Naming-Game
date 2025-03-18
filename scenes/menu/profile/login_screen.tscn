@@ -1,0 +1,182 @@
+[gd_scene load_steps=30 format=3 uid="uid://bapeplw8u15p1"]
+
+[ext_resource type="Script" uid="uid://b7jhla7y0v18g" path="res://scripts/menu/profile/login_screen.gd" id="1_vskjx"]
+[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="1_ys5yb"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_vskjx"]
+[ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_q6ygs"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_08h1j"]
+[ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="5_1qoin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjj4k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owf7i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3f8a0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmcv0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_826we"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iocpe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcfm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8p7v7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ffq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qedyb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwuau"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8j3da"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pawjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyn18"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vca5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndipy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdl4d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqur0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shwkx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o23ak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rs12t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uw1yf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urf3a"]
+
+[node name="LoginScreen" type="Node2D"]
+script = ExtResource("1_vskjx")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(270, 480)
+texture = ExtResource("1_ys5yb")
+
+[node name="Home" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 523.0
+offset_bottom = 522.0
+scale = Vector2(0.0799991, 0.0812476)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hjj4k")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_owf7i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3f8a0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dmcv0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_826we")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_iocpe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gcfm5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8p7v7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3ffq1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qedyb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rwuau")
+icon = ExtResource("2_vskjx")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 5.0
+offset_right = 536.0
+offset_bottom = 61.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8j3da")
+icon = ExtResource("3_q6ygs")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 291.0
+offset_right = 515.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("4_08h1j")
+theme_override_font_sizes/font_size = 65
+text = "Hızlı İsimlendir!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="UserName" type="HBoxContainer" parent="."]
+offset_left = 39.0
+offset_top = 473.0
+offset_right = 471.0
+offset_bottom = 510.0
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Label" type="Label" parent="UserName"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_08h1j")
+theme_override_font_sizes/font_size = 30
+text = "Kullanıcı Adı"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="UserName"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_08h1j")
+theme_override_font_sizes/font_size = 20
+
+[node name="Login" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 579.0
+offset_right = 412.0
+offset_bottom = 658.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pawjw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fyn18")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vca5g")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ndipy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gdl4d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pqur0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_shwkx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_o23ak")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rs12t")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_uw1yf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_urf3a")
+icon = ExtResource("5_1qoin")
+
+[node name="Label" type="Label" parent="Login"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 11.0
+offset_right = 228.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("4_08h1j")
+theme_override_font_sizes/font_size = 40
+text = "Giriş Yap"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UserError" type="Label" parent="."]
+visible = false
+offset_left = 42.0
+offset_top = 514.0
+offset_right = 307.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_08h1j")
+theme_override_font_sizes/font_size = 18
+text = "Böyle bir kullanıcı bulunmamaktadır."
+vertical_alignment = 1
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 0.501961)
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Login" to="." method="_on_login_pressed"]

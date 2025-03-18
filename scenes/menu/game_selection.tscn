@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://dv3y81w74ddn5"]
 
-[ext_resource type="Script" uid="uid://6316pgk77wph" path="res://scripts/menu/game_selection.gd" id="1_5hamw"]
+[ext_resource type="Script" path="res://scripts/menu/game_selection.gd" id="1_5hamw"]
 [ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="2_onis4"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_8sxrb"]
 [ext_resource type="Texture2D" uid="uid://bjqtpaugbbixl" path="res://assets/Images/ballon_game/balloon_game.png" id="3_ds4f7"]

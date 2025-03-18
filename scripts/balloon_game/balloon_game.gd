@@ -35,3 +35,5 @@ func _on_game_time_timeout() -> void:
 		if is_instance_valid(item):
 			item.queue_free()
 	GameManager.currentItems.clear()
+	
+	SQLManager.save_score()

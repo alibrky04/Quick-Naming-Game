@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var score: Label = $Texts/Score
 @onready var count: Label = $Texts/Count
+@onready var best_score: Label = $Texts/BestScore
 @onready var game_over: AudioStreamPlayer = $GameOver
 
 func _ready() -> void:

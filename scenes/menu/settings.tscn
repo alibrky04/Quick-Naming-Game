@@ -64,6 +64,16 @@ text = "x"
 flat = true
 expand_icon = true
 
+[node name="Profile" type="Label" parent="."]
+offset_left = 122.0
+offset_top = 379.0
+offset_right = 151.0
+offset_bottom = 399.0
+scale = Vector2(1.70365, 1.70365)
+theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+text = "Hesap: "
+
 [connection signal="pressed" from="BoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="BoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="BoxContainer/Hard" to="." method="_on_hard_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://url5jnbdshav" path="res://scenes/balloon_game/balloon_spawner.tscn" id="1_84jfv"]
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon_game.gd" id="1_gyfu8"]
-[ext_resource type="Script" uid="uid://wd7qkabgkqao" path="res://scripts/ui_misc/score_label.gd" id="3_es0xx"]
+[ext_resource type="Script" path="res://scripts/ui_misc/score_label.gd" id="3_es0xx"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_ilyxe"]
 [ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="5_5gwc7"]
 [ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/sun.tscn" id="6_leiqa"]

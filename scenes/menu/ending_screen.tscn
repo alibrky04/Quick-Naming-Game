@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d0afag7stfnow"]
 
-[ext_resource type="Script" uid="uid://cju4m0b10nnq8" path="res://scripts/menu/ending_screen.gd" id="1_d0wfy"]
+[ext_resource type="Script" path="res://scripts/menu/ending_screen.gd" id="1_d0wfy"]
 [ext_resource type="Texture2D" uid="uid://bv8nygsg3ktf4" path="res://assets/Images/buttons/restart.png" id="1_xxlgv"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_flnaw"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_07rwl"]
@@ -22,9 +22,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Restart" type="Button" parent="."]
 offset_left = 58.0
-offset_top = 206.0
+offset_top = 234.0
 offset_right = 543.0
-offset_bottom = 691.0
+offset_bottom = 719.0
 scale = Vector2(0.0742149, 0.0781178)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hd6s6")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hd6s6")
@@ -44,9 +44,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Home" type="Button" parent="."]
 offset_left = 158.0
-offset_top = 197.0
+offset_top = 225.0
 offset_right = 209.0
-offset_bottom = 248.0
+offset_bottom = 276.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5byie")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5byie")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5byie")
@@ -64,10 +64,10 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Texts" type="VBoxContainer" parent="."]
-offset_left = 71.0
+offset_left = 62.0
 offset_top = 55.0
-offset_right = 179.0
-offset_bottom = 150.0
+offset_right = 202.0
+offset_bottom = 188.0
 theme_override_constants/separation = 15
 alignment = 1
 
@@ -91,10 +91,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Count" type="Label" parent="Texts"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_07rwl")
-text = "Zaman: 00:00"
+text = "Balon Sayısı: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="BestScore" type="Label" parent="Texts"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07rwl")
+text = "En Yüksek Puan: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ok3g7")

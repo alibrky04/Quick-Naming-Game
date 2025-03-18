@@ -14,6 +14,8 @@ var itemSpeed = initialSpeed + speedBooster
 var currentItems = []
 var lastItemGenerated = false
 
+var currentProfile = ""
+
 const number_map := {
 	"bir": "1",
 	"iki": "2",
@@ -42,6 +44,7 @@ func get_ending_screen() -> void:
 	
 	ending_scene.score.text = "Puan: " + str(score)
 	ending_scene.count.text = "Balon Sayısı: " + str(itemCounter)
+	ending_scene.best_score.text = "En Yüksek Puan: " + str(SQLManager.get_best_score())
 	
 	score = 0
 	itemCounter = 0
