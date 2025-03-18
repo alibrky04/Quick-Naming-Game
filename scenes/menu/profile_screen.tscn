@@ -1,0 +1,174 @@
+[gd_scene load_steps=30 format=3 uid="uid://c5kjg08vgc4xc"]
+
+[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="1_l2x7y"]
+[ext_resource type="Script" uid="uid://cuc82xmr62ybr" path="res://scripts/menu/profile_screen.gd" id="1_pduwt"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_pduwt"]
+[ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_cp3tn"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_mo4b8"]
+[ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="6_sccj6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo4b8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sccj6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scas0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mca2o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2iji8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucc8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6s5id"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iij4j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5m10l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60yfj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrpqu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoqfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rahru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnml6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajg4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_miwlh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap0b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41b1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mp20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46f5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0ysn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mr50g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rans1"]
+
+[node name="ProfileScreen" type="Node2D"]
+script = ExtResource("1_pduwt")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(270, 480)
+texture = ExtResource("1_l2x7y")
+
+[node name="Home" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 523.0
+offset_bottom = 522.0
+scale = Vector2(0.0799991, 0.0812476)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mo4b8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sccj6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_scas0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mca2o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2iji8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ucc8w")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6s5id")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_iij4j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5m10l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_60yfj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xrpqu")
+icon = ExtResource("2_pduwt")
+flat = true
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 5.0
+offset_right = 536.0
+offset_bottom = 61.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hoqfc")
+icon = ExtResource("3_cp3tn")
+flat = true
+expand_icon = true
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Name" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 291.0
+offset_right = 515.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("5_mo4b8")
+theme_override_font_sizes/font_size = 65
+text = "Hızlı İsimlendir!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Login" type="Button" parent="."]
+offset_left = 118.0
+offset_top = 452.0
+offset_right = 402.0
+offset_bottom = 531.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rahru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tnml6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajg4a")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_miwlh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ap0b7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_41b1i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4mp20")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_46f5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i0ysn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mr50g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rans1")
+icon = ExtResource("6_sccj6")
+
+[node name="Label" type="Label" parent="Login"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 11.0
+offset_right = 228.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("5_mo4b8")
+theme_override_font_sizes/font_size = 40
+text = "Giriş Yap"
+autowrap_mode = 2
+
+[node name="NewProfile" type="Button" parent="."]
+offset_left = 118.0
+offset_top = 579.0
+offset_right = 402.0
+offset_bottom = 658.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rahru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tnml6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajg4a")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_miwlh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ap0b7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_41b1i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4mp20")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_46f5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i0ysn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mr50g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rans1")
+icon = ExtResource("6_sccj6")
+
+[node name="Label" type="Label" parent="NewProfile"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 11.0
+offset_right = 254.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("5_mo4b8")
+theme_override_font_sizes/font_size = 40
+text = "Yeni Hesap"
+autowrap_mode = 2
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="NewProfile" to="." method="_on_new_profile_pressed"]

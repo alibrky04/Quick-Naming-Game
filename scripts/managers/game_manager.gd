@@ -14,7 +14,7 @@ var itemSpeed = initialSpeed + speedBooster
 var currentItems = []
 var lastItemGenerated = false
 
-var currentProfile = ""
+var currentProfile = "Yok"
 
 const number_map := {
 	"bir": "1",
@@ -50,6 +50,7 @@ func get_ending_screen() -> void:
 	itemCounter = 0
 	lastItemGenerated = false
 	setItemIndex = 0
+	speedBooster = 0
 
 func _on_boost_reset_timeout() -> void:
 	if itemSpeed > initialSpeed:

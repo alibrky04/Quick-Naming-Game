@@ -40,4 +40,3 @@ func spawn_balloon() -> void:
 func _on_game_time_timeout() -> void:
 	timer.stop()
 	GameManager.lastItemGenerated = true
-	GameManager.get_ending_screen()

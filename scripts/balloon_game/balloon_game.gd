@@ -29,11 +29,12 @@ func _on_stt_text_signal(message) -> void:
 			break
 
 func _on_game_time_timeout() -> void:
-	shadow.visible = true
-	
 	for item in GameManager.currentItems.duplicate():
 		if is_instance_valid(item):
 			item.queue_free()
 	GameManager.currentItems.clear()
 	
 	SQLManager.save_score()
+	
+	shadow.visible = true
+	GameManager.get_ending_screen()
