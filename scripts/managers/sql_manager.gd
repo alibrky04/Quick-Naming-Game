@@ -152,3 +152,23 @@ func check_and_save_best_score():
 			insert_data("best_scores", {"user_name": GameManager.currentProfile, "best_score": latest_score})
 	else:
 		print("Query failed.")
+
+func get_last_scores(user_name: String, score_number: int) -> Array:
+	var query = """
+		SELECT ps.score 
+		FROM player_scores ps
+		JOIN plays p ON ps.score_id = p.score_id
+		WHERE p.user_name = ?
+		ORDER BY p.score_id DESC
+		LIMIT ?;
+	"""
+	var success = database.query_with_bindings(query, [user_name, score_number])
+	
+	if success:
+		var scores = []
+		for row in database.query_result:
+			scores.append(row["score"])
+		return scores
+	else:
+		print("Query failed.")
+		return []

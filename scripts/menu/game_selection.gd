@@ -14,6 +14,7 @@ func _on_settings_pressed() -> void:
 	shadow.visible = true
 	var settings = load("res://scenes/menu/settings.tscn").instantiate()
 	get_tree().current_scene.add_child(settings)
+	settings.position = Vector2(70, 150)
 	settings.return_back_signal.connect(_on_return_back_signal)
 
 func _on_return_back_signal() -> void:

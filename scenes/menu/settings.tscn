@@ -9,28 +9,25 @@
 script = ExtResource("1_dxr1k")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 83.0
-offset_top = 187.0
-offset_right = 307.0
-offset_bottom = 517.0
-scale = Vector2(1.70365, 1.70365)
+offset_right = 400.0
+offset_bottom = 720.0
 color = Color(0.658824, 0.901961, 0.811765, 1)
 
 [node name="Speed" type="Label" parent="."]
-offset_left = 122.0
-offset_top = 287.0
-offset_right = 151.0
-offset_bottom = 307.0
+offset_left = 46.0
+offset_top = 77.0
+offset_right = 75.0
+offset_bottom = 97.0
 scale = Vector2(1.70365, 1.70365)
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
 text = "Hız:"
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
-offset_left = 183.0
-offset_top = 277.0
-offset_right = 320.0
-offset_bottom = 308.0
+offset_left = 107.0
+offset_top = 67.0
+offset_right = 244.0
+offset_bottom = 98.0
 scale = Vector2(1.70365, 1.70365)
 
 [node name="Easy" type="Button" parent="BoxContainer"]
@@ -46,10 +43,10 @@ layout_mode = 2
 text = "Zor"
 
 [node name="Cancel" type="Button" parent="."]
-offset_left = 418.0
-offset_top = 170.0
-offset_right = 443.0
-offset_bottom = 220.0
+offset_left = 359.0
+offset_top = -24.0
+offset_right = 384.0
+offset_bottom = 26.0
 scale = Vector2(1.70365, 1.70365)
 theme_override_colors/font_disabled_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
@@ -65,16 +62,24 @@ flat = true
 expand_icon = true
 
 [node name="Profile" type="Label" parent="."]
-offset_left = 122.0
-offset_top = 379.0
-offset_right = 151.0
-offset_bottom = 399.0
+offset_left = 46.0
+offset_top = 168.0
+offset_right = 132.0
+offset_bottom = 188.0
 scale = Vector2(1.70365, 1.70365)
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
-text = "Hesap: "
+text = "Hesap: Yok"
+
+[node name="Scores" type="Button" parent="."]
+offset_left = 139.0
+offset_top = 258.0
+offset_right = 250.0
+offset_bottom = 301.0
+text = "Skorlar"
 
 [connection signal="pressed" from="BoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="BoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="BoxContainer/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Scores" to="." method="_on_scores_pressed"]

@@ -14,7 +14,7 @@ var itemSpeed = initialSpeed + speedBooster
 var currentItems = []
 var lastItemGenerated = false
 
-var currentProfile = "Yok"
+var currentProfile = ""
 
 const number_map := {
 	"bir": "1",
@@ -41,6 +41,8 @@ func add_points(points: int) -> void:
 func get_ending_screen() -> void:
 	var ending_scene = load("res://scenes/menu/ending_screen.tscn").instantiate()
 	get_tree().current_scene.add_child(ending_scene)
+	
+	ending_scene.position = Vector2(135, 320)
 	
 	ending_scene.score.text = "Puan: " + str(score)
 	ending_scene.count.text = "Balon Sayısı: " + str(itemCounter)

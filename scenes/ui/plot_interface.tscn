@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvwj4v8tx7gwe"]
+
+[ext_resource type="Script" uid="uid://b6kepf8wqdnpk" path="res://scripts/ui_misc/plot_interface.gd" id="1_i86uy"]
+[ext_resource type="PackedScene" uid="uid://dlwq4kmdb3bhs" path="res://addons/easy_charts/control_charts/chart.tscn" id="2_ouoip"]
+
+[node name="PlotInterface" type="Control"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 360.0
+mouse_filter = 2
+script = ExtResource("1_i86uy")
+
+[node name="Chart" parent="." instance=ExtResource("2_ouoip")]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 360.0
+offset_bottom = 360.0
