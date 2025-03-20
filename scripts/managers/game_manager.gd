@@ -12,7 +12,6 @@ var speedBooster = 0
 var itemSpeed = initialSpeed + speedBooster
 
 var currentItems = []
-var lastItemGenerated = false
 
 var currentProfile = ""
 
@@ -50,7 +49,6 @@ func get_ending_screen() -> void:
 	
 	score = 0
 	itemCounter = 0
-	lastItemGenerated = false
 	setItemIndex = 0
 	speedBooster = 0
 

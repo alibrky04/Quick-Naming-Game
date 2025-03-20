@@ -62,6 +62,8 @@ var tables = {
 	}
 }
 
+var best_score_achieved = false
+
 func _ready() -> void:
 	database = SQLite.new()
 	database.path = "user://data.db"
@@ -148,8 +150,10 @@ func check_and_save_best_score():
 			if latest_score > best_score:
 				var update_query = "UPDATE best_scores SET best_score=? WHERE user_name=?;"
 				database.query_with_bindings(update_query, [latest_score, GameManager.currentProfile])
+				best_score_achieved = true
 		else:
 			insert_data("best_scores", {"user_name": GameManager.currentProfile, "best_score": latest_score})
+			best_score_achieved = true
 	else:
 		print("Query failed.")
 
@@ -168,6 +172,7 @@ func get_last_scores(user_name: String, score_number: int) -> Array:
 		var scores = []
 		for row in database.query_result:
 			scores.append(row["score"])
+		scores.reverse()
 		return scores
 	else:
 		print("Query failed.")

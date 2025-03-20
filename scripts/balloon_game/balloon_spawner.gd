@@ -16,8 +16,7 @@ func _process(_delta: float) -> void:
 	timer.wait_time = itemGenerationSpeed
 
 func _on_timer_timeout() -> void:
-	if !GameManager.lastItemGenerated:
-		spawn_balloon()
+	spawn_balloon()
 		
 func spawn_balloon() -> void:
 	var centerpos = balloonSpawner.global_position
@@ -39,4 +38,3 @@ func spawn_balloon() -> void:
 
 func _on_game_time_timeout() -> void:
 	timer.stop()
-	GameManager.lastItemGenerated = true
