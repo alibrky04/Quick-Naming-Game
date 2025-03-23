@@ -6,7 +6,6 @@ from vosk import Model, KaldiRecognizer, SetLogLevel
 import signal
 import socket
 import select
-import time
 
 HOST = "127.0.0.1"  # Localhost
 PORT = 5000  # Port to connect to
@@ -40,30 +39,23 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-last_alive_time = time.time()
-timeout_duration = 0.2
-
 try:
     while True:
         message = ""
-        ready_to_read, _, _ = select.select([client_socket], [], [], 0.1)
+        ready_to_read, _, _ = select.select([client_socket], [], [], 0.01)
         
         for sock in ready_to_read:
             if sock == client_socket:
                 try:
                     message = sock.recv(1024).decode().strip()
-                    if "is_alive" in message:
-                        last_alive_time = time.time()
-                        print("Received 'is_alive' signal from server.")
-                        break
+                    if "shutdown" in message:
+                        print("Shutdown signal received.")
+                        client_socket.sendall(b"ack_shutdown\n")
+                        sys.exit(0)
                 except BlockingIOError:
                     continue
                 except Exception as e:
                     print(f"Error receiving message: {e}")
-
-        if time.time() - last_alive_time > timeout_duration:
-            print("No 'is_alive' signal received. Stopping...")
-            break
 
         # Stream audio data
         data = stream.read(4000, exception_on_overflow=False)

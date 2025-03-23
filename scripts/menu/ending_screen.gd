@@ -7,7 +7,6 @@ extends Node2D
 
 var star_scene = preload("res://scenes/ui/star.tscn")
 const animation_duration = 0.8
-var rotation_amount = 360
 
 func _ready() -> void:
 	game_over.play()

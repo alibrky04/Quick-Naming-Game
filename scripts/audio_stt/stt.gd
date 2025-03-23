@@ -27,7 +27,7 @@ func _run_stt_model():
 	var result = []
 	var exit_code = OS.execute(python_env, [python_executable], result)
 	if exit_code != 0:
-		print("Error running Python script:", result.join("\n"))
+		print("Error running Python script:", result)
 	is_running = false
 
 func _process(_delta):
@@ -39,20 +39,16 @@ func _process(_delta):
 		var message = client.get_utf8_string(client.get_available_bytes())
 		print("Received speech:", message)
 		text_signal.emit(message)
-
+		
 func _exit_tree():
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
-	
-	if thread and is_running:
-		is_running = false
-		thread.wait_to_finish()
-	
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-	
 	if client:
+		client.set_no_delay(true)
+		client.put_string("shutdown")
+		print("Shutdown signal sent to Python.")
+
 		client.disconnect_from_host()
 		client = null
+		print("Client disconnected!")
 
-func _on_timer_timeout():
-	if client:
-		client.put_string("is_alive")
+	if thread and is_running:
+		is_running = false

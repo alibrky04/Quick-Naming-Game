@@ -16,10 +16,8 @@ script = ExtResource("1_gyfu8")
 [node name="STT" parent="." instance=ExtResource("5_5gwc7")]
 
 [node name="Background" type="ColorRect" parent="."]
-offset_left = -293.0
-offset_top = -191.0
-offset_right = 825.0
-offset_bottom = 1242.0
+offset_right = 540.0
+offset_bottom = 960.0
 mouse_filter = 2
 color = Color(0.495835, 0.810281, 0.988885, 1)
 
