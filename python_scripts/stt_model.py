@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import pyaudio
+import time
 from vosk import Model, KaldiRecognizer, SetLogLevel
 import signal
 import socket
@@ -39,10 +40,12 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
+last_text = ""
+
 try:
     while True:
         message = ""
-        ready_to_read, _, _ = select.select([client_socket], [], [], 0.01)
+        ready_to_read, _, _ = select.select([client_socket], [], [], 0.001)
         
         for sock in ready_to_read:
             if sock == client_socket:
@@ -58,13 +61,21 @@ try:
                     print(f"Error receiving message: {e}")
 
         # Stream audio data
-        data = stream.read(4000, exception_on_overflow=False)
+        data = stream.read(2000, exception_on_overflow=False)
+        
         if recognizer.AcceptWaveform(data):
             result = json.loads(recognizer.Result())
             text = result["text"]
-            if text:
-                print("Recognized text:", text)
-                client_socket.sendall((text + "\n").encode())
+            if text and text != last_text:
+                last_text = text
+                client_socket.sendall(json.dumps({"text": text}).encode() + b"\n")
+
+        else:
+            result = json.loads(recognizer.PartialResult())
+            text = result["partial"]
+            if text and text != last_text:
+                last_text = text
+                client_socket.sendall(json.dumps({"text": text}).encode() + b"\n")
 except Exception as e:
     print("An error occurred:", str(e))
 finally:

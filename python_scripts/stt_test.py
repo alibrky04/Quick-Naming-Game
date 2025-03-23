@@ -31,19 +31,17 @@ signal.signal(signal.SIGINT, signal_handler)
 try:
     while True:
         # Stream audio data
-        reading_time = time.time()
         data = stream.read(4000, exception_on_overflow=False)
         start_time = time.time()  # Start timing transcription
         
         if recognizer.AcceptWaveform(data):
             result = json.loads(recognizer.Result())
             text = result
-            end_time = time.time()  # End timing transcription
+            end_time = time.time()
             duration = end_time - start_time
-            reading_duration = end_time - reading_time
             
             if text:
-                print(f"Recognized text: {text} (Time taken: {duration:.4f} seconds), Reading duration: {reading_duration:.4f} seconds")
+                print(f"Recognized text: {text} (Time taken: {duration:.4f} seconds)")
 except Exception as e:
     print("An error occurred:", str(e))
 finally:

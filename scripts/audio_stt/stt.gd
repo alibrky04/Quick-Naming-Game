@@ -37,9 +37,12 @@ func _process(_delta):
 
 	if client and client.get_available_bytes() > 0:
 		var message = client.get_utf8_string(client.get_available_bytes())
-		print("Received speech:", message)
-		text_signal.emit(message)
-		
+		var parsed_message = JSON.parse_string(message)
+		if parsed_message and parsed_message.has("text"):
+			var text = parsed_message["text"]
+			print("Received speech:", text)
+			text_signal.emit(text)
+
 func _exit_tree():
 	if client:
 		client.set_no_delay(true)
@@ -52,3 +55,4 @@ func _exit_tree():
 
 	if thread and is_running:
 		is_running = false
+		thread.wait_to_finish()
