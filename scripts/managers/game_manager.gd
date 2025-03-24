@@ -2,7 +2,7 @@ extends Node
 
 const staticSpeedBoost = 5
 
-var initialSpeed = 60
+var initialSpeed = 120
 var selectedGame = 1 # 1: Balloon Game
 var difficultyLevel = 1
 var score = 0

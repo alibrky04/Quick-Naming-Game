@@ -13,13 +13,13 @@ func _on_cancel_pressed() -> void:
 	return_back_signal.emit()
 
 func _on_easy_pressed() -> void:
-	GameManager.initialSpeed = 30
-
-func _on_normal_pressed() -> void:
 	GameManager.initialSpeed = 60
 
-func _on_hard_pressed() -> void:
+func _on_normal_pressed() -> void:
 	GameManager.initialSpeed = 120
+
+func _on_hard_pressed() -> void:
+	GameManager.initialSpeed = 180
 
 func _on_scores_pressed() -> void:
 	if GameManager.currentProfile != "":

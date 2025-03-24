@@ -45,6 +45,7 @@ func create_random_item():
 		last_four = []
 	
 	return word
+	
 func pick_word():
 	var word = ""
 	if last_four.size() > 0:
