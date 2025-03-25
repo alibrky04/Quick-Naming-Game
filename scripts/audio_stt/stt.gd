@@ -6,8 +6,8 @@ var server = TCPServer.new()
 var client: StreamPeerTCP = null
 
 var thread: Thread
-var python_executable = "res://python_scripts/stt_model.py"
-var python_env = "res://python_scripts/.venv/Scripts/python.exe"
+var python_executable = "res://other_scripts/stt_model.py"
+var python_env = "res://other_scripts/.venv/Scripts/python.exe"
 var is_running = false
 
 signal text_signal(message)

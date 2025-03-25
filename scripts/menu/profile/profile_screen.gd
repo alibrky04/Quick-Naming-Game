@@ -3,7 +3,7 @@ extends Node2D
 @onready var shadow: ColorRect = $Shadow
 
 func _on_home_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/main_menu.tscn")
 
 func _on_settings_pressed() -> void:
 	shadow.visible = true
@@ -16,7 +16,7 @@ func _on_return_back_signal() -> void:
 	shadow.visible = false
 
 func _on_login_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/profile/login_screen.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/login_screen.tscn")
 
 func _on_new_profile_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/profile/new_account.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/new_account.tscn")

@@ -5,7 +5,7 @@ extends Node2D
 @onready var user_error: Label = $UserError
 
 func _on_home_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/main_menu.tscn")
 
 func _on_settings_pressed() -> void:
 	shadow.visible = true
@@ -22,6 +22,6 @@ func _on_login_pressed() -> void:
 	
 	if SQLManager.user_exists(userName):
 		GameManager.currentProfile = userName
-		get_tree().change_scene_to_file("res://scenes/menu/school_selection.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/school_selection.tscn")
 	else:
 		user_error.visible = true

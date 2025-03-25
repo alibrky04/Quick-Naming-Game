@@ -3,7 +3,7 @@ extends Node2D
 @onready var shadow: ColorRect = $Shadow
 
 func _on_home_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/main_menu.tscn")
 
 func _on_settings_pressed() -> void:
 	shadow.visible = true
@@ -18,9 +18,9 @@ func _on_return_back_signal() -> void:
 func _on_pre_school_pressed() -> void:
 	SetManager.unique_data_path = "res://assets/sets_unique_preschool.json"
 	SetManager.set_count = 6
-	get_tree().change_scene_to_file("res://scenes/menu/game_selection.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")
 
 func _on_elementary_school_pressed() -> void:
 	SetManager.unique_data_path = "res://assets/sets_unique_elemantary.json"
 	SetManager.set_count = 12
-	get_tree().change_scene_to_file("res://scenes/menu/game_selection.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")
