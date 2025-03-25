@@ -33,6 +33,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[dotnet]
+
+project/assembly_name="Quick Naming Project"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/easy_charts/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
