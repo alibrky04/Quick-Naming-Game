@@ -25,11 +25,11 @@
   },
   "set_7": {
 	"type": "number_naming",
-	"items": ["bir", "4", "9", "2", "7"]
+	"items": ["bir", "dört", "dokuz", "iki", "yedi"]
   },
   "set_8": {
 	"type": "number_naming",
-	"items": ["bir", "3", "8", "5", "0"]
+	"items": ["bir", "üç", "sekiz", "beş", "sıfır"]
   },
   "set_9": {
 	"type": "letter_naming",

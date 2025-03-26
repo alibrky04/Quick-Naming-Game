@@ -17,15 +17,15 @@ var currentProfile = ""
 
 const number_map := {
 	"bir": "1",
-	"2": "2",
-	"3": "3",
-	"4": "4",
-	"5": "5",
-	"6": "6",
-	"7": "7",
-	"8": "8",
-	"9": "9",
-	"0": "0"
+	"iki": "2",
+	"üç": "3",
+	"dört": "4",
+	"beş": "5",
+	"altı": "6",
+	"yedi": "7",
+	"sekiz": "8",
+	"dokuz": "9",
+	"sıfır": "0"
 }
 
 @onready var boost_reset: Timer = $BoostReset
