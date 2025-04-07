@@ -1,6 +1,10 @@
 import sys
 import os
 import json
+
+script_dir = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(script_dir, "python_runtime", "libs"))
+
 import pyaudio
 from vosk import Model, KaldiRecognizer, SetLogLevel
 import signal
