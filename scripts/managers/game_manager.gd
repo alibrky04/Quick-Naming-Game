@@ -59,12 +59,19 @@ func _on_boost_reset_timeout() -> void:
 func calculate_speed() -> void:
 	itemSpeed = GameManager.initialSpeed + speedBooster
 
-func convert_to_number(word) -> String:
-	var number = ""
+func convert_to_number(word: String) -> String:
+	word = word.strip_edges().to_lower()
 	
 	if word in number_map:
-		number = number_map[word]
+		return number_map[word]
 	else:
-		print("Unknown number: ", word)
-		
-	return number
+		print("Unknown number:", word)
+		return ""
+
+func remove_combining_marks(text: String) -> String:
+	var output = ""
+	for c in text:
+		var code = c.unicode_at(0)
+		if code < 0x0300 or code > 0x036F:
+			output += c
+	return output

@@ -17,10 +17,9 @@ func _ready():
 	print("Server started, waiting for connection...")
 
 	script_path = ProjectSettings.globalize_path(script_path)
-	print("Script: ", script_path)
+	
 	python_path = ProjectSettings.globalize_path(python_path)
-	print("Python: ", python_path)
-
+	
 	thread = Thread.new()
 	is_running = true
 	thread.start(_run_stt_model)
@@ -42,7 +41,9 @@ func _process(_delta):
 		var parsed_message = JSON.parse_string(message)
 		if parsed_message and parsed_message.has("text"):
 			var text = parsed_message["text"]
+			text = text.strip_edges().to_lower()
 			print("Received speech:", text)
+			text = GameManager.remove_combining_marks(text)
 			text_signal.emit(text)
 
 func _exit_tree():

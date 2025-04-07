@@ -26,6 +26,7 @@ func _on_stt_text_signal(word: Variant) -> void:
 		if not item.isClickable and item.item in word and item.canActivate:
 			item.isClickable = true
 			item.indicator.visible = true
+			item.pop_balloon()
 			break
 
 func _on_game_time_timeout() -> void:
