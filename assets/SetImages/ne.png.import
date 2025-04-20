@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bggq0ai0t8q5"
-path="res://.godot/imported/kedi.png-7364ab7d068f387c4e404e02123c86d2.ctex"
+uid="uid://6ygyprkfisyo"
+path="res://.godot/imported/ne.png-9e9e9a31bbd5404ad57d655e6176c6b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/kedi.png"
-dest_files=["res://.godot/imported/kedi.png-7364ab7d068f387c4e404e02123c86d2.ctex"]
+source_file="res://assets/SetImages/ne.png"
+dest_files=["res://.godot/imported/ne.png-9e9e9a31bbd5404ad57d655e6176c6b7.ctex"]
 
 [params]
 

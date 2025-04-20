@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjl00cqlxfiq5"
-path="res://.godot/imported/lemon.jpg-c2ced9fdb08f73bdfdd875491c4b269b.ctex"
+uid="uid://dgeuvcin51usa"
+path="res://.godot/imported/al.png-fb3b59bfdea59b1ce277b3c18d9a5298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/lemon.jpg"
-dest_files=["res://.godot/imported/lemon.jpg-c2ced9fdb08f73bdfdd875491c4b269b.ctex"]
+source_file="res://assets/SetImages/al.png"
+dest_files=["res://.godot/imported/al.png-fb3b59bfdea59b1ce277b3c18d9a5298.ctex"]
 
 [params]
 

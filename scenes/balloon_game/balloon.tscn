@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxpjc4rbkdjns"]
+[gd_scene load_steps=6 format=3 uid="uid://dxpjc4rbkdjns"]
 
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon.gd" id="1_3a27j"]
-[ext_resource type="Texture2D" uid="uid://c6r6hk8d6adkr" path="res://assets/Images/ballon_game/balloon.png" id="1_7sdeg"]
-[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_lclrm"]
+[ext_resource type="Texture2D" uid="uid://dnuruagjomho2" path="res://assets/SetImages/1.png" id="2_sn5cq"]
 [ext_resource type="AudioStream" uid="uid://bk5xo2xfocn3k" path="res://assets/Sounds/pop.wav" id="4_fyfma"]
 [ext_resource type="Texture2D" uid="uid://fbqv7c0vf4xe" path="res://assets/Images/misc/indicator.png" id="5_2gy1u"]
 
@@ -13,44 +12,21 @@ height = 88.0
 [node name="Balloon" type="Area2D"]
 script = ExtResource("1_3a27j")
 
-[node name="ColorImage" type="Sprite2D" parent="."]
-position = Vector2(0, -12)
-scale = Vector2(1.1, 1.1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 32)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7sdeg")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_m5ka1")
 
 [node name="ItemImage" type="Sprite2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(0.65, 0.65)
-
-[node name="ShapeImage" type="Sprite2D" parent="."]
-position = Vector2(0, -10)
-scale = Vector2(0.45, 0.45)
-
-[node name="ItemText" type="Label" parent="."]
-offset_left = -27.0
-offset_top = -22.0
-offset_right = 26.0
-offset_bottom = 3.0
-theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_fonts/font = ExtResource("3_lclrm")
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_sn5cq")
 
 [node name="PopSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fyfma")
 
 [node name="Indicator" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(16, -59)
+position = Vector2(35, -94)
 rotation = -0.245032
 scale = Vector2(1.31053, 1.31053)
 texture = ExtResource("5_2gy1u")

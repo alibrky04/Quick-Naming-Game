@@ -23,11 +23,12 @@ func _process(delta: float) -> void:
 
 func _on_stt_text_signal(word: Variant) -> void:
 	for item in GameManager.currentItems:
-		if not item.isClickable and item.item in word and item.canActivate:
-			item.isClickable = true
-			item.indicator.visible = true
-			item.pop_balloon()
-			break
+		if not item.isClickable and item.canActivate:
+			if item.item in word or (item.item == "1" && "bir" in word):
+				item.isClickable = true
+				# item.indicator.visible = true
+				item.pop_balloon()
+				break
 
 func _on_game_time_timeout() -> void:
 	for item in GameManager.currentItems.duplicate():

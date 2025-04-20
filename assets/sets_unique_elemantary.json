@@ -1,11 +1,11 @@
 {
   "set_1": {
 	"type": "object_naming",
-	"items": ["kalem", "mısır", "kedi", "tavuk", "limon"]
+	"items": ["inek", "aslan", "elma", "mısır", "limon"]
   },
   "set_2": {
 	"type": "object_naming",
-	"items": ["bulut", "inek", "aslan", "elma", "koltuk"]
+	"items": ["bulut", "havuç", "tavuk", "çorap", "kalem"]
   },
   "set_3": {
 	"type": "color_naming",
@@ -21,30 +21,30 @@
   },
   "set_6": {
 	"type": "shape_naming",
-	"items": ["kalp", "daire", "üçgen", "kare", "artı"]
+	"items": ["üçgen", "kare", "daire", "kalp", "artı"]
   },
   "set_7": {
 	"type": "number_naming",
-	"items": ["bir", "dört", "dokuz", "iki", "yedi"]
+	"items": ["dört", "1", "dokuz", "iki", "yedi"]
   },
   "set_8": {
 	"type": "number_naming",
-	"items": ["bir", "üç", "sekiz", "beş", "sıfır"]
+	"items": ["üç", "1", "sekiz", "beş", "sıfır"]
   },
   "set_9": {
 	"type": "letter_naming",
-	"items": ["t", "a", "n", "l", "s"]
+	"items": ["t", "a", "n", "k", "l"]
   },
   "set_10": {
 	"type": "letter_naming",
-	"items": ["t", "e", "m", "k", "z"]
+	"items": ["e", "m", "t", "k", "s"]
   },
   "set_11": {
 	"type": "word_naming",
-	"items": ["bir", "ol", "ve", "bu", "gibi"]
+	"items": ["ve", "bir", "ol", "bu", "gel"]
   },
   "set_12": {
 	"type": "word_naming",
-	"items": ["ve", "al", "yap", "ben", "ara"]
+	"items": ["al", "ben", "her", "ne", "yap"]
   }
 }

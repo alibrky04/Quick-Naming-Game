@@ -15,19 +15,6 @@ var currentItems = []
 
 var currentProfile = ""
 
-const number_map := {
-	"bir": "1",
-	"iki": "2",
-	"üç": "3",
-	"dört": "4",
-	"beş": "5",
-	"altı": "6",
-	"yedi": "7",
-	"sekiz": "8",
-	"dokuz": "9",
-	"sıfır": "0"
-}
-
 @onready var boost_reset: Timer = $BoostReset
 
 signal score_updated(new_score)
@@ -58,15 +45,6 @@ func _on_boost_reset_timeout() -> void:
 	
 func calculate_speed() -> void:
 	itemSpeed = GameManager.initialSpeed + speedBooster
-
-func convert_to_number(word: String) -> String:
-	word = word.strip_edges().to_lower()
-	
-	if word in number_map:
-		return number_map[word]
-	else:
-		print("Unknown number:", word)
-		return ""
 
 func remove_combining_marks(text: String) -> String:
 	var output = ""

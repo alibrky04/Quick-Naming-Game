@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7cx2eswmlpd8"
-path="res://.godot/imported/koltuk.png-84b19a5bef754f2973ce1d6ee05739ff.ctex"
+uid="uid://ddfhbp5bs1id"
+path="res://.godot/imported/Black.png-8254d6163f1256f57f91a4ee9b4080cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/koltuk.png"
-dest_files=["res://.godot/imported/koltuk.png-84b19a5bef754f2973ce1d6ee05739ff.ctex"]
+source_file="res://assets/SetImages/Black.png"
+dest_files=["res://.godot/imported/Black.png-8254d6163f1256f57f91a4ee9b4080cc.ctex"]
 
 [params]
 
