@@ -15,4 +15,5 @@ func _on_level_selected(button: Button):
 		AudioManager.on_scene_changed("balloon_game")
 
 func _on_home_pressed() -> void:
+	GameManager.currentProfile = ""
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")

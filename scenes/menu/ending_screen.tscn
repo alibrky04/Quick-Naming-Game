@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0afag7stfnow"]
+[gd_scene load_steps=10 format=3 uid="uid://d0afag7stfnow"]
 
 [ext_resource type="Script" path="res://scripts/menu/ending_screen.gd" id="1_d0wfy"]
 [ext_resource type="Texture2D" uid="uid://bv8nygsg3ktf4" path="res://assets/Images/buttons/restart.png" id="1_xxlgv"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_flnaw"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_07rwl"]
+[ext_resource type="Texture2D" uid="uid://bjjppcup0s2jp" path="res://assets/Images/buttons/dots.png" id="3_hrc2s"]
 [ext_resource type="AudioStream" uid="uid://pyp1mpbsfp4n" path="res://assets/Sounds/game_over.mp3" id="5_ok3g7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hd6s6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5m22"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5byie"]
 
@@ -19,10 +22,10 @@ offset_bottom = 320.0
 color = Color(0.349947, 0.308483, 0.67862, 1)
 
 [node name="Restart" type="Button" parent="."]
-offset_left = 58.0
-offset_top = 234.0
-offset_right = 543.0
-offset_bottom = 719.0
+offset_left = 51.0
+offset_top = 231.0
+offset_right = 630.0
+offset_bottom = 810.0
 scale = Vector2(0.0742149, 0.0781178)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hd6s6")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hd6s6")
@@ -39,10 +42,30 @@ icon = ExtResource("1_xxlgv")
 flat = true
 expand_icon = true
 
-[node name="Home" type="Button" parent="."]
-offset_left = 158.0
+[node name="ToGameSelect" type="Button" parent="."]
+offset_left = 105.0
 offset_top = 225.0
-offset_right = 209.0
+offset_right = 159.0
+offset_bottom = 279.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_a5m22")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a5m22")
+icon = ExtResource("3_hrc2s")
+flat = true
+expand_icon = true
+
+[node name="Home" type="Button" parent="."]
+offset_left = 175.0
+offset_top = 225.0
+offset_right = 226.0
 offset_bottom = 276.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5byie")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5byie")
@@ -103,4 +126,5 @@ vertical_alignment = 1
 stream = ExtResource("5_ok3g7")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ToGameSelect" to="." method="_on_to_game_select_pressed"]
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
