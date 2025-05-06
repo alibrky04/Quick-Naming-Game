@@ -18,9 +18,9 @@ offset_left = 46.0
 offset_top = 77.0
 offset_right = 75.0
 offset_bottom = 97.0
-scale = Vector2(1.70365, 1.70365)
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
 text = "Hız:"
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
@@ -28,29 +28,30 @@ offset_left = 107.0
 offset_top = 67.0
 offset_right = 244.0
 offset_bottom = 98.0
-scale = Vector2(1.70365, 1.70365)
 
 [node name="Easy" type="Button" parent="BoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
 text = "Kolay"
 
 [node name="Normal" type="Button" parent="BoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
 text = "Orta"
 
 [node name="Hard" type="Button" parent="BoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
 text = "Zor"
 
 [node name="Cancel" type="Button" parent="."]
-offset_left = 359.0
-offset_top = -24.0
-offset_right = 384.0
-offset_bottom = 26.0
-scale = Vector2(1.70365, 1.70365)
+offset_left = 364.0
+offset_top = -22.0
+offset_right = 400.0
+offset_bottom = 55.0
 theme_override_colors/font_disabled_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 theme_override_colors/font_hover_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
@@ -58,7 +59,7 @@ theme_override_colors/font_outline_color = Color(0.00351917, 0.00351917, 0.00351
 theme_override_colors/font_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 theme_override_colors/font_focus_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 theme_override_colors/font_pressed_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dxr1k")
 text = "x"
 flat = true
@@ -66,25 +67,43 @@ expand_icon = true
 
 [node name="Profile" type="Label" parent="."]
 offset_left = 46.0
-offset_top = 168.0
-offset_right = 132.0
-offset_bottom = 188.0
-scale = Vector2(1.70365, 1.70365)
+offset_top = 143.0
+offset_right = 206.0
+offset_bottom = 180.0
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
 text = "Hesap: Yok"
 
 [node name="Scores" type="Button" parent="."]
 offset_left = 139.0
-offset_top = 258.0
+offset_top = 304.0
 offset_right = 250.0
-offset_bottom = 301.0
+offset_bottom = 347.0
 theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 25
 text = "Skorlar"
+
+[node name="Sound" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 207.0
+offset_right = 103.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0.000245483, 0.000245483, 0.000245483, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 30
+text = "Ses:"
+
+[node name="SoundSlider" type="HSlider" parent="."]
+offset_left = 113.0
+offset_top = 219.0
+offset_right = 386.0
+offset_bottom = 235.0
+step = 5.0
 
 [connection signal="pressed" from="BoxContainer/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="BoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="BoxContainer/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Scores" to="." method="_on_scores_pressed"]
+[connection signal="value_changed" from="SoundSlider" to="." method="_on_sound_slider_value_changed"]

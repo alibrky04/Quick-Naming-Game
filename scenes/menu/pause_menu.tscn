@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkhxgvelmnymn"]
+
+[ext_resource type="Script" uid="uid://cast1lpvou2s3" path="res://scripts/menu/pause_menu.gd" id="1_n54lc"]
+[ext_resource type="Texture2D" uid="uid://bjjppcup0s2jp" path="res://assets/Images/buttons/dots.png" id="2_msl3b"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="3_2yk66"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_mb26x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nn8h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkyws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n54lc"]
+
+[node name="PauseMenu" type="Node2D"]
+script = ExtResource("1_n54lc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 270.0
+offset_bottom = 320.0
+color = Color(0.349947, 0.308483, 0.67862, 1)
+
+[node name="ToGameSelect" type="Button" parent="."]
+offset_left = 58.0
+offset_top = 190.0
+offset_right = 112.0
+offset_bottom = 244.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5nn8h")
+icon = ExtResource("2_msl3b")
+flat = true
+expand_icon = true
+
+[node name="Home" type="Button" parent="."]
+offset_left = 148.0
+offset_top = 193.0
+offset_right = 199.0
+offset_bottom = 244.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xkyws")
+icon = ExtResource("3_2yk66")
+flat = true
+expand_icon = true
+
+[node name="Paused" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 102.0
+offset_right = 243.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(3.72304e-05, 3.72304e-05, 3.72304e-05, 1)
+theme_override_fonts/font = ExtResource("4_mb26x")
+theme_override_font_sizes/font_size = 25
+text = "Oyun Durduruldu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="."]
+offset_left = 234.0
+offset_top = -21.0
+offset_right = 270.0
+offset_bottom = 56.0
+theme_override_colors/font_disabled_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+theme_override_colors/font_hover_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+theme_override_colors/font_outline_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_colors/font_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+theme_override_colors/font_focus_color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+theme_override_colors/font_pressed_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n54lc")
+text = "x"
+flat = true
+
+[connection signal="button_down" from="ToGameSelect" to="." method="_on_to_game_select_button_down"]
+[connection signal="button_down" from="Home" to="." method="_on_home_button_down"]
+[connection signal="button_down" from="Cancel" to="." method="_on_cancel_button_down"]

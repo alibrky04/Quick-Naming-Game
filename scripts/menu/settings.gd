@@ -1,12 +1,19 @@
 extends Node2D
 
 @onready var profile: Label = $Profile
+@onready var sound_slider: HSlider = $SoundSlider
+
+const MIN_DB = -80.0
+const MAX_DB = 0.0
 
 signal return_back_signal()
 
 func _ready() -> void:
 	if GameManager.currentProfile != "":
 		profile.text = "Hesap: " + GameManager.currentProfile
+	
+	var db = AudioManager.player.volume_db
+	sound_slider.value = clamp((db - MIN_DB) / (MAX_DB - MIN_DB) * 100.0, 0, 100)
 
 func _on_cancel_pressed() -> void:
 	queue_free()
@@ -28,4 +35,8 @@ func _on_scores_pressed() -> void:
 			
 			self.add_child(plot)
 			
-			plot.chart.global_position = Vector2(90, 480)
+			plot.chart.global_position = Vector2(90, 500)
+
+func _on_sound_slider_value_changed(value: float) -> void:
+	var db = lerp(MIN_DB, MAX_DB, value / 100.0)
+	AudioManager.player.volume_db = db

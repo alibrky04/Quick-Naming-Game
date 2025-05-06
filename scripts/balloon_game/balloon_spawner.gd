@@ -4,15 +4,16 @@ extends Area2D
 @onready var balloonSpawner: Area2D = $"."
 @onready var balloon: PackedScene = preload("res://scenes/balloon_game/balloon.tscn")
 @onready var timer: Timer = $Timer
+@onready var balloons: Node2D = $"../Balloons"
 
 var positionInArea: Vector2
-var itemGenerationSpeed = 180.0 / max(GameManager.itemSpeed, 0.01)
+var itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
 
 func _ready() -> void:
 	timer.start(itemGenerationSpeed)
 
 func _process(_delta: float) -> void:
-	itemGenerationSpeed = 180.0 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 300 / max(GameManager.itemSpeed, 0.01)
 	timer.wait_time = itemGenerationSpeed
 
 func _on_timer_timeout() -> void:
@@ -34,7 +35,7 @@ func spawn_balloon() -> void:
 	spawn.item_type = SetManager.selected_set["type"]
 	GameManager.currentItems.append(spawn)
 	
-	get_tree().current_scene.add_child.call_deferred(spawn)
+	balloons.add_child.call_deferred(spawn)
 
 func _on_game_time_timeout() -> void:
 	timer.stop()

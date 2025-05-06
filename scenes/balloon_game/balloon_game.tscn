@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ilyfflhv00mq"]
+[gd_scene load_steps=14 format=3 uid="uid://ilyfflhv00mq"]
 
 [ext_resource type="PackedScene" uid="uid://url5jnbdshav" path="res://scenes/balloon_game/balloon_spawner.tscn" id="1_84jfv"]
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon_game.gd" id="1_gyfu8"]
@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://ia8ge5enlfcr" path="res://assets/Images/misc/cloud1.png" id="7_58y0e"]
 [ext_resource type="Texture2D" uid="uid://bx4twrmebs1ux" path="res://assets/Images/misc/cloud2.png" id="8_kn3e8"]
 [ext_resource type="Texture2D" uid="uid://xjgwg2r0g6c6" path="res://assets/Images/misc/cloud3.png" id="9_1mm8r"]
+[ext_resource type="Texture2D" uid="uid://eoogy476fqjf" path="res://assets/Images/misc/pause.png" id="10_58y0e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leiqa"]
 bg_color = Color(0.244058, 0.715444, 9.62615e-07, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58y0e"]
 
 [node name="BalloonGame" type="Node2D"]
 script = ExtResource("1_gyfu8")
@@ -82,6 +85,8 @@ position = Vector2(125, 549)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("7_58y0e")
 
+[node name="Balloons" type="Node2D" parent="."]
+
 [node name="Sun" parent="." instance=ExtResource("6_leiqa")]
 position = Vector2(78, 80)
 
@@ -110,9 +115,29 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_leiqa")
 fill_mode = 3
 show_percentage = false
 
+[node name="Pause" type="Button" parent="."]
+offset_left = 457.0
+offset_right = 540.0
+offset_bottom = 83.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_58y0e")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_58y0e")
+icon = ExtResource("10_58y0e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="BalloonSpawner" parent="." instance=ExtResource("1_84jfv")]
 position = Vector2(270, 950)
-scale = Vector2(2, 1)
+scale = Vector2(2.5, 1.25)
 
 [node name="Shadow" type="ColorRect" parent="."]
 visible = false
@@ -123,3 +148,4 @@ color = Color(0, 0, 0, 0.501961)
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="GameTime" to="BalloonSpawner" method="_on_game_time_timeout"]
+[connection signal="button_down" from="Pause" to="." method="_on_pause_button_down"]

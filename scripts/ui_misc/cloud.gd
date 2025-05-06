@@ -1,6 +1,7 @@
 extends Sprite2D
 
-var speed = 60
+const initialSpeed = 60
+var speed = initialSpeed
 
 func _process(delta: float) -> void:
 	position.y += speed * delta
