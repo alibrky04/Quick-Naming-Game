@@ -4,19 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://dlwq4kmdb3bhs" path="res://addons/easy_charts/control_charts/chart.tscn" id="2_ouoip"]
 
 [node name="PlotInterface" type="Control"]
-custom_minimum_size = Vector2(360, 360)
+custom_minimum_size = Vector2(450, 450)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 360.0
-offset_bottom = 360.0
+offset_right = 400.0
+offset_bottom = 400.0
 mouse_filter = 2
 script = ExtResource("1_i86uy")
 
 [node name="Chart" parent="." instance=ExtResource("2_ouoip")]
-custom_minimum_size = Vector2(360, 360)
+custom_minimum_size = Vector2(450, 450)
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_right = 360.0
-offset_bottom = 360.0
+offset_right = 400.0
+offset_bottom = 400.0

@@ -1,0 +1,270 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbb6apcbelyh8"]
+
+[ext_resource type="Script" uid="uid://w7n4bigd8um2" path="res://scripts/ui_misc/cloud_background.gd" id="1_gxudl"]
+[ext_resource type="PackedScene" uid="uid://dx26xvgwg2a5y" path="res://scenes/ui/cloud.tscn" id="1_kaxl0"]
+[ext_resource type="Texture2D" uid="uid://ia8ge5enlfcr" path="res://assets/Images/misc/cloud1.png" id="2_gxudl"]
+[ext_resource type="Texture2D" uid="uid://bx4twrmebs1ux" path="res://assets/Images/misc/cloud2.png" id="3_3h35n"]
+[ext_resource type="Texture2D" uid="uid://xjgwg2r0g6c6" path="res://assets/Images/misc/cloud3.png" id="4_nlwfa"]
+
+[node name="CloudBackground" type="Node2D"]
+z_index = -1
+script = ExtResource("1_gxudl")
+
+[node name="Cloud" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(438.875, 187.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud2" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(161.875, 266.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud3" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(516.875, 540.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud4" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(356.875, 391.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud5" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(134, 799)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud6" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(398.875, 760.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud7" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(139, 1052)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud8" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(179.875, 54.2501)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud9" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(439, 956)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud10" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(435.875, 17.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud11" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(168.875, 550.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud12" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1159.88, 435.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud13" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(694.875, 339.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud14" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1010.75, 675.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud15" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(813.875, 539.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud16" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(727.75, 789.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud17" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(971.75, 877.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud18" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(748.75, 992.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud19" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(723.875, 105.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud20" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1001, 1059)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud21" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1014.88, 200.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud22" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(586.875, 687.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud23" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1639.88, 130.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud24" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1343.88, 269.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud25" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1656.75, 556.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud26" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1527.75, 415.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud27" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1373.75, 670.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud28" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1617.75, 758.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud29" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1637, 1082)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud30" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1261.88, 67.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud31" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1687, 972)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud32" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(965.875, 357.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud33" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1387.75, 548.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud34" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1351, 999)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_nlwfa")
+script = null
+
+[node name="Cloud35" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1182.88, 816.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null
+
+[node name="Cloud36" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1719.88, 292.25)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_3h35n")
+script = null
+
+[node name="Cloud37" parent="." instance=ExtResource("1_kaxl0")]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(970, 70)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gxudl")
+script = null

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon_spawner.gd" id="1_7y2ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g43lm"]
-size = Vector2(175.125, 16.8438)
+size = Vector2(1377.28, 16.8438)
 
 [node name="BalloonSpawner" type="Area2D"]
 script = ExtResource("1_7y2ll")

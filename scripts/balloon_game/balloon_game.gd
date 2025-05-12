@@ -11,6 +11,10 @@ var resume_speed = 0
 var is_paused = false
 
 func _ready() -> void:
+	CloudBackground.cloud_speed = CloudBackground.game_cloud_speed
+	for cloud in CloudBackground.cloud_list:
+		cloud.modulate.a = CloudBackground.game_cloud_alpha
+	
 	GameManager.itemSpeed = GameManager.initialSpeed
 	
 	progress_bar.min_value = 0
@@ -42,8 +46,7 @@ func _on_game_time_timeout() -> void:
 	SQLManager.save_score()
 	
 	shadow.visible = true
-	for cloud in $CloudLayer.get_children():
-		cloud.speed = 0
+	CloudBackground.cloud_speed = 0
 	
 	GameManager.get_ending_screen()
 
@@ -52,7 +55,7 @@ func _on_pause_button_down() -> void:
 	shadow.visible = true
 	var pause_menu = load("res://scenes/menu/pause_menu.tscn").instantiate()
 	get_tree().current_scene.add_child(pause_menu)
-	pause_menu.position = Vector2(135, 320)
+	pause_menu.position = Vector2(690, 220)
 	pause_menu.return_back_signal.connect(_on_return_back_signal)
 	pause_menu.menu_back_signal.connect(_on_menu_back_signal)
 
@@ -66,13 +69,12 @@ func pause_resume(state: bool):
 	if state:
 		resume_speed = GameManager.initialSpeed
 		GameManager.initialSpeed = 0
-		for cloud in $CloudLayer.get_children():
-			cloud.speed = 0
+		GameManager.calculate_speed()
+		CloudBackground.cloud_speed = 0
 	else:
 		GameManager.initialSpeed = resume_speed
 		GameManager.calculate_speed()
-		for cloud in $CloudLayer.get_children():
-			cloud.speed = cloud.initialSpeed
+		CloudBackground.cloud_speed = CloudBackground.game_cloud_speed
 
 func _on_return_back_signal() -> void:
 	shadow.visible = false

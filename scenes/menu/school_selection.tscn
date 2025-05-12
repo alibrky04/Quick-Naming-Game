@@ -1,8 +1,8 @@
 [gd_scene load_steps=30 format=3 uid="uid://cm57mk8owsihn"]
 
-[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="1_f581e"]
 [ext_resource type="Script" uid="uid://dvfn2ygq38xqj" path="res://scripts/menu/school_selection.gd" id="1_g0xno"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_axn5k"]
+[ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_ltrp2"]
 [ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_g0xno"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_hl4vc"]
 [ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="6_ltrp2"]
@@ -57,25 +57,25 @@
 script = ExtResource("1_g0xno")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(270, 480)
-texture = ExtResource("1_f581e")
+z_index = -2
+texture = ExtResource("2_ltrp2")
+centered = false
 
 [node name="Label" type="Label" parent="."]
-offset_left = 72.0
-offset_top = 124.0
-offset_right = 468.0
-offset_bottom = 167.0
+offset_left = 281.0
+offset_top = 342.0
+offset_right = 1600.0
+offset_bottom = 463.0
 theme_override_fonts/font = ExtResource("5_hl4vc")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 100
 text = "Bugün kiminle oynuyoruz?"
 horizontal_alignment = 1
 
 [node name="Home" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 523.0
-offset_bottom = 522.0
-scale = Vector2(0.0799991, 0.0812476)
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 132.0
+offset_bottom = 132.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hl4vc")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ltrp2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_g7kwt")
@@ -89,22 +89,23 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7wqeu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bulwl")
 icon = ExtResource("2_axn5k")
 flat = true
+expand_icon = true
 
 [node name="Settings" type="Button" parent="."]
-offset_left = 480.0
-offset_top = 5.0
-offset_right = 536.0
-offset_bottom = 61.0
+offset_left = 1788.0
+offset_top = 12.0
+offset_right = 1908.0
+offset_bottom = 132.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iyue2")
 icon = ExtResource("3_g0xno")
 flat = true
 expand_icon = true
 
 [node name="PreSchool" type="Button" parent="."]
-offset_left = 133.0
-offset_top = 293.0
-offset_right = 417.0
-offset_bottom = 372.0
+offset_left = 750.0
+offset_top = 522.0
+offset_right = 1125.0
+offset_bottom = 622.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lej7e")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vjomv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_komdc")
@@ -117,24 +118,32 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_nqkbm")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2ejsp")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2kclb")
 icon = ExtResource("6_ltrp2")
+expand_icon = true
 
 [node name="Label" type="Label" parent="PreSchool"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 15.0
-offset_right = 251.0
-offset_bottom = 58.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -32.0
+offset_right = 147.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_fonts/font = ExtResource("5_hl4vc")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 50
 text = "Okul Öncesi"
 autowrap_mode = 2
 
 [node name="ElementarySchool" type="Button" parent="."]
-offset_left = 136.0
-offset_top = 437.0
-offset_right = 420.0
-offset_bottom = 516.0
+offset_left = 753.0
+offset_top = 666.0
+offset_right = 1128.0
+offset_bottom = 766.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lej7e")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vjomv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_komdc")
@@ -147,24 +156,32 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_nqkbm")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2ejsp")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2kclb")
 icon = ExtResource("6_ltrp2")
+expand_icon = true
 
 [node name="Label" type="Label" parent="ElementarySchool"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 17.0
-offset_right = 264.0
-offset_bottom = 60.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -29.0
+offset_right = 70.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_fonts/font = ExtResource("5_hl4vc")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 50
 text = "İlkokul"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Shadow" type="ColorRect" parent="."]
 visible = false
-offset_right = 540.0
-offset_bottom = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://hmgk50svcrmo"]
 
-[ext_resource type="Texture2D" uid="uid://c8i5tqduu04gf" path="res://assets/Images/backgrounds/main_menu_background.png" id="1_l2x7y"]
 [ext_resource type="Script" uid="uid://dia57fq3ilffs" path="res://scripts/menu/profile/profile_screen.gd" id="1_pduwt"]
+[ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_ogg6h"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="2_pduwt"]
 [ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_cp3tn"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_mo4b8"]
@@ -57,15 +57,15 @@
 script = ExtResource("1_pduwt")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(270, 480)
-texture = ExtResource("1_l2x7y")
+z_index = -2
+texture = ExtResource("2_ogg6h")
+centered = false
 
 [node name="Home" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 523.0
-offset_bottom = 522.0
-scale = Vector2(0.0799991, 0.0812476)
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 132.0
+offset_bottom = 132.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mo4b8")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sccj6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_scas0")
@@ -79,37 +79,48 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_60yfj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xrpqu")
 icon = ExtResource("2_pduwt")
 flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="."]
-offset_left = 480.0
-offset_top = 5.0
-offset_right = 536.0
-offset_bottom = 61.0
+offset_left = 1788.0
+offset_top = 12.0
+offset_right = 1908.0
+offset_bottom = 132.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hoqfc")
 icon = ExtResource("3_cp3tn")
 flat = true
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Name" type="Label" parent="."]
-offset_left = 19.0
-offset_top = 291.0
-offset_right = 515.0
-offset_bottom = 425.0
+[node name="Title" type="Label" parent="."]
+offset_left = 485.0
+offset_top = 399.0
+offset_right = 1470.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("5_mo4b8")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 125
 text = "Hızlı İsimlendir!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
-[node name="Login" type="Button" parent="."]
-offset_left = 128.0
-offset_top = 452.0
-offset_right = 412.0
-offset_bottom = 531.0
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 759.0
+offset_top = 583.0
+offset_right = 1134.0
+offset_bottom = 833.0
+theme_override_constants/separation = 50
+
+[node name="Login" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(375, 100)
+layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rahru")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tnml6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajg4a")
@@ -122,24 +133,30 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_i0ysn")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mr50g")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rans1")
 icon = ExtResource("6_sccj6")
+expand_icon = true
 
-[node name="Label" type="Label" parent="Login"]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 11.0
-offset_right = 228.0
-offset_bottom = 66.0
+[node name="Label" type="Label" parent="VBoxContainer/Login"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -33.0
+offset_right = 103.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_fonts/font = ExtResource("5_mo4b8")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Giriş Yap"
 autowrap_mode = 2
 
-[node name="NewProfile" type="Button" parent="."]
-offset_left = 128.0
-offset_top = 579.0
-offset_right = 412.0
-offset_bottom = 658.0
+[node name="NewProfile" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(375, 100)
+layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rahru")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tnml6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajg4a")
@@ -152,20 +169,28 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_i0ysn")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mr50g")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rans1")
 icon = ExtResource("6_sccj6")
+expand_icon = true
 
-[node name="Label" type="Label" parent="NewProfile"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 11.0
-offset_right = 254.0
-offset_bottom = 66.0
+[node name="Label" type="Label" parent="VBoxContainer/NewProfile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = -30.0
+offset_right = 138.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
 theme_override_fonts/font = ExtResource("5_mo4b8")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Yeni Hesap"
 autowrap_mode = 2
 
-[node name="Shadow" type="ColorRect" parent="NewProfile"]
+[node name="Shadow" type="ColorRect" parent="VBoxContainer/NewProfile"]
 visible = false
 layout_mode = 0
 offset_left = -118.0
@@ -174,13 +199,7 @@ offset_right = 422.0
 offset_bottom = 381.0
 color = Color(0, 0, 0, 0.501961)
 
-[node name="Shadow" type="ColorRect" parent="."]
-visible = false
-offset_right = 540.0
-offset_bottom = 960.0
-color = Color(0, 0, 0, 0.501961)
-
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Login" to="." method="_on_login_pressed"]
-[connection signal="pressed" from="NewProfile" to="." method="_on_new_profile_pressed"]
+[connection signal="pressed" from="VBoxContainer/Login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewProfile" to="." method="_on_new_profile_pressed"]

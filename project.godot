@@ -24,14 +24,14 @@ GameManager="*res://scenes/managers/game_manager.tscn"
 AudioManager="*res://scenes/managers/audio_manager.tscn"
 SetManager="*res://scripts/managers/set_manager.gd"
 SQLManager="*res://scripts/managers/sql_manager.gd"
+CloudBackground="*res://scenes/ui/cloud_background.tscn"
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=960
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
-window/handheld/orientation=1
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [dotnet]
 

@@ -10,10 +10,11 @@ var positionInArea: Vector2
 var itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
 
 func _ready() -> void:
+	spawn_balloon()
 	timer.start(itemGenerationSpeed)
 
 func _process(_delta: float) -> void:
-	itemGenerationSpeed = 300 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
 	timer.wait_time = itemGenerationSpeed
 
 func _on_timer_timeout() -> void:

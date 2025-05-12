@@ -1,15 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ilyfflhv00mq"]
+[gd_scene load_steps=10 format=3 uid="uid://ilyfflhv00mq"]
 
 [ext_resource type="PackedScene" uid="uid://url5jnbdshav" path="res://scenes/balloon_game/balloon_spawner.tscn" id="1_84jfv"]
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon_game.gd" id="1_gyfu8"]
 [ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="2_leiqa"]
 [ext_resource type="Script" path="res://scripts/ui_misc/score_label.gd" id="3_es0xx"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_ilyxe"]
-[ext_resource type="PackedScene" uid="uid://dx26xvgwg2a5y" path="res://scenes/ui/cloud.tscn" id="6_06cce"]
 [ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/sun.tscn" id="6_leiqa"]
-[ext_resource type="Texture2D" uid="uid://ia8ge5enlfcr" path="res://assets/Images/misc/cloud1.png" id="7_58y0e"]
-[ext_resource type="Texture2D" uid="uid://bx4twrmebs1ux" path="res://assets/Images/misc/cloud2.png" id="8_kn3e8"]
-[ext_resource type="Texture2D" uid="uid://xjgwg2r0g6c6" path="res://assets/Images/misc/cloud3.png" id="9_1mm8r"]
 [ext_resource type="Texture2D" uid="uid://eoogy476fqjf" path="res://assets/Images/misc/pause.png" id="10_58y0e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leiqa"]
@@ -23,78 +19,23 @@ script = ExtResource("1_gyfu8")
 [node name="STT" parent="." instance=ExtResource("2_leiqa")]
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 540.0
-offset_bottom = 960.0
+z_index = -2
+offset_right = 1920.0
+offset_bottom = 1079.0
 mouse_filter = 2
 color = Color(0.495835, 0.810281, 0.988885, 1)
-
-[node name="CloudLayer" type="Node2D" parent="."]
-
-[node name="Cloud" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(395, 186)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("7_58y0e")
-
-[node name="Cloud2" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(118, 265)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("8_kn3e8")
-
-[node name="Cloud3" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(394, 557)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("9_1mm8r")
-
-[node name="Cloud4" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(265, 416)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("7_58y0e")
-
-[node name="Cloud5" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(111, 671)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("8_kn3e8")
-
-[node name="Cloud6" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(355, 759)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("9_1mm8r")
-
-[node name="Cloud7" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(132, 874)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("7_58y0e")
-
-[node name="Cloud8" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(136, 53.0001)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("9_1mm8r")
-
-[node name="Cloud9" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(395, 922)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("8_kn3e8")
-
-[node name="Cloud10" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(392, 16)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("8_kn3e8")
-
-[node name="Cloud11" parent="CloudLayer" instance=ExtResource("6_06cce")]
-position = Vector2(125, 549)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("7_58y0e")
 
 [node name="Balloons" type="Node2D" parent="."]
 
 [node name="Sun" parent="." instance=ExtResource("6_leiqa")]
-position = Vector2(78, 80)
+position = Vector2(114, 125)
+scale = Vector2(2, 2)
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 61.0
-offset_right = 120.0
-offset_bottom = 97.0
+[node name="ScoreLabel" type="Label" parent="Sun"]
+offset_left = -41.5
+offset_top = -17.0
+offset_right = 42.5
+offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("4_ilyxe")
 theme_override_font_sizes/font_size = 25
 text = "0"
@@ -106,19 +47,19 @@ wait_time = 60.0
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 514.0
-offset_top = 185.0
-offset_right = 527.0
-offset_bottom = 792.0
+offset_left = 1839.0
+offset_top = 200.0
+offset_right = 1879.0
+offset_bottom = 807.0
 theme_type_variation = &"FullTime"
 theme_override_styles/fill = SubResource("StyleBoxFlat_leiqa")
 fill_mode = 3
 show_percentage = false
 
 [node name="Pause" type="Button" parent="."]
-offset_left = 457.0
-offset_right = 540.0
-offset_bottom = 83.0
+offset_left = 1800.0
+offset_right = 1920.0
+offset_bottom = 118.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_58y0e")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_58y0e")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_58y0e")
@@ -136,13 +77,13 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="BalloonSpawner" parent="." instance=ExtResource("1_84jfv")]
-position = Vector2(270, 950)
-scale = Vector2(2.5, 1.25)
+position = Vector2(985, 1070)
+scale = Vector2(1.1, 1.1)
 
 [node name="Shadow" type="ColorRect" parent="."]
 visible = false
-offset_right = 540.0
-offset_bottom = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
