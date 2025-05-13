@@ -60,6 +60,8 @@ func _on_pause_button_down() -> void:
 	pause_menu.menu_back_signal.connect(_on_menu_back_signal)
 
 func pause_resume(state: bool):
+	GameManager.is_paused = state
+	GameManager.boost_reset.paused = state
 	is_paused = state
 	game_time.paused = state
 	balloon_spawner.timer.paused = state

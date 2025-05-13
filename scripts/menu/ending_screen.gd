@@ -39,20 +39,20 @@ func _on_home_pressed() -> void:
 
 func _on_best_score_achieved():
 	const num_stars = 2
-	var best_score_position = Vector2(280, 500)
+	var best_score_position = Vector2(900, 560)
 
 	for i in range(num_stars):
-		_spawn_star(best_score_position - Vector2(100 + i * 30, 25 + i * 30))
+		_spawn_star(best_score_position - Vector2(100 + i * 75, 25 + i * 30))
 
 	for i in range(num_stars):
-		_spawn_star(best_score_position + Vector2(100 + i * 30, 25 + i * 30))
+		_spawn_star(best_score_position + Vector2(250 + i * 75, 50 + i * 30))
 		
 	SQLManager.best_score_achieved = false
 
 func _spawn_star(target_position: Vector2):
 	var star = star_scene.instantiate()
 	star.position = target_position
-	star.scale = Vector2(0.5, 0.5)
+	star.scale = Vector2(0.75, 0.75)
 	get_tree().current_scene.add_child(star)
 	
 	var tween = get_tree().create_tween()

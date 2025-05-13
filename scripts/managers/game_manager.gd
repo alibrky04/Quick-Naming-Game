@@ -10,9 +10,9 @@ var itemCounter = 0
 var setItemIndex = 0
 var speedBooster = 0
 var itemSpeed = initialSpeed + speedBooster
+var is_paused = false
 
 var currentItems = []
-
 var currentProfile = ""
 
 @onready var boost_reset: Timer = $BoostReset
@@ -44,7 +44,7 @@ func _on_boost_reset_timeout() -> void:
 		speedBooster -= staticSpeedBoost
 	
 func calculate_speed() -> void:
-	itemSpeed = GameManager.initialSpeed + speedBooster
+	itemSpeed = GameManager.initialSpeed + (speedBooster * int(!is_paused))
 
 func remove_combining_marks(text: String) -> String:
 	var output = ""

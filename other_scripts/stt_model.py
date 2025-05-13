@@ -64,7 +64,7 @@ try:
                     print(f"Error receiving message: {e}")
 
         # Stream audio data
-        data = stream.read(2000, exception_on_overflow=False)
+        data = stream.read(4000, exception_on_overflow=False)
         
         if recognizer.AcceptWaveform(data):
             result = json.loads(recognizer.Result())
