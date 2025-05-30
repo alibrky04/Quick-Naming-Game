@@ -88,6 +88,16 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
+[node name="LoadingLabel" type="Label" parent="."]
+visible = false
+offset_left = 744.0
+offset_top = 470.0
+offset_right = 1200.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("4_ilyxe")
+theme_override_font_sizes/font_size = 50
+text = "Oyun Yükleniyor... "
+
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="GameTime" to="BalloonSpawner" method="_on_game_time_timeout"]

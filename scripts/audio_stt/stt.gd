@@ -6,17 +6,15 @@ var server = TCPServer.new()
 var client: StreamPeerTCP = null
 
 var thread: Thread
-var script_path = "res://other_scripts/stt_model.py"
-var python_path = "res://other_scripts/python_runtime/python.exe"
+var python_path = "res://python_src/dist/stt_model.exe"
 var is_running = false
 
+signal connected_signal
 signal text_signal(message)
 
 func _ready():
 	server.listen(port, host)
 	print("Server started, waiting for connection...")
-
-	script_path = ProjectSettings.globalize_path(script_path)
 	
 	python_path = ProjectSettings.globalize_path(python_path)
 	
@@ -26,7 +24,7 @@ func _ready():
 
 func _run_stt_model():
 	var result = []
-	var exit_code = OS.execute(python_path, [script_path], result)
+	var exit_code = OS.execute(python_path, [], result, true)
 	if exit_code != 0:
 		print("Error running Python script:", result)
 	is_running = false
@@ -35,6 +33,7 @@ func _process(_delta):
 	if client == null and server.is_connection_available():
 		client = server.take_connection()
 		print("Client connected!")
+		connected_signal.emit()
 
 	if client and client.get_available_bytes() > 0:
 		var message = client.get_utf8_string(client.get_available_bytes())

@@ -1,7 +1,0 @@
-[config]
-
-name="SpeechToText"
-binary_type="local"
-binary="SpeechToText-debug.aar"
-
-[dependencies]

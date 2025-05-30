@@ -2,9 +2,6 @@ extends Node
 
 var set_count = 12
 
-var data_path = "res://assets/sets.json"
-var json_data = {}
-
 var unique_data_path = "res://assets/sets_unique_elemantary.json"
 var json_unique_data = {}
 
@@ -15,7 +12,6 @@ var last_four = []
 var last_picked = ""
 
 func _ready():
-	json_data = read_json(data_path)
 	json_unique_data = read_json(unique_data_path)
 
 func read_json(json_file_path: String):

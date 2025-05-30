@@ -4,6 +4,8 @@ extends Node2D
 @onready var progress_bar = $ProgressBar
 @onready var game_time: Timer = $GameTime
 @onready var balloon_spawner: Area2D = $BalloonSpawner
+@onready var stt: Node = $STT
+@onready var loading_label: Label = $LoadingLabel
 
 const total_time = 60
 var remaining_time = total_time
@@ -11,6 +13,8 @@ var resume_speed = 0
 var is_paused = false
 
 func _ready() -> void:
+	stt.connected_signal.connect(_on_stt_connected_signal)
+	
 	CloudBackground.cloud_speed = CloudBackground.game_cloud_speed
 	for cloud in CloudBackground.cloud_list:
 		cloud.modulate.a = CloudBackground.game_cloud_alpha
@@ -22,6 +26,10 @@ func _ready() -> void:
 	progress_bar.value = total_time
 	
 	game_time.start(total_time)
+	
+	pause_resume(true)
+	loading_label.visible = true
+	shadow.visible = true
 	
 func _process(delta: float) -> void:
 	if not is_paused:
@@ -93,3 +101,9 @@ func _on_menu_back_signal() -> void:
 	GameManager.itemCounter = 0
 	GameManager.setItemIndex = 0
 	GameManager.speedBooster = 0
+
+func _on_stt_connected_signal():
+	pause_resume(false)
+	loading_label.visible = false
+	shadow.visible = false
+	balloon_spawner.spawn_balloon()
