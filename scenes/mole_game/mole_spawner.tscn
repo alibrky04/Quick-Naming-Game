@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6p6shr6a5xyd"]
+
+[ext_resource type="Script" uid="uid://bhgs3r4fo8cgl" path="res://scripts/mole_game/mole_spawner.gd" id="1_hs8hb"]
+[ext_resource type="Texture2D" uid="uid://s4ifijaqgfoy" path="res://assets/Images/mole_game/yuva.png" id="2_54c58"]
+
+[node name="MoleSpawner" type="Node2D"]
+script = ExtResource("1_hs8hb")
+
+[node name="Nests" type="GridContainer" parent="."]
+offset_right = 2636.0
+offset_bottom = 604.0
+scale = Vector2(0.3, 0.3)
+theme_override_constants/h_separation = 500
+theme_override_constants/v_separation = 1000
+columns = 2
+
+[node name="Nest1" type="TextureRect" parent="Nests"]
+layout_mode = 2
+texture = ExtResource("2_54c58")
+
+[node name="Nest2" type="TextureRect" parent="Nests"]
+layout_mode = 2
+texture = ExtResource("2_54c58")
+
+[node name="Nest3" type="TextureRect" parent="Nests"]
+layout_mode = 2
+texture = ExtResource("2_54c58")
+
+[node name="Nest4" type="TextureRect" parent="Nests"]
+layout_mode = 2
+texture = ExtResource("2_54c58")

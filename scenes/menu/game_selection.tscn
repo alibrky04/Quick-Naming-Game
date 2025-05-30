@@ -124,7 +124,7 @@ icon = ExtResource("3_ds4f7")
 flat = true
 expand_icon = true
 
-[node name="Locked" type="Button" parent="GridContainer"]
+[node name="MoleGameSelection" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")

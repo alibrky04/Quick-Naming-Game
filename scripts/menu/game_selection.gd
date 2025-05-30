@@ -7,6 +7,7 @@ func _on_home_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/main_menu.tscn")
 
 func _on_balloon_game_selection_pressed() -> void:
+	GameManager.selectedGame = 1
 	SetManager.random_set_select()
 	AudioManager.on_scene_changed("balloon_game")
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/balloon_game/balloon_game.tscn")

@@ -15,9 +15,13 @@ var canActivate = true
 var item = ""
 var item_type = ""
 
+const games = {1: "balloon_game", 2: "mole_game", 3: "space_game"}
+
 func _ready():
 	if item_image:
-		set_item("res://assets/SetImages/" + item + ".png")
+		var game_name = games[GameManager.selectedGame]
+		var path = "res://assets/SetImages/{0}/{1}.png".format([game_name, item])
+		set_item(path)
 
 func _process(delta: float) -> void:
 	GameManager.calculate_speed()
