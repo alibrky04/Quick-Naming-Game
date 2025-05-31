@@ -31,14 +31,15 @@ scale = Vector2(0.2, 0.2)
 sprite_texture = ExtResource("4_c6xm1")
 
 [node name="ScoreLabel" type="Label" parent="Sun"]
-offset_left = -70.0
+offset_left = -320.0
 offset_top = -120.0
-offset_right = 64.0
+offset_right = 320.0
 offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("2_no8w6")
 theme_override_font_sizes/font_size = 200
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("3_4o8qv")
 
 [node name="GameTime" type="Timer" parent="."]
@@ -84,6 +85,17 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
+[node name="LoadingLabel" type="Label" parent="."]
+visible = false
+offset_left = 744.0
+offset_top = 470.0
+offset_right = 1200.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("2_no8w6")
+theme_override_font_sizes/font_size = 50
+text = "Oyun Yükleniyor... "
+
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="timeout" from="GameTime" to="MoleSpawner" method="_on_game_time_timeout"]
 [connection signal="button_down" from="Pause" to="." method="_on_pause_button_down"]

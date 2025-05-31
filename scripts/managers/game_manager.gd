@@ -1,10 +1,10 @@
 extends Node
 
 const staticSpeedBoost = 5
+const games = {1: "balloon_game", 2: "mole_game", 3: "space_game"}
 
 var initialSpeed = 120
 var selectedGame = 1
-var difficultyLevel = 1
 var score = 0
 var itemCounter = 0
 var setItemIndex = 0
@@ -18,7 +18,9 @@ var currentProfile = ""
 @onready var boost_reset: Timer = $BoostReset
 
 signal score_updated(new_score)
-signal item_generated()
+
+func _ready() -> void:
+	calculate_speed()
 
 func add_points(points: int) -> void:
 	score += points
@@ -42,9 +44,10 @@ func get_ending_screen() -> void:
 func _on_boost_reset_timeout() -> void:
 	if itemSpeed > initialSpeed:
 		speedBooster -= staticSpeedBoost
+	calculate_speed()
 	
 func calculate_speed() -> void:
-	itemSpeed = GameManager.initialSpeed + (speedBooster * int(!is_paused))
+	itemSpeed = initialSpeed + (speedBooster * int(!is_paused))
 
 func remove_combining_marks(text: String) -> String:
 	var output = ""

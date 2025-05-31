@@ -12,6 +12,12 @@ func _on_balloon_game_selection_pressed() -> void:
 	AudioManager.on_scene_changed("balloon_game")
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/balloon_game/balloon_game.tscn")
 
+func _on_mole_game_selection_pressed() -> void:
+	GameManager.selectedGame = 2
+	SetManager.random_set_select()
+	AudioManager.on_scene_changed("mole_game")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/mole_game/mole_game.tscn")
+
 func _on_settings_pressed() -> void:
 	shadow.visible = true
 	var settings = load("res://scenes/menu/settings.tscn").instantiate()

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://doiewafv42gd3"]
+
+[ext_resource type="Script" uid="uid://c8t8e7ijvg5pk" path="res://scripts/mole_game/mole.gd" id="1_qra8t"]
+[ext_resource type="Texture2D" uid="uid://bld71oybd0fyi" path="res://assets/SetImages/mole_game/elma.png" id="2_hf2a1"]
+
+[node name="Mole" type="Node2D"]
+script = ExtResource("1_qra8t")
+
+[node name="ItemImage" type="Sprite2D" parent="."]
+texture = ExtResource("2_hf2a1")
+
+[node name="SpawnNoise" type="AudioStreamPlayer" parent="."]
+
+[node name="DespawnNoise" type="AudioStreamPlayer" parent="."]
+
+[node name="DespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

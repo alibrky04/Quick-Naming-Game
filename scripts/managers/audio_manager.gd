@@ -25,3 +25,6 @@ func on_scene_changed(scene: String, new_music_path: String = menu_music_path):
 	elif scene == "balloon_game":
 		current_music = "balloon_game"
 		player.stop()
+	elif scene == "mole_game":
+		current_music = "mole_game"
+		player.stop()

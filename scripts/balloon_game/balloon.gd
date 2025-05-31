@@ -4,6 +4,7 @@ extends Area2D
 @onready var pop_sound: AudioStreamPlayer = $PopSound
 @onready var indicator: Sprite2D = $Indicator
 
+# Animation Variables
 var star_scene = preload("res://scenes/ui/star.tscn")
 const corner_position = Vector2(80, 80)
 const corner_scale = Vector2(0.2, 0.2)
@@ -15,11 +16,9 @@ var canActivate = true
 var item = ""
 var item_type = ""
 
-const games = {1: "balloon_game", 2: "mole_game", 3: "space_game"}
-
 func _ready():
 	if item_image:
-		var game_name = games[GameManager.selectedGame]
+		var game_name = GameManager.games[GameManager.selectedGame]
 		var path = "res://assets/SetImages/{0}/{1}.png".format([game_name, item])
 		set_item(path)
 
@@ -48,7 +47,6 @@ func pop_balloon():
 	GameManager.speedBooster += GameManager.staticSpeedBoost
 	GameManager.boost_reset.start()
 	GameManager.itemCounter += 1
-	GameManager.item_generated.emit()
 	
 	play_star()
 

@@ -3,6 +3,9 @@ extends Node2D
 @onready var shadow: ColorRect = $Shadow
 @onready var progress_bar = $ProgressBar
 @onready var game_time: Timer = $GameTime
+@onready var mole_spawner: Node2D = $MoleSpawner
+@onready var loading_label: Label = $LoadingLabel
+@onready var stt: Node = $STT
 
 const total_time = 60
 var remaining_time = total_time
@@ -10,13 +13,17 @@ var resume_speed = 0
 var is_paused = false
 
 func _ready() -> void:
-	GameManager.itemSpeed = GameManager.initialSpeed
+	stt.connected_signal.connect(_on_stt_connected_signal)
 	
 	progress_bar.min_value = 0
 	progress_bar.max_value = total_time
 	progress_bar.value = total_time
 	
 	game_time.start(total_time)
+	
+	pause_resume(true)
+	loading_label.visible = true
+	shadow.visible = true
 	
 func _process(delta: float) -> void:
 	if not is_paused:
@@ -25,11 +32,9 @@ func _process(delta: float) -> void:
 
 func _on_stt_text_signal(word: Variant) -> void:
 	for item in GameManager.currentItems:
-		if not item.isClickable and item.canActivate:
+		if item.canActivate:
 			if item.item in word or (item.item == "1" && "bir" in word):
-				item.isClickable = true
-				# item.indicator.visible = true
-				item.pop_balloon()
+				item.hit_mole()
 				break
 
 func _on_game_time_timeout() -> void:
@@ -57,6 +62,12 @@ func pause_resume(state: bool):
 	GameManager.boost_reset.paused = state
 	is_paused = state
 	game_time.paused = state
+	mole_spawner.timer.paused = state
+	
+	for item in GameManager.currentItems:
+		if is_instance_valid(item):
+			item.despawn_timer.paused = state
+	
 	for item in GameManager.currentItems:
 		item.canActivate = !state
 	
@@ -85,3 +96,11 @@ func _on_menu_back_signal() -> void:
 	GameManager.itemCounter = 0
 	GameManager.setItemIndex = 0
 	GameManager.speedBooster = 0
+
+func _on_stt_connected_signal():
+	pause_resume(false)
+	loading_label.visible = false
+	shadow.visible = false
+	
+	mole_spawner.update_generation_speed()
+	mole_spawner.spawn_mole()
