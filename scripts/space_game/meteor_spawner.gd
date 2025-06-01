@@ -1,24 +1,26 @@
-extends Area2D
+extends Node2D
 
-@onready var colShape: CollisionShape2D = $CollisionShape2D
-@onready var balloon: PackedScene = preload("res://scenes/balloon_game/balloon.tscn")
+@onready var colShape: CollisionShape2D = $SpawnArea/CollisionShape2D
+@onready var meteor: PackedScene = preload("res://scenes/space_game/meteor.tscn")
 @onready var timer: Timer = $Timer
-@onready var balloons: Node2D = $"../Balloons"
+@onready var meteors: Node2D = $"../Meteors"
+@onready var spaceship: Node2D = get_parent().get_node("Spaceship")
 
 var positionInArea: Vector2
-var itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+var itemGenerationSpeed: float
 
 func _ready() -> void:
+	update_generation_speed()
+	
 	timer.start(itemGenerationSpeed)
 
 func _process(_delta: float) -> void:
-	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
-	timer.wait_time = itemGenerationSpeed
+	update_generation_speed()
 
 func _on_timer_timeout() -> void:
-	spawn_balloon()
+	spawn_meteor()
 		
-func spawn_balloon() -> void:
+func spawn_meteor() -> void:
 	var centerpos = global_position
 		
 	var shape = colShape.shape as RectangleShape2D
@@ -28,13 +30,18 @@ func spawn_balloon() -> void:
 	positionInArea.x = randf_range(centerpos.x - size.x / 2, centerpos.x + size.x / 2)
 	positionInArea.y = randf_range(centerpos.y - size.y / 2, centerpos.y + size.y / 2)
 	
-	var spawn = balloon.instantiate()
+	var spawn = meteor.instantiate()
 	spawn.global_position = positionInArea
 	spawn.item = SetManager.create_random_item()
 	spawn.item_type = SetManager.selected_set["type"]
 	GameManager.currentItems.append(spawn)
 	
-	balloons.add_child.call_deferred(spawn)
+	meteors.add_child.call_deferred(spawn)
 
 func _on_game_time_timeout() -> void:
 	timer.stop()
+
+func update_generation_speed():
+	GameManager.calculate_speed()
+	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+	timer.set_wait_time(itemGenerationSpeed)

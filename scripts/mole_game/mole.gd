@@ -11,6 +11,7 @@ var rotation_amount = 360
 
 @onready var item_image: Sprite2D = $ItemImage
 @onready var despawn_timer: Timer = $DespawnTimer
+@onready var mole_audio: AudioStreamPlayer = $MoleAudio
 
 var canActivate = true
 var item = ""
@@ -30,7 +31,7 @@ func _ready():
 	for i in range(1, 3):
 		hit_sounds.append(load("res://assets/Sounds/mole/mole_hit_%d.mp3" % i))
 
-	AudioManager.play_random_sound(spawn_sounds)
+	play_random_sound(spawn_sounds)
 
 	var game_name = GameManager.games[GameManager.selectedGame]
 	var path = "res://assets/SetImages/%s/%s.png" % [game_name, item]
@@ -46,7 +47,7 @@ func hit_mole():
 		return
 	if is_instance_valid(self):
 		despawn_timer.stop()
-		AudioManager.play_random_sound(hit_sounds)
+		play_random_sound(hit_sounds)
 		GameManager.add_points(10)
 		GameManager.currentItems.erase(self)
 		GameManager.speedBooster += GameManager.staticSpeedBoost
@@ -58,7 +59,7 @@ func hit_mole():
 
 func _on_despawn_timer_timeout():
 	if is_instance_valid(self):
-		AudioManager.play_random_sound(despawn_sounds)
+		play_random_sound(despawn_sounds)
 		GameManager.currentItems.erase(self)
 		animate_despawn()
 
@@ -107,3 +108,11 @@ func animate_despawn():
 	tween.tween_property(self, "modulate:a", 0, 0.3)\
 		.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	tween.finished.connect(func(): queue_free())
+
+func play_random_sound(sounds: Array[AudioStream]) -> void:
+	if sounds.is_empty():
+		return
+	mole_audio.stream = sounds.pick_random()
+	mole_audio.pitch_scale = randf_range(0.9, 1.1)
+	mole_audio.volume_db = randf_range(-1.5, 0.0)
+	mole_audio.play()

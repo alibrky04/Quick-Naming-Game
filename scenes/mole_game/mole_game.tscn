@@ -25,12 +25,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_hyjo3")
 
-[node name="Sun" parent="." instance=ExtResource("1_dgow1")]
+[node name="PointMaker" parent="." instance=ExtResource("1_dgow1")]
 position = Vector2(114, 125)
 scale = Vector2(0.2, 0.2)
 sprite_texture = ExtResource("4_c6xm1")
 
-[node name="ScoreLabel" type="Label" parent="Sun"]
+[node name="ScoreLabel" type="Label" parent="PointMaker"]
 offset_left = -320.0
 offset_top = -120.0
 offset_right = 320.0

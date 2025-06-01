@@ -12,4 +12,7 @@ texture = ExtResource("2_hf2a1")
 [node name="DespawnTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="MoleAudio" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

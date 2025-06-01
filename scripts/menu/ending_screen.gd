@@ -20,6 +20,8 @@ func _on_restart_pressed() -> void:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/balloon_game/balloon_game.tscn")
 	elif GameManager.selectedGame == 2:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/mole_game/mole_game.tscn")
+	elif GameManager.selectedGame == 3:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/space_game/space_game.tscn")
 
 func _on_to_game_select_pressed() -> void:
 	AudioManager.on_scene_changed("menu")

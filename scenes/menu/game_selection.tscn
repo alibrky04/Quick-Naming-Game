@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dv3y81w74ddn5"]
+[gd_scene load_steps=27 format=3 uid="uid://dv3y81w74ddn5"]
 
 [ext_resource type="Script" path="res://scripts/menu/game_selection.gd" id="1_5hamw"]
 [ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_amktt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="5_vpt28"]
 [ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="7_amktt"]
 [ext_resource type="Texture2D" uid="uid://c7ju3ushgecce" path="res://assets/Images/mole_game/mole_game.png" id="7_kinxy"]
+[ext_resource type="Texture2D" uid="uid://1x3ru5uo0ln2" path="res://assets/Images/space_game/space_game.png" id="8_peyby"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bjv0"]
 
@@ -144,7 +145,7 @@ icon = ExtResource("7_kinxy")
 flat = true
 expand_icon = true
 
-[node name="Locked2" type="Button" parent="GridContainer"]
+[node name="SpaceGameSelection" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oemg")
@@ -159,7 +160,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_4py2v")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j3eu7")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4py2v")
 action_mode = 0
-icon = ExtResource("4_dbsta")
+icon = ExtResource("8_peyby")
 flat = true
 expand_icon = true
 
@@ -186,3 +187,4 @@ expand_icon = true
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/BalloonGameSelection" to="." method="_on_balloon_game_selection_pressed"]
 [connection signal="pressed" from="GridContainer/MoleGameSelection" to="." method="_on_mole_game_selection_pressed"]
+[connection signal="pressed" from="GridContainer/SpaceGameSelection" to="." method="_on_space_game_selection_pressed"]

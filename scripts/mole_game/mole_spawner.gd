@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func update_generation_speed():
 	GameManager.calculate_speed()
-	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 600.0 / max(GameManager.itemSpeed, 0.01)
 	timer.set_wait_time(itemGenerationSpeed)
 
 func _on_timer_timeout() -> void:

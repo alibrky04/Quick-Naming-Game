@@ -44,4 +44,3 @@ enabled=PackedStringArray("res://addons/easy_charts/plugin.cfg", "res://addons/g
 [rendering]
 
 renderer/rendering_method="mobile"
-textures/vram_compression/import_etc2_astc=true

@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://1c7ghsovebxt"]
+
+[ext_resource type="Script" uid="uid://c07203y2abb8e" path="res://scripts/space_game/space_game.gd" id="1_jepem"]
+[ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="2_hoav1"]
+[ext_resource type="Texture2D" uid="uid://d1fxs3cg3toi" path="res://assets/Images/space_game/space_background.png" id="3_jepem"]
+[ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/point_maker.tscn" id="4_he5fe"]
+[ext_resource type="Texture2D" uid="uid://ksqrpelsat2k" path="res://assets/Images/space_game/Gezegen.png" id="4_uoesf"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="6_8vmr0"]
+[ext_resource type="Script" path="res://scripts/ui_misc/score_label.gd" id="7_cdvrm"]
+[ext_resource type="Texture2D" uid="uid://eoogy476fqjf" path="res://assets/Images/misc/pause.png" id="8_ujpkx"]
+[ext_resource type="PackedScene" uid="uid://d3pvm31ro1sm8" path="res://scenes/space_game/spaceship.tscn" id="8_uoesf"]
+[ext_resource type="PackedScene" uid="uid://cwduxcj4xd8vl" path="res://scenes/space_game/meteor_spawner.tscn" id="10_hoav1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtjxa"]
+bg_color = Color(0.945098, 0.32549, 0.294118, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1ptk"]
+
+[node name="SpaceGame" type="Node2D"]
+script = ExtResource("1_jepem")
+
+[node name="STT" parent="." instance=ExtResource("2_hoav1")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_jepem")
+
+[node name="Meteors" type="Node2D" parent="."]
+
+[node name="PointMaker" parent="." instance=ExtResource("4_he5fe")]
+position = Vector2(137, 125)
+scale = Vector2(0.2, 0.2)
+sprite_texture = ExtResource("4_uoesf")
+
+[node name="ScoreLabel" type="Label" parent="PointMaker"]
+offset_left = -320.0
+offset_top = -120.0
+offset_right = 320.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("6_8vmr0")
+theme_override_font_sizes/font_size = 200
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_cdvrm")
+
+[node name="GameTime" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 1839.0
+offset_top = 200.0
+offset_right = 1879.0
+offset_bottom = 807.0
+theme_type_variation = &"FullTime"
+theme_override_styles/fill = SubResource("StyleBoxFlat_xtjxa")
+fill_mode = 3
+show_percentage = false
+
+[node name="Pause" type="Button" parent="."]
+offset_left = 1800.0
+offset_right = 1920.0
+offset_bottom = 118.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j1ptk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j1ptk")
+icon = ExtResource("8_ujpkx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Spaceship" parent="." instance=ExtResource("8_uoesf")]
+position = Vector2(960, 900)
+
+[node name="MeteorSpawner" parent="." instance=ExtResource("10_hoav1")]
+position = Vector2(966, 0)
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="LoadingLabel" type="Label" parent="."]
+visible = false
+offset_left = 744.0
+offset_top = 470.0
+offset_right = 1200.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("6_8vmr0")
+theme_override_font_sizes/font_size = 50
+text = "Oyun Yükleniyor... "
+
+[connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="timeout" from="GameTime" to="MeteorSpawner" method="_on_game_time_timeout"]
+[connection signal="button_down" from="Pause" to="." method="_on_pause_button_down"]

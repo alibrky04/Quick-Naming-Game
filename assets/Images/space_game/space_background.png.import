@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0kc7y4psqapw"
-path="res://.godot/imported/spaceship_broken.png-5b040b10e09ea8172c1bf1977707aca1.ctex"
+uid="uid://d1fxs3cg3toi"
+path="res://.godot/imported/space_background.png-2cb6f572c41d315fa71227737aa4f9b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/space_game/spaceship_broken.png"
-dest_files=["res://.godot/imported/spaceship_broken.png-5b040b10e09ea8172c1bf1977707aca1.ctex"]
+source_file="res://assets/Images/space_game/space_background.png"
+dest_files=["res://.godot/imported/space_background.png-2cb6f572c41d315fa71227737aa4f9b3.ctex"]
 
 [params]
 
