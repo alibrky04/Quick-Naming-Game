@@ -16,7 +16,10 @@ func _ready() -> void:
 
 func _on_restart_pressed() -> void:
 	SetManager.random_set_select()
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/balloon_game/balloon_game.tscn")
+	if GameManager.selectedGame == 1:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/balloon_game/balloon_game.tscn")
+	elif GameManager.selectedGame == 2:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/mole_game/mole_game.tscn")
 
 func _on_to_game_select_pressed() -> void:
 	AudioManager.on_scene_changed("menu")

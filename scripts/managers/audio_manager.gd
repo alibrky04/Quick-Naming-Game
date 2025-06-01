@@ -28,3 +28,11 @@ func on_scene_changed(scene: String, new_music_path: String = menu_music_path):
 	elif scene == "mole_game":
 		current_music = "mole_game"
 		player.stop()
+
+func play_random_sound(sounds: Array[AudioStream]) -> void:
+	if sounds.is_empty():
+		return
+	player.stream = sounds.pick_random()
+	player.pitch_scale = randf_range(0.9, 1.1)
+	player.volume_db = randf_range(-1.5, 0.0)
+	player.play()

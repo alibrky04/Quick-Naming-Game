@@ -9,10 +9,6 @@ script = ExtResource("1_qra8t")
 [node name="ItemImage" type="Sprite2D" parent="."]
 texture = ExtResource("2_hf2a1")
 
-[node name="SpawnNoise" type="AudioStreamPlayer" parent="."]
-
-[node name="DespawnNoise" type="AudioStreamPlayer" parent="."]
-
 [node name="DespawnTimer" type="Timer" parent="."]
 one_shot = true
 

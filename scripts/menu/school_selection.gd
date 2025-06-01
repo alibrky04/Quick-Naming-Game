@@ -18,7 +18,7 @@ func _on_return_back_signal() -> void:
 
 func _on_pre_school_pressed() -> void:
 	SetManager.unique_data_path = "res://assets/sets_unique_preschool.json"
-	SetManager.set_count = 6
+	SetManager.set_count = 1
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")
 
 func _on_elementary_school_pressed() -> void:
