@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cwduxcj4xd8vl" path="res://scenes/space_game/meteor_spawner.tscn" id="10_hoav1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtjxa"]
-bg_color = Color(0.945098, 0.32549, 0.294118, 1)
+bg_color = Color(0.674797, 0.262017, 0.777226, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1ptk"]
 
@@ -103,5 +103,4 @@ text = "Oyun Yükleniyor... "
 
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
-[connection signal="timeout" from="GameTime" to="MeteorSpawner" method="_on_game_time_timeout"]
 [connection signal="button_down" from="Pause" to="." method="_on_pause_button_down"]

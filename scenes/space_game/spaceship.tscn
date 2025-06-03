@@ -18,3 +18,5 @@ texture = ExtResource("2_sjq67")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_sjq67")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

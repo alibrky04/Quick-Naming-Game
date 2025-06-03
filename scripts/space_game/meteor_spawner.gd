@@ -38,10 +38,7 @@ func spawn_meteor() -> void:
 	
 	meteors.add_child.call_deferred(spawn)
 
-func _on_game_time_timeout() -> void:
-	timer.stop()
-
 func update_generation_speed():
 	GameManager.calculate_speed()
-	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 480.0 / max(GameManager.itemSpeed, 0.01)
 	timer.set_wait_time(itemGenerationSpeed)

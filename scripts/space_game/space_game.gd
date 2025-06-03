@@ -6,6 +6,7 @@ extends Node2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var game_time: Timer = $GameTime
 @onready var meteor_spawner: Node2D = $MeteorSpawner
+@onready var spaceship: Node2D = $Spaceship
 
 const total_time = 60
 var remaining_time = total_time
@@ -14,6 +15,7 @@ var is_paused = false
 
 func _ready() -> void:
 	stt.connected_signal.connect(_on_stt_connected_signal)
+	spaceship.ship_broke.connect(_on_ship_broke_signal)
 	
 	progress_bar.min_value = 0
 	progress_bar.max_value = total_time
@@ -26,7 +28,7 @@ func _ready() -> void:
 	shadow.visible = true
 	
 func _process(delta: float) -> void:
-	if not is_paused:
+	if not is_paused and not game_time.paused:
 		remaining_time -= delta
 		progress_bar.value = remaining_time
 
@@ -38,6 +40,8 @@ func _on_stt_text_signal(word: Variant) -> void:
 				break
 
 func _on_game_time_timeout() -> void:
+	meteor_spawner.timer.paused = true
+	
 	for item in GameManager.currentItems.duplicate():
 		if is_instance_valid(item):
 			item.queue_free()
@@ -100,3 +104,16 @@ func _on_stt_connected_signal():
 	
 	meteor_spawner.update_generation_speed()
 	meteor_spawner.spawn_meteor()
+
+func _on_ship_broke_signal():
+	meteor_spawner.timer.paused = true
+	
+	for item in GameManager.currentItems.duplicate():
+		if is_instance_valid(item):
+			item.queue_free()
+	GameManager.currentItems.clear()
+	
+	game_time.paused = true
+	
+	shadow.visible = true
+	GameManager.get_ending_screen()

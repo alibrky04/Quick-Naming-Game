@@ -8,8 +8,8 @@ const animation_duration = 0.8
 var rotation_amount = 360
 
 @onready var item_image: Sprite2D = $ItemImage
-@onready var meteor_audio: AudioStreamPlayer = $MeteorAudio
 @onready var spaceship: Node2D = get_parent().get_parent().get_node("Spaceship")
+@onready var player: AudioStreamPlayer = $Player
 
 var canActivate = true
 var item = ""
@@ -30,7 +30,7 @@ func _ready():
 	rotation = direction.angle() + deg_to_rad(270)
 
 func _process(delta: float) -> void:
-	t = 360.0 / max(GameManager.itemSpeed, 0.01)
+	t = 480.0 / max(GameManager.itemSpeed, 0.01)
 	speed = distance / t
 	
 	if !GameManager.is_paused:
@@ -51,9 +51,6 @@ func destroy_meteor():
 		GameManager.itemCounter += 1
 
 		play_star()
-
-func hit_spaceship():
-	pass
 
 func play_star():
 	var star = star_scene.instantiate()
