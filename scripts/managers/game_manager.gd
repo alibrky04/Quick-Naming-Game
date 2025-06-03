@@ -12,6 +12,11 @@ var speedBooster = 0
 var itemSpeed = initialSpeed + speedBooster
 var is_paused = false
 
+var selected_school = ""
+var set_mode = "easy"
+var do_shuffle = false
+var shuffle_mode = "M1"
+
 var currentItems = []
 var currentProfile = ""
 

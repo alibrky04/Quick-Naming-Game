@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://15l8pkja3iiy" path="res://scripts/space_game/meteor_spawner.gd" id="1_an2x6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_an2x6"]
-size = Vector2(945.75, 20)
+size = Vector2(544.719, 20)
 
 [node name="MeteorSpawner" type="Node2D"]
 script = ExtResource("1_an2x6")

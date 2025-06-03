@@ -40,7 +40,7 @@ func _process(_delta):
 		var parsed_message = JSON.parse_string(message)
 		if parsed_message and parsed_message.has("text"):
 			var text = parsed_message["text"]
-			text = text.strip_edges().to_lower()
+			text = text.strip_edges().to_lower().replace(" ", "")
 			print("Received speech:", text)
 			text = GameManager.remove_combining_marks(text)
 			text_signal.emit(text)

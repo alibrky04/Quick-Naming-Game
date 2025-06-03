@@ -1,0 +1,255 @@
+[gd_scene load_steps=34 format=3 uid="uid://dae6ygxu01ldy"]
+
+[ext_resource type="Script" uid="uid://bfm1i0a0sd0x1" path="res://scripts/menu/mode_selection.gd" id="1_nfhf5"]
+[ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_u61su"]
+[ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_7yco3"]
+[ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="4_uxqry"]
+[ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="5_kvl8s"]
+[ext_resource type="Texture2D" uid="uid://ccwwpy2jafw7a" path="res://assets/Images/buttons/checked.png" id="6_7yco3"]
+[ext_resource type="Texture2D" uid="uid://de4fb5g1io8ff" path="res://assets/Images/buttons/unchecked.png" id="7_uxqry"]
+[ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="8_uxqry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vg4bx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ey2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb0cj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2s0q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_enech"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwqke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ksrg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk854"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_earkq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upmbc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le0ar"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovnn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yco3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxqry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kvl8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vsvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fie4k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aota7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv2u2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tujnn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3nrn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_de1i7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at816"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgg0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jd4mc"]
+
+[node name="ModeSelection" type="Node2D"]
+script = ExtResource("1_nfhf5")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("2_u61su")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 281.0
+offset_top = 342.0
+offset_right = 1600.0
+offset_bottom = 463.0
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 100
+text = "Modu Seçiniz"
+horizontal_alignment = 1
+
+[node name="Home" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 132.0
+offset_bottom = 132.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vg4bx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0ey2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kb0cj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_k2s0q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_enech")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hwqke")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2ksrg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_mk854")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_earkq")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_upmbc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_le0ar")
+icon = ExtResource("4_uxqry")
+flat = true
+expand_icon = true
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 1788.0
+offset_top = 12.0
+offset_right = 1908.0
+offset_bottom = 132.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ovnn7")
+icon = ExtResource("5_kvl8s")
+flat = true
+expand_icon = true
+
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 778.0
+offset_top = 492.0
+offset_right = 1117.0
+offset_bottom = 683.0
+
+[node name="Easy" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Easy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 50
+text = "Kolay"
+
+[node name="Easy" type="CheckBox" parent="VBoxContainer/Easy"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7yco3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7yco3")
+theme_override_icons/checked = ExtResource("6_7yco3")
+theme_override_icons/unchecked = ExtResource("7_uxqry")
+button_pressed = true
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hard" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 105
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Hard"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 50
+text = "Zor"
+
+[node name="Hard" type="CheckBox" parent="VBoxContainer/Hard"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_uxqry")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uxqry")
+theme_override_icons/checked = ExtResource("6_7yco3")
+theme_override_icons/unchecked = ExtResource("7_uxqry")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Shuffle" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Shuffle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 50
+text = "Karıştır"
+
+[node name="Shuffle" type="OptionButton" parent="VBoxContainer/Shuffle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 25
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Hayır"
+popup/item_0/id = 0
+popup/item_1/text = "M1"
+popup/item_1/id = 1
+popup/item_2/text = "M2"
+popup/item_2/id = 2
+popup/item_3/text = "M3"
+popup/item_3/id = 3
+
+[node name="PreSchool" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 778.0
+offset_top = 738.0
+offset_right = 1117.0
+offset_bottom = 838.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kvl8s")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5vsvk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fie4k")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_aota7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rv2u2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_tujnn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a3nrn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_de1i7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_at816")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vgg0w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jd4mc")
+icon = ExtResource("8_uxqry")
+expand_icon = true
+
+[node name="Label" type="Label" parent="PreSchool"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -32.0
+offset_right = 155.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+theme_override_fonts/font = ExtResource("3_7yco3")
+theme_override_font_sizes/font_size = 50
+text = "Devam"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="toggled" from="VBoxContainer/Easy/Easy" to="." method="_on_easy_toggled"]
+[connection signal="toggled" from="VBoxContainer/Hard/Hard" to="." method="_on_hard_toggled"]
+[connection signal="item_selected" from="VBoxContainer/Shuffle/Shuffle" to="." method="_on_shuffle_item_selected"]
+[connection signal="pressed" from="PreSchool" to="." method="_on_pre_school_pressed"]

@@ -106,4 +106,6 @@ func _on_stt_connected_signal():
 	pause_resume(false)
 	loading_label.visible = false
 	shadow.visible = false
+	
+	balloon_spawner.update_generation_speed()
 	balloon_spawner.spawn_balloon()

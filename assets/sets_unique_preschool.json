@@ -1,6 +1,30 @@
 {
-  "set_1": {
-	"type": "object_naming",
-	"items": ["inek", "aslan", "elma", "mısır", "limon"]
-  }
+	"easy": {
+		"set_1": {
+			"type": "object_naming",
+			"items": ["nar", "süt", "bal", "çöp", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "çivi", "masa", "gül"]
+  		},
+		"set_2": {
+			"type": "color_naming",
+			"items": ["pembe", "turuncu", "siyah", "mor", "sarı", "yeşil", "mavi", "kırmızı"]
+		},
+		"set_3": {
+			"type": "shape_naming",
+			"items": ["üçgen", "kare", "daire", "yıldız", "kalp"]
+		}
+	},
+	"hard": {
+		"set_1": {
+			"type": "object_naming",
+			"items": ["nar", "süt", "bal", "çöp", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "çivi", "masa", "gül", "elma", "aslan", "mısır", "inek", "limon", "bulut", "tavuk", "havuç", "çorap", "koltuk", "fare", "armut", "şapka", "ceviz", "balon", "tavşan", "üzüm", "makas", "simit", "çatal"]
+  		},
+		"set_2": {
+			"type": "color_naming",
+			"items": ["pembe", "turuncu", "siyah", "mor", "sarı", "yeşil", "mavi", "kırmızı"]
+		},
+		"set_3": {
+			"type": "shape_naming",
+			"items": ["üçgen", "kare", "daire", "yıldız", "kalp"]
+		}
+	}
 }

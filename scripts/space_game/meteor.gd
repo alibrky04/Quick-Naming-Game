@@ -14,6 +14,7 @@ var rotation_amount = 360
 var canActivate = true
 var item = ""
 var item_type = ""
+var already_broken = false
 
 var direction: Vector2
 var distance: float
@@ -43,14 +44,23 @@ func destroy_meteor():
 	if not is_inside_tree():
 		return
 	if is_instance_valid(self):
+		already_broken = true
+		
 		GameManager.add_points(10)
+
+		await play_shake()
+
+		player.play()
+		visible = false
+		play_star()
+		await player.finished
+		
 		GameManager.currentItems.erase(self)
 		queue_free()
+		
 		GameManager.speedBooster += GameManager.staticSpeedBoost
 		GameManager.boost_reset.start()
 		GameManager.itemCounter += 1
-
-		play_star()
 
 func play_star():
 	var star = star_scene.instantiate()
@@ -77,3 +87,14 @@ func play_star():
 		star.queue_free()
 		tween.kill()
 	)
+
+func play_shake() -> void:
+	var tween = create_tween()
+	var shake_amount = 5.0
+	var original_position = position
+	
+	tween.tween_property(self, "position", original_position + Vector2(shake_amount, 0), 0.03)
+	tween.tween_property(self, "position", original_position - Vector2(shake_amount, 0), 0.03)
+	tween.tween_property(self, "position", original_position, 0.03)
+
+	await tween.finished

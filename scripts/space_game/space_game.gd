@@ -7,6 +7,7 @@ extends Node2D
 @onready var game_time: Timer = $GameTime
 @onready var meteor_spawner: Node2D = $MeteorSpawner
 @onready var spaceship: Node2D = $Spaceship
+@onready var star_background: Node2D = $StarBackground
 
 const total_time = 60
 var remaining_time = total_time
@@ -76,10 +77,12 @@ func pause_resume(state: bool):
 		GameManager.initialSpeed = 0
 		GameManager.calculate_speed()
 		CloudBackground.cloud_speed = 0
+		star_background.star_speed = 0
 	else:
 		GameManager.initialSpeed = resume_speed
 		GameManager.calculate_speed()
 		CloudBackground.cloud_speed = CloudBackground.game_cloud_speed
+		star_background.star_speed = star_background.game_star_speed
 
 func _on_return_back_signal() -> void:
 	shadow.visible = false
@@ -114,6 +117,7 @@ func _on_ship_broke_signal():
 	GameManager.currentItems.clear()
 	
 	game_time.paused = true
+	star_background.star_speed = 0
 	
 	shadow.visible = true
 	GameManager.get_ending_screen()

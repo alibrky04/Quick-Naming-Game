@@ -6,14 +6,14 @@ extends Area2D
 @onready var balloons: Node2D = $"../Balloons"
 
 var positionInArea: Vector2
-var itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+var itemGenerationSpeed: float
 
 func _ready() -> void:
+	update_generation_speed()
 	timer.start(itemGenerationSpeed)
 
 func _process(_delta: float) -> void:
-	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
-	timer.wait_time = itemGenerationSpeed
+	update_generation_speed()
 
 func _on_timer_timeout() -> void:
 	spawn_balloon()
@@ -38,3 +38,8 @@ func spawn_balloon() -> void:
 
 func _on_game_time_timeout() -> void:
 	timer.stop()
+
+func update_generation_speed():
+	GameManager.calculate_speed()
+	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)
+	timer.set_wait_time(itemGenerationSpeed)

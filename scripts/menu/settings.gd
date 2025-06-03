@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var profile: Label = $VBoxContainer/Profile
 @onready var sound_slider: HSlider = $VBoxContainer/Sound/SoundSlider
+@onready var text_edit: TextEdit = $VBoxContainer/HBoxContainer/TextEdit
 
 const MIN_DB = -80.0
 const MAX_DB = 0.0
@@ -14,19 +15,28 @@ func _ready() -> void:
 	
 	var db = AudioManager.player.volume_db
 	sound_slider.value = clamp((db - MIN_DB) / (MAX_DB - MIN_DB) * 100.0, 0, 100)
+	
+	text_edit.placeholder_text = str(GameManager.initialSpeed)
 
 func _on_cancel_pressed() -> void:
 	queue_free()
 	return_back_signal.emit()
 
-func _on_easy_pressed() -> void:
-	GameManager.initialSpeed = 60
+func _on_text_edit_text_changed() -> void:
+	var old_text := text_edit.text
 
-func _on_normal_pressed() -> void:
-	GameManager.initialSpeed = 120
+	var filtered := ""
+	for c in old_text:
+		if c.is_valid_int():
+			filtered += c
 
-func _on_hard_pressed() -> void:
-	GameManager.initialSpeed = 180
+	if old_text != filtered:
+		text_edit.text = filtered
+		text_edit.set_caret_column(filtered.length())
+
+func _on_button_pressed() -> void:
+	if not text_edit.text.is_empty():
+		GameManager.initialSpeed = int(text_edit.text)
 
 func _on_scores_pressed() -> void:
 	if GameManager.currentProfile != "":

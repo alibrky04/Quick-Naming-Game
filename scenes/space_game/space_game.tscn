@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://1c7ghsovebxt"]
+[gd_scene load_steps=14 format=3 uid="uid://1c7ghsovebxt"]
 
 [ext_resource type="Script" uid="uid://c07203y2abb8e" path="res://scripts/space_game/space_game.gd" id="1_jepem"]
 [ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="2_hoav1"]
-[ext_resource type="Texture2D" uid="uid://d1fxs3cg3toi" path="res://assets/Images/space_game/space_background.png" id="3_jepem"]
+[ext_resource type="Texture2D" uid="uid://cpoypedg1lo86" path="res://assets/Images/misc/star_background.png" id="4_28gnh"]
+[ext_resource type="Script" uid="uid://b66dpqdcorn26" path="res://scripts/space_game/star_background.gd" id="4_ggswf"]
 [ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/point_maker.tscn" id="4_he5fe"]
 [ext_resource type="Texture2D" uid="uid://ksqrpelsat2k" path="res://assets/Images/space_game/Gezegen.png" id="4_uoesf"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="6_8vmr0"]
@@ -21,10 +22,108 @@ script = ExtResource("1_jepem")
 
 [node name="STT" parent="." instance=ExtResource("2_hoav1")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_jepem")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0784881, 0.083807, 0.105078, 1)
+
+[node name="StarBackground" type="Node2D" parent="."]
+script = ExtResource("4_ggswf")
+
+[node name="StarBackground" type="Sprite2D" parent="StarBackground"]
+position = Vector2(233, 237)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground2" type="Sprite2D" parent="StarBackground"]
+position = Vector2(699, 237)
+rotation = -0.989144
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground3" type="Sprite2D" parent="StarBackground"]
+position = Vector2(328, 716)
+rotation = -2.76689
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground4" type="Sprite2D" parent="StarBackground"]
+position = Vector2(940, 762)
+rotation = -0.983593
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground5" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1166, 350)
+rotation = -0.402058
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground6" type="Sprite2D" parent="StarBackground"]
+position = Vector2(511, 351)
+rotation = -1.33138
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground7" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1569, 324)
+rotation = 1.34466
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground8" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1464, 785)
+rotation = 1.81511
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground9" type="Sprite2D" parent="StarBackground"]
+position = Vector2(552, 853)
+rotation = 2.82194
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground10" type="Sprite2D" parent="StarBackground"]
+position = Vector2(940, 1084)
+rotation = 4.20881
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground11" type="Sprite2D" parent="StarBackground"]
+position = Vector2(268, 1051)
+rotation = 5.20457
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground12" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1516, 1099)
+rotation = 4.74356
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground13" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1491, 17)
+rotation = 4.74356
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground14" type="Sprite2D" parent="StarBackground"]
+position = Vector2(855, 5)
+rotation = 5.33096
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground15" type="Sprite2D" parent="StarBackground"]
+position = Vector2(324, 19)
+rotation = 3.35487
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
+
+[node name="StarBackground16" type="Sprite2D" parent="StarBackground"]
+position = Vector2(1659, 663)
+rotation = 4.83592
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_28gnh")
 
 [node name="Meteors" type="Node2D" parent="."]
 

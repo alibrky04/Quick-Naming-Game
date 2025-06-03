@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://eauftqx3tmmm" path="res://scripts/space_game/meteor.gd" id="1_rjbt6"]
 [ext_resource type="Texture2D" uid="uid://cfkv1hqn3po5k" path="res://assets/SetImages/space_game/elma.png" id="2_0sn2t"]
-[ext_resource type="AudioStream" uid="uid://coasr56gwfhre" path="res://assets/Sounds/space/meteor_crash.mp3" id="3_tq17g"]
+[ext_resource type="AudioStream" uid="uid://p02jw5qpfs2x" path="res://assets/Sounds/space/meteor_destroy.mp3" id="3_tq17g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0sn2t"]
 radius = 63.0079

@@ -1,9 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgyahylrus4ae"]
+[gd_scene load_steps=9 format=3 uid="uid://cgyahylrus4ae"]
 
 [ext_resource type="Script" uid="uid://cif5bvr5wl5e0" path="res://scripts/menu/settings.gd" id="1_dxr1k"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_rqcjd"]
+[ext_resource type="Texture2D" uid="uid://b5lo1k3re8wst" path="res://assets/Images/buttons/tick.png" id="3_37860"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxr1k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37860"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37860"]
+bg_color = Color(0.329412, 0.65098, 0.737255, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t5g5"]
+bg_color = Color(0.329412, 0.65098, 0.737255, 0.980392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_occy7"]
+bg_color = Color(0.329412, 0.65098, 0.737255, 0.784314)
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_dxr1k")
@@ -48,26 +60,22 @@ theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 50
 text = "Hız:"
 
-[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Easy" type="Button" parent="VBoxContainer/HBoxContainer/BoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rqcjd")
-theme_override_font_sizes/font_size = 50
-text = "Kolay"
+theme_override_font_sizes/font_size = 40
+placeholder_text = "120"
 
-[node name="Normal" type="Button" parent="VBoxContainer/HBoxContainer/BoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rqcjd")
-theme_override_font_sizes/font_size = 50
-text = "Orta"
-
-[node name="Hard" type="Button" parent="VBoxContainer/HBoxContainer/BoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rqcjd")
-theme_override_font_sizes/font_size = 50
-text = "Zor"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_37860")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_37860")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0t5g5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_occy7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0t5g5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_37860")
+icon = ExtResource("3_37860")
 
 [node name="Profile" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -102,8 +110,7 @@ theme_override_font_sizes/font_size = 50
 text = "Skorlar"
 
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/BoxContainer/Easy" to="." method="_on_easy_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/BoxContainer/Normal" to="." method="_on_normal_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/BoxContainer/Hard" to="." method="_on_hard_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/Sound/SoundSlider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="pressed" from="Scores" to="." method="_on_scores_pressed"]

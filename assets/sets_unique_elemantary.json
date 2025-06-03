@@ -1,50 +1,54 @@
 {
-  "set_1": {
-	"type": "object_naming",
-	"items": ["inek", "aslan", "elma", "mısır", "limon"]
-  },
-  "set_2": {
-	"type": "object_naming",
-	"items": ["bulut", "havuç", "tavuk", "çorap", "kalem"]
-  },
-  "set_3": {
-	"type": "color_naming",
-	"items": ["mavi", "beyaz", "sarı", "kırmızı", "yeşil"]
-  },
-  "set_4": {
-	"type": "color_naming",
-	"items": ["mor", "siyah", "kırmızı", "yeşil", "sarı"]
-  },
-  "set_5": {
-	"type": "shape_naming",
-	"items": ["üçgen", "kare", "daire", "kalp", "yıldız"]
-  },
-  "set_6": {
-	"type": "shape_naming",
-	"items": ["üçgen", "kare", "daire", "kalp", "artı"]
-  },
-  "set_7": {
-	"type": "number_naming",
-	"items": ["dört", "1", "dokuz", "iki", "yedi"]
-  },
-  "set_8": {
-	"type": "number_naming",
-	"items": ["üç", "1", "sekiz", "beş", "sıfır"]
-  },
-  "set_9": {
-	"type": "letter_naming",
-	"items": ["t", "a", "n", "k", "l"]
-  },
-  "set_10": {
-	"type": "letter_naming",
-	"items": ["e", "m", "t", "k", "s"]
-  },
-  "set_11": {
-	"type": "word_naming",
-	"items": ["ve", "bir", "ol", "bu", "gel"]
-  },
-  "set_12": {
-	"type": "word_naming",
-	"items": ["al", "ben", "her", "ne", "yap"]
-  }
+	"easy": {
+		"set_1": {
+			"type": "object_naming",
+			"items": ["nar", "süt", "bal", "çöp", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "çivi", "masa", "gül"]
+  		},
+		"set_2": {
+			"type": "color_naming",
+			"items": ["pembe", "turuncu", "siyah", "mor", "sarı", "yeşil", "mavi", "kırmızı"]
+		},
+		"set_3": {
+			"type": "shape_naming",
+			"items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
+		},
+		"set_4": {
+			"type": "number_naming",
+			"items": ["sıfır", "1", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"]
+		},
+		"set_5": {
+			"type": "letter_naming",
+			"items": ["a", "b", "c", "d", "e", "f", "i", "k", "l", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
+		},
+		"set_6": {
+			"type": "word_naming",
+			"items": ["al", "bak", "ben", "bil", "bir", "bu", "çok", "duy", "en", "gel", "git", "gör", "her", "ne", "ol", "var", "ve", "yap", "ye", "yok", "ile"]
+		}
+	},
+	"hard": {
+		"set_1": {
+			"type": "object_naming",
+			"items": ["nar", "süt", "bal", "çöp", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "çivi", "masa", "gül", "elma", "aslan", "mısır", "inek", "limon", "kalem", "bulut", "tavuk", "havuç", "çorap", "koltuk", "fare", "armut", "silgi", "şapka", "ceviz", "balon", "tavşan", "üzüm", "makas", "simit", "çatal"]
+  		},
+		"set_2": {
+			"type": "color_naming",
+			"items": ["pembe", "turuncu", "siyah", "mor", "sarı", "yeşil", "mavi", "kırmızı"]
+		},
+		"set_3": {
+			"type": "shape_naming",
+			"items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
+		},
+		"set_4": {
+			"type": "number_naming",
+			"items": ["sıfır", "1", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "onbir", "oniki", "onüç", "ondört", "onbeş", "onaltı", "onyedi", "onsekiz", "ondokuz", "yirmibir", "yirmiiki", "yirmiüç", "yirmidört", "yirmibeş", "yirmialtı", "yirmiyedi", "yirmisekiz", "yirmidokuz"]
+		},
+		"set_5": {
+			"type": "letter_naming",
+			"items": ["a", "b", "c", "d", "e", "f", "i", "k", "l", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
+		},
+		"set_6": {
+			"type": "word_naming",
+			"items": ["al", "bak", "ben", "bil", "bir", "bu", "çok", "duy", "en", "gel", "git", "gör", "her", "ne", "ol", "var", "ve", "yap", "ye", "yok", "ile", "ama", "anladı", "ara", "daha", "geldi", "gelecek", "gelir", "geliyor", "gelmiş", "gibi", "gitti", "için", "kendi", "önce", "sonra", "söyle", "söyledi", "söyler", "vermiş", "yapar", "yapıyor", "yapmış", "yaptı", "yaşar"]
+		}
+	}
 }
