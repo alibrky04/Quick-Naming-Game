@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxpjc4rbkdjns"]
 
 [ext_resource type="Script" path="res://scripts/balloon_game/balloon.gd" id="1_3a27j"]
-[ext_resource type="Texture2D" uid="uid://dnuruagjomho2" path="res://assets/SetImages/1.png" id="2_sn5cq"]
+[ext_resource type="Texture2D" uid="uid://cv2hr5ulspypl" path="res://assets/SetImages/balloon_game/1.png" id="2_sn5cq"]
 [ext_resource type="AudioStream" uid="uid://bk5xo2xfocn3k" path="res://assets/Sounds/pop.wav" id="4_fyfma"]
 [ext_resource type="Texture2D" uid="uid://fbqv7c0vf4xe" path="res://assets/Images/misc/indicator.png" id="5_2gy1u"]
 

@@ -36,7 +36,7 @@ else:
     # Normal script mode
     base_path = os.path.dirname(os.path.abspath(__file__))
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "model")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "vosk_model")
 
 if not os.path.exists(MODEL_PATH):
     print("Model not found!")

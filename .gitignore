@@ -385,3 +385,5 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 *.generated.props
+
+python_src/wav2vec2-base-turkish
