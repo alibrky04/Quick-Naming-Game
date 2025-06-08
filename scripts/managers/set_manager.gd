@@ -12,6 +12,9 @@ var last_picked = ""
 
 var shuffled_queue = []
 
+var debug_enabled = false
+var debug_target_set = 5
+
 func _ready():
 	json_unique_data = read_json(unique_data_path)
 
@@ -32,11 +35,23 @@ func random_set_select():
 		shuffle_set_select()
 		return
 
-	random_set = json_unique_data[GameManager.set_mode]["set_" + str(randi() % set_count + 1)]
+	var set_index = randi() % set_count + 1
+
+	if debug_enabled:
+		while set_index != debug_target_set:
+			set_index = randi() % set_count + 1
+
+	random_set = json_unique_data[GameManager.set_mode]["set_" + str(set_index)]
+
+	if random_set == null:
+		print("Invalid set index:", set_index)
+		return
+
 	var count = 5 if GameManager.set_mode == "easy" else 6
 	selected_set["type"] = random_set["type"]
 	selected_set["items"] = generate_subset(count)
 	initialize_shuffled_queue()
+
 
 func shuffle_set_select():
 	var school_type = GameManager.selected_school

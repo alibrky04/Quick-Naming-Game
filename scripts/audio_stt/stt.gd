@@ -6,7 +6,7 @@ var server = TCPServer.new()
 var client: StreamPeerTCP = null
 
 var thread: Thread
-var python_path = "res://python_src/dist/stt_model.exe"
+var python_path = "res://python_src/dist/letter_model.exe"
 var is_running = false
 
 signal connected_signal
@@ -24,7 +24,7 @@ func _ready():
 
 func _run_stt_model():
 	var result = []
-	var exit_code = OS.execute(python_path, [], result, true)
+	var exit_code = OS.execute(python_path, [], result, false)
 	if exit_code != 0:
 		print("Error running Python script:", result)
 	is_running = false

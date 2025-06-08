@@ -387,3 +387,5 @@ $RECYCLE.BIN/
 *.generated.props
 
 python_src/wav2vec2-base-turkish
+python_src/build
+python_src/dist

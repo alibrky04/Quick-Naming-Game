@@ -42,6 +42,7 @@ func _on_stt_text_signal(word: Variant) -> void:
 
 func _on_game_time_timeout() -> void:
 	meteor_spawner.timer.paused = true
+	star_background.star_speed = 0
 	
 	for item in GameManager.currentItems.duplicate():
 		if is_instance_valid(item):
