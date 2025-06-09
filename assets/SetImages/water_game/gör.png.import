@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq1xhu4qycycy"
-path="res://.godot/imported/Nar.png-f36d3cb1f399f84563933d04b9793b2b.ctex"
+uid="uid://bw8csdf1e8e54"
+path="res://.godot/imported/gör.png-111bb488842c8148a0a11f3426d394fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/balloon_game/Nar.png"
-dest_files=["res://.godot/imported/Nar.png-f36d3cb1f399f84563933d04b9793b2b.ctex"]
+source_file="res://assets/SetImages/water_game/gör.png"
+dest_files=["res://.godot/imported/gör.png-111bb488842c8148a0a11f3426d394fb.ctex"]
 
 [params]
 

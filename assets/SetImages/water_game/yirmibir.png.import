@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq1xhu4qycycy"
-path="res://.godot/imported/Nar.png-f36d3cb1f399f84563933d04b9793b2b.ctex"
+uid="uid://ca3xv8atkxswl"
+path="res://.godot/imported/yirmibir.png-86ceffdeb8ff32dc6bb460a9479c7259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/balloon_game/Nar.png"
-dest_files=["res://.godot/imported/Nar.png-f36d3cb1f399f84563933d04b9793b2b.ctex"]
+source_file="res://assets/SetImages/water_game/yirmibir.png"
+dest_files=["res://.godot/imported/yirmibir.png-86ceffdeb8ff32dc6bb460a9479c7259.ctex"]
 
 [params]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmbcbaabdp2sw"]
+
+[ext_resource type="Script" uid="uid://c8ixopx7nm3gn" path="res://scripts/water_game/droplet_spawner.gd" id="1_y5fht"]
+
+[node name="DropletSpawner" type="Node2D"]
+script = ExtResource("1_y5fht")
