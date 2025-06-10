@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['stt_model.py'],
+    ['vosk_model.py'],
     pathex=[],
-    binaries=[('.venv/Lib/site-packages/vosk/*.dll', 'vosk')],
-    datas=[('model', 'model')],
-    hiddenimports=[],
+    binaries=[],
+    datas=[('vosk_model', 'vosk_model'), ('.venv\\Lib\\site-packages\\vosk', 'vosk'), ('.venv\\Lib\\site-packages\\vosk\\libvosk.dll', 'vosk')],
+    hiddenimports=['vosk', 'pyaudio'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='stt_model',
+    name='vosk_model',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

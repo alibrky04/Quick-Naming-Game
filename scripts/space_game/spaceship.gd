@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	var meteor = area.get_parent()
 
-	if meteor.already_broken or not meteor.visible:
+	if not meteor.canActivate or not meteor.visible:
 		return
 
 	health -= 1

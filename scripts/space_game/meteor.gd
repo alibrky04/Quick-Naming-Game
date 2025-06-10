@@ -14,7 +14,6 @@ var rotation_amount = 360
 var canActivate = true
 var item = ""
 var item_type = ""
-var already_broken = false
 
 var direction: Vector2
 var distance: float
@@ -44,7 +43,7 @@ func destroy_meteor():
 	if not is_inside_tree():
 		return
 	if is_instance_valid(self):
-		already_broken = true
+		canActivate = false
 		
 		GameManager.add_points(10)
 

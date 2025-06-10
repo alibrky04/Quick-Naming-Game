@@ -1,12 +1,15 @@
 extends Node
 
+const vosk_model = "res://python_src/dist/vosk_model.exe"
+const wav2vec2_model = "res://python_src/dist/wav2vec2_model.exe"
+
 var host = "127.0.0.1"
 var port = 5000
 var server = TCPServer.new()
 var client: StreamPeerTCP = null
 
 var thread: Thread
-var python_path = "res://python_src/dist/letter_model.exe"
+var python_path = wav2vec2_model
 var is_running = false
 
 signal connected_signal
