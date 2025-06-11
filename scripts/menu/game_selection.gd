@@ -24,6 +24,12 @@ func _on_space_game_selection_pressed() -> void:
 	AudioManager.on_scene_changed("space_game")
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/space_game/space_game.tscn")
 
+func _on_water_game_selection_pressed() -> void:
+	GameManager.selectedGame = 4
+	SetManager.random_set_select()
+	AudioManager.on_scene_changed("water_game")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/water_game/water_game.tscn")
+
 func _on_settings_pressed() -> void:
 	shadow.visible = true
 	var settings = load("res://scenes/menu/settings.tscn").instantiate()

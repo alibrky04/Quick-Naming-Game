@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpx3422wclysd"
-path="res://.godot/imported/tam dolu.png-aa7c91992c61332a9526f6521cbd629a.ctex"
+uid="uid://c7hi6t80goe65"
+path="res://.godot/imported/water_game.png-90b663e06327b167898df69de51e7eaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/water_game/tam dolu.png"
-dest_files=["res://.godot/imported/tam dolu.png-aa7c91992c61332a9526f6521cbd629a.ctex"]
+source_file="res://assets/Images/water_game/water_game.png"
+dest_files=["res://.godot/imported/water_game.png-90b663e06327b167898df69de51e7eaf.ctex"]
 
 [params]
 

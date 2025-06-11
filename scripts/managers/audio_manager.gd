@@ -31,3 +31,6 @@ func on_scene_changed(scene: String, new_music_path: String = menu_music_path):
 	elif scene == "space_game":
 		current_music = "space_game"
 		player.stop()
+	elif scene == "water_game":
+		current_music = "water_game"
+		player.stop()

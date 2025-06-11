@@ -100,5 +100,4 @@ text = "Oyun Yükleniyor... "
 
 [connection signal="text_signal" from="STT" to="." method="_on_stt_text_signal"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
-[connection signal="timeout" from="GameTime" to="BalloonSpawner" method="_on_game_time_timeout"]
 [connection signal="button_down" from="Pause" to="." method="_on_pause_button_down"]

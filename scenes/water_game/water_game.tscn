@@ -1,15 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhq7jubq0jrxi"]
+[gd_scene load_steps=12 format=3 uid="uid://dhq7jubq0jrxi"]
 
 [ext_resource type="Script" uid="uid://ce07r65sbp80d" path="res://scripts/water_game/water_game.gd" id="1_g5kaa"]
 [ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="2_jb72i"]
 [ext_resource type="PackedScene" uid="uid://chc78sl8o0gt8" path="res://scenes/ui/point_maker.tscn" id="3_6toj3"]
+[ext_resource type="PackedScene" uid="uid://dmbcbaabdp2sw" path="res://scenes/water_game/droplet_spawner.tscn" id="3_g5kaa"]
 [ext_resource type="Texture2D" uid="uid://dvxg8n8rwq7bs" path="res://assets/Images/water_game/Puan göstergesi.png" id="4_rxubg"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_cbgq0"]
 [ext_resource type="Script" path="res://scripts/ui_misc/score_label.gd" id="6_qst6q"]
 [ext_resource type="Texture2D" uid="uid://eoogy476fqjf" path="res://assets/Images/misc/pause.png" id="7_ch6ve"]
+[ext_resource type="PackedScene" uid="uid://cd3xi5rgnkyly" path="res://scenes/water_game/bucket.tscn" id="8_h7h3m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6kqk"]
-bg_color = Color(0.674797, 0.262017, 0.777226, 1)
+bg_color = Color(0.683053, 0.158549, 0.17283, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fl68c"]
 
@@ -21,11 +23,20 @@ script = ExtResource("1_g5kaa")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.15558, 0.248039, 0.325989, 1)
+color = Color(0.770062, 0.854207, 0.919047, 1)
+
+[node name="Droplets" type="Node2D" parent="."]
+
+[node name="Bucket" parent="." instance=ExtResource("8_h7h3m")]
+position = Vector2(960, 920)
+scale = Vector2(0.35, 0.35)
+
+[node name="DropletSpawner" parent="." instance=ExtResource("3_g5kaa")]
+position = Vector2(980, 19)
 
 [node name="PointMaker" parent="." instance=ExtResource("3_6toj3")]
-position = Vector2(137, 125)
-scale = Vector2(0.2, 0.2)
+position = Vector2(201, 125)
+scale = Vector2(0.45, 0.45)
 sprite_texture = ExtResource("4_rxubg")
 
 [node name="ScoreLabel" type="Label" parent="PointMaker"]

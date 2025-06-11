@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cisqe6hpoqyjg"
-path="res://.godot/imported/yarım dolu.png-2a41618a63e024f81ee80b45745c1c48.ctex"
+uid="uid://dmw4kbywratvj"
+path="res://.godot/imported/empty.png-bb05f5607d9ac7bd6b31147f9f6766b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/water_game/yarım dolu.png"
-dest_files=["res://.godot/imported/yarım dolu.png-2a41618a63e024f81ee80b45745c1c48.ctex"]
+source_file="res://assets/Images/water_game/empty.png"
+dest_files=["res://.godot/imported/empty.png-bb05f5607d9ac7bd6b31147f9f6766b2.ctex"]
 
 [params]
 

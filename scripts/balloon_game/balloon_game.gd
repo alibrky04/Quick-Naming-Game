@@ -46,6 +46,8 @@ func _on_stt_text_signal(word: Variant) -> void:
 				break
 
 func _on_game_time_timeout() -> void:
+	balloon_spawner.timer.stop()
+	
 	for item in GameManager.currentItems.duplicate():
 		if is_instance_valid(item):
 			item.queue_free()

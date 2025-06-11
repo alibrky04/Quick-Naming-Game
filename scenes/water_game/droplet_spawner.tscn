@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmbcbaabdp2sw"]
+[gd_scene load_steps=3 format=3 uid="uid://dmbcbaabdp2sw"]
 
 [ext_resource type="Script" uid="uid://c8ixopx7nm3gn" path="res://scripts/water_game/droplet_spawner.gd" id="1_y5fht"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5fht"]
+size = Vector2(1044.38, 37.75)
+
 [node name="DropletSpawner" type="Node2D"]
 script = ExtResource("1_y5fht")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_y5fht")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

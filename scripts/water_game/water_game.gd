@@ -5,6 +5,8 @@ extends Node2D
 @onready var shadow: ColorRect = $Shadow
 @onready var loading_label: Label = $LoadingLabel
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var droplet_spawner: Node2D = $DropletSpawner
+@onready var bucket: Node2D = $Bucket
 
 const total_time = 60
 var remaining_time = total_time
@@ -33,11 +35,15 @@ func _on_stt_text_signal(word: Variant) -> void:
 	for item in GameManager.currentItems:
 		if item.canActivate:
 			if item.item in word or (item.item == "1" && "bir" in word):
-				item.destroy_meteor()
+				item.is_told = true
+				item.drop_droplet()
+				
+				var droplet_position_x = item.global_position.x
+				bucket.global_position = Vector2(droplet_position_x, bucket.global_position.y)
 				break
 
 func _on_game_time_timeout() -> void:
-	# meteor_spawner.timer.paused = true
+	droplet_spawner.timer.paused = true
 	
 	for item in GameManager.currentItems.duplicate():
 		if is_instance_valid(item):
@@ -63,7 +69,7 @@ func pause_resume(state: bool):
 	GameManager.boost_reset.paused = state
 	is_paused = state
 	game_time.paused = state
-	# meteor_spawner.timer.paused = state
+	droplet_spawner.timer.paused = state
 	
 	for item in GameManager.currentItems:
 		item.canActivate = !state
@@ -99,5 +105,5 @@ func _on_stt_connected_signal():
 	loading_label.visible = false
 	shadow.visible = false
 	
-	# meteor_spawner.update_generation_speed()
-	# meteor_spawner.spawn_meteor()
+	droplet_spawner.update_generation_speed()
+	droplet_spawner.spawn_droplet()

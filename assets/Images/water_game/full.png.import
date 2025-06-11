@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmw4kbywratvj"
-path="res://.godot/imported/boş.png-4a7a0c4d6d5005c5e46cf9013d507c0a.ctex"
+uid="uid://bpx3422wclysd"
+path="res://.godot/imported/full.png-e999439b2ef0776ef0c9f0df0d10baa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/water_game/boş.png"
-dest_files=["res://.godot/imported/boş.png-4a7a0c4d6d5005c5e46cf9013d507c0a.ctex"]
+source_file="res://assets/Images/water_game/full.png"
+dest_files=["res://.godot/imported/full.png-e999439b2ef0776ef0c9f0df0d10baa0.ctex"]
 
 [params]
 

@@ -10,6 +10,8 @@ var shuffle_list = ["hayır", "M1", "M2", "M3"]
 func _ready():
 	if GameManager.selected_school == "preschool":
 		shuffle.set_item_disabled(3, true)
+	GameManager.set_mode = "easy"
+	GameManager.do_shuffle = false
 
 func _on_home_pressed() -> void:
 	GameManager.currentProfile = ""

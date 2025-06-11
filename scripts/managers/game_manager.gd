@@ -1,7 +1,7 @@
 extends Node
 
 const staticSpeedBoost = 5
-const games = {1: "balloon_game", 2: "mole_game", 3: "space_game"}
+const games = {1: "balloon_game", 2: "mole_game", 3: "space_game", 4: "water_game"}
 
 var initialSpeed = 120
 var selectedGame = 1

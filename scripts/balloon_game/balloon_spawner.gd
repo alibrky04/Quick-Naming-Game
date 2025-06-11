@@ -36,9 +36,6 @@ func spawn_balloon() -> void:
 	
 	balloons.add_child.call_deferred(spawn)
 
-func _on_game_time_timeout() -> void:
-	timer.stop()
-
 func update_generation_speed():
 	GameManager.calculate_speed()
 	itemGenerationSpeed = 360.0 / max(GameManager.itemSpeed, 0.01)

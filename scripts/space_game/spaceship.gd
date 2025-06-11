@@ -9,7 +9,7 @@ var health
 signal ship_broke
 
 func _ready() -> void:
-	health = 15
+	health = 21
 
 func _process(_delta: float) -> void:
 	reflect_damage()
@@ -31,9 +31,9 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		meteor.queue_free()
 
 func reflect_damage():
-	if health == 10:
+	if health == 14:
 		sprite_2d.texture = load("res://assets/Images/space_game/spaceship_damaged.png")
-	elif health == 5:
+	elif health == 7:
 		sprite_2d.texture = load("res://assets/Images/space_game/spaceship_broken.png")
 	elif health <= 0:
 		ship_broke.emit()
