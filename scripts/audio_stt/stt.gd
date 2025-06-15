@@ -19,6 +19,8 @@ func _ready():
 	server.listen(port, host)
 	print("Server started, waiting for connection...")
 	
+	select_stt_model()
+	
 	python_path = ProjectSettings.globalize_path(python_path)
 	
 	thread = Thread.new()
@@ -61,3 +63,8 @@ func _exit_tree():
 	if thread and is_running:
 		is_running = false
 		thread.wait_to_finish()
+
+func select_stt_model():
+	if not GameManager.do_shuffle:
+		if SetManager.selected_set["type"] == "letter_naming":
+			python_path = wav2vec2_model
