@@ -36,7 +36,6 @@ func _on_stt_text_signal(word: Variant) -> void:
 		if item.canActivate:
 			if item.item in word or (item.item == "1" && "bir" in word):
 				item.is_told = true
-				item.drop_droplet()
 				
 				var droplet_position_x = item.global_position.x
 				bucket.global_position = Vector2(droplet_position_x, bucket.global_position.y)

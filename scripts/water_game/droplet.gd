@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var item_image: Sprite2D = $ItemImage
-@onready var player: AudioStreamPlayer = $Player
 
 # Animation Variables
 var star_scene = preload("res://scenes/ui/star.tscn")
@@ -40,10 +39,6 @@ func _process(delta: float) -> void:
 
 func set_item(image_path: String):
 	item_image.texture = load(image_path)
-		
-func drop_droplet():
-	player.play()
-	await player.finished
 
 func catch():
 	GameManager.add_points(10)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhq7jubq0jrxi"]
+[gd_scene load_steps=13 format=3 uid="uid://dhq7jubq0jrxi"]
 
 [ext_resource type="Script" uid="uid://ce07r65sbp80d" path="res://scripts/water_game/water_game.gd" id="1_g5kaa"]
 [ext_resource type="PackedScene" uid="uid://dl5vediax1w7c" path="res://scenes/audio_stt/stt.tscn" id="2_jb72i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmbcbaabdp2sw" path="res://scenes/water_game/droplet_spawner.tscn" id="3_g5kaa"]
 [ext_resource type="Texture2D" uid="uid://dvxg8n8rwq7bs" path="res://assets/Images/water_game/Puan göstergesi.png" id="4_rxubg"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="5_cbgq0"]
+[ext_resource type="Texture2D" uid="uid://cxpk2catmgkpd" path="res://assets/Images/water_game/droplet_cloud.png" id="5_jb72i"]
 [ext_resource type="Script" path="res://scripts/ui_misc/score_label.gd" id="6_qst6q"]
 [ext_resource type="Texture2D" uid="uid://eoogy476fqjf" path="res://assets/Images/misc/pause.png" id="7_ch6ve"]
 [ext_resource type="PackedScene" uid="uid://cd3xi5rgnkyly" path="res://scenes/water_game/bucket.tscn" id="8_h7h3m"]
@@ -32,7 +33,45 @@ position = Vector2(960, 920)
 scale = Vector2(0.35, 0.35)
 
 [node name="DropletSpawner" parent="." instance=ExtResource("3_g5kaa")]
-position = Vector2(980, 19)
+position = Vector2(980, 157)
+
+[node name="DropletCloud" type="Node2D" parent="."]
+
+[node name="DropletCloud" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(505, 75)
+rotation = 0.0327707
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
+
+[node name="DropletCloud2" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(676, 75)
+rotation = -0.105568
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
+
+[node name="DropletCloud3" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(871, 75)
+rotation = 0.141255
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
+
+[node name="DropletCloud4" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(1043, 75)
+rotation = 0.0625696
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
+
+[node name="DropletCloud5" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(1201, 75)
+rotation = -0.0890016
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
+
+[node name="DropletCloud6" type="Sprite2D" parent="DropletCloud"]
+position = Vector2(1399, 75)
+rotation = 0.123769
+scale = Vector2(0.12234, 0.12234)
+texture = ExtResource("5_jb72i")
 
 [node name="PointMaker" parent="." instance=ExtResource("3_6toj3")]
 position = Vector2(201, 125)

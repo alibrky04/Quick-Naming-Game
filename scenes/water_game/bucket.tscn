@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd3xi5rgnkyly"]
+[gd_scene load_steps=5 format=3 uid="uid://cd3xi5rgnkyly"]
 
 [ext_resource type="Script" uid="uid://b2gled3klwesj" path="res://scripts/water_game/bucket.gd" id="1_f61ee"]
 [ext_resource type="Texture2D" uid="uid://dmw4kbywratvj" path="res://assets/Images/water_game/empty.png" id="2_22wo2"]
+[ext_resource type="AudioStream" uid="uid://kvi1yy5shlyc" path="res://assets/Sounds/water/droplet_fall.mp3" id="3_22wo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22wo2"]
 size = Vector2(644.5, 206)
@@ -19,5 +20,6 @@ position = Vector2(-7.75, -287)
 shape = SubResource("RectangleShape2D_22wo2")
 
 [node name="Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_22wo2")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

@@ -9,7 +9,7 @@ var server = TCPServer.new()
 var client: StreamPeerTCP = null
 
 var thread: Thread
-var python_path = wav2vec2_model
+var python_path = vosk_model
 var is_running = false
 
 signal connected_signal
