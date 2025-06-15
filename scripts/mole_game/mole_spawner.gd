@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func update_generation_speed():
 	GameManager.calculate_speed()
-	itemGenerationSpeed = 600.0 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 405.0 / max(GameManager.itemSpeed, 0.01)
 	timer.set_wait_time(itemGenerationSpeed)
 
 func _on_timer_timeout() -> void:
@@ -45,7 +45,7 @@ func spawn_mole() -> void:
 	GameManager.currentItems.append(spawn)
 	
 	chosen_nest.add_child(spawn)
-	spawn.despawn_timer.start(itemGenerationSpeed)
+	spawn.despawn_timer.start(itemGenerationSpeed * 3)
 	
 	spawn.position = Vector2(chosen_nest.size.x / 2, -300)
 

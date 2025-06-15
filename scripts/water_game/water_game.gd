@@ -100,9 +100,20 @@ func _on_menu_back_signal() -> void:
 	GameManager.speedBooster = 0
 
 func _on_stt_connected_signal():
+	await wait(2.0)
+	
 	pause_resume(false)
 	loading_label.visible = false
 	shadow.visible = false
 	
 	droplet_spawner.update_generation_speed()
 	droplet_spawner.spawn_droplet()
+
+func wait(seconds: float) -> void:
+	var timer := Timer.new()
+	timer.wait_time = seconds
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	timer.queue_free()

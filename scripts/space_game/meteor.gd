@@ -30,7 +30,7 @@ func _ready():
 	rotation = direction.angle() + deg_to_rad(270)
 
 func _process(delta: float) -> void:
-	t = 480.0 / max(GameManager.itemSpeed, 0.01)
+	t = 1200.0 / max(GameManager.itemSpeed, 0.01)
 	speed = distance / t
 	
 	if !GameManager.is_paused:

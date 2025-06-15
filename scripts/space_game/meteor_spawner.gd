@@ -40,5 +40,5 @@ func spawn_meteor() -> void:
 
 func update_generation_speed():
 	GameManager.calculate_speed()
-	itemGenerationSpeed = 480.0 / max(GameManager.itemSpeed, 0.01)
+	itemGenerationSpeed = 420.0 / max(GameManager.itemSpeed, 0.01)
 	timer.set_wait_time(itemGenerationSpeed)

@@ -102,12 +102,23 @@ func _on_menu_back_signal() -> void:
 	GameManager.speedBooster = 0
 
 func _on_stt_connected_signal():
+	await wait(2.0)
+	
 	pause_resume(false)
 	loading_label.visible = false
 	shadow.visible = false
 	
 	meteor_spawner.update_generation_speed()
 	meteor_spawner.spawn_meteor()
+
+func wait(seconds: float) -> void:
+	var timer := Timer.new()
+	timer.wait_time = seconds
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	timer.queue_free()
 
 func _on_ship_broke_signal():
 	meteor_spawner.timer.paused = true
