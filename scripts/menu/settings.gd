@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var profile: Label = $Tabs/Diğer/Diğer/Profile
 @onready var sound_slider: HSlider = $Tabs/Diğer/Diğer/Sound/SoundSlider
-@onready var text_edit: TextEdit = $Tabs/Oyun/Oyun/HBoxContainer/TextEdit
 
+@onready var text_edit: TextEdit = $Tabs/Oyun/Oyun/HBoxContainer/TextEdit
+@onready var button: Button = $Tabs/Oyun/Oyun/HBoxContainer/Button
 @onready var speed_check: CheckBox = $Tabs/Oyun/Oyun/SpeedControl/SpeedCheck
 
 @onready var option_button: OptionButton = $Tabs/Oyun/Oyun/SetType/OptionButton
@@ -120,3 +121,12 @@ func _on_option_button_item_selected(index: int) -> void:
 	if index > 0:
 		SetManager.debug_enabled = true
 		SetManager.debug_target_set = index
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:
+		if text_edit.has_focus():
+			button.emit_signal("pressed")
+			get_viewport().set_input_as_handled()
+		elif button.visible and not button.disabled:
+			button.emit_signal("pressed")
+			get_viewport().set_input_as_handled()
