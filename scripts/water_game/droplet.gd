@@ -4,7 +4,7 @@ extends Node2D
 
 # Animation Variables
 var star_scene = preload("res://scenes/ui/star.tscn")
-const corner_position = Vector2(80, 80)
+const corner_position = Vector2(200, 125)
 const corner_scale = Vector2(0.2, 0.2)
 const animation_duration = 0.8
 var rotation_amount = 360
@@ -50,13 +50,15 @@ func catch():
 	GameManager.boost_reset.start()
 	GameManager.itemCounter += 1
 	
-	play_star()
+	play_point_animation()
 
-func play_star():
+func play_point_animation():
 	var star = star_scene.instantiate()
 	star.position = position
-	star.scale = Vector2(1, 1)
+	star.scale = Vector2(.25, .25)
 	get_parent().add_child(star)
+	
+	star.sprite_2d.texture = item_image.texture
 	
 	var tween = get_tree().create_tween()
 	

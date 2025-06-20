@@ -74,7 +74,7 @@ scale = Vector2(0.12234, 0.12234)
 texture = ExtResource("5_jb72i")
 
 [node name="PointMaker" parent="." instance=ExtResource("3_6toj3")]
-position = Vector2(201, 125)
+position = Vector2(200, 125)
 scale = Vector2(0.45, 0.45)
 sprite_texture = ExtResource("4_rxubg")
 
