@@ -11,6 +11,7 @@ var setItemIndex = 0
 var speedBooster = 0
 var itemSpeed = initialSpeed + speedBooster
 var is_paused = false
+var can_increase_speed = true
 
 var selected_school = ""
 var set_mode = "easy"
@@ -52,7 +53,7 @@ func _on_boost_reset_timeout() -> void:
 	calculate_speed()
 	
 func calculate_speed() -> void:
-	itemSpeed = initialSpeed + (speedBooster * int(!is_paused))
+	itemSpeed = initialSpeed + (speedBooster * int(!is_paused) * int(can_increase_speed))
 
 func remove_combining_marks(text: String) -> String:
 	var output = ""

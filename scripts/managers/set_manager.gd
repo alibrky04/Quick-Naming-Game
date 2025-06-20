@@ -1,6 +1,6 @@
 extends Node
 
-var set_count = 12
+var set_count = 6
 
 var unique_data_path = "res://assets/sets_unique_elemantary.json"
 var json_unique_data = {}
@@ -8,12 +8,13 @@ var json_unique_data = {}
 var selected_set = {}
 
 var random_set = {}
+var played_set_types = []
 var last_picked = ""
 
 var shuffled_queue = []
 
 var debug_enabled = false
-var debug_target_set = 5
+var debug_target_set = 1
 
 func _ready():
 	json_unique_data = read_json(unique_data_path)
@@ -34,24 +35,48 @@ func random_set_select():
 	if GameManager.do_shuffle:
 		shuffle_set_select()
 		return
+	
+	if debug_enabled:
+		random_set = json_unique_data[GameManager.set_mode]["set_" + str(debug_target_set)]
+
+	var last_type_before_reset = ""
+
+	if played_set_types.size() >= set_count:
+		last_type_before_reset = played_set_types.back()
+		played_set_types.clear()
 
 	var set_index = randi() % set_count + 1
 
-	if debug_enabled:
-		while set_index != debug_target_set:
-			set_index = randi() % set_count + 1
+	var max_attempts = 10000
+	var attempts = 0
+	while attempts < max_attempts and !debug_enabled:
+		random_set = json_unique_data[GameManager.set_mode]["set_" + str(set_index)]
 
-	random_set = json_unique_data[GameManager.set_mode]["set_" + str(set_index)]
+		if random_set == null:
+			print("Invalid set index:", set_index)
+			return
 
-	if random_set == null:
-		print("Invalid set index:", set_index)
+		var candidate_type = random_set["type"]
+		var is_repeat_of_last = last_type_before_reset != "" and played_set_types.is_empty() and candidate_type == last_type_before_reset
+
+		if not played_set_types.has(candidate_type) and not is_repeat_of_last:
+			break
+
+		set_index = randi() % set_count + 1
+		attempts += 1
+
+	if attempts == max_attempts:
+		print("Failed to find a valid unplayed set after", max_attempts, "attempts.")
 		return
 
 	var count = 5 if GameManager.set_mode == "easy" else 6
 	selected_set["type"] = random_set["type"]
 	selected_set["items"] = generate_subset(count)
-	initialize_shuffled_queue()
+	
+	if !debug_enabled:
+		played_set_types.append(selected_set["type"])
 
+	initialize_shuffled_queue()
 
 func shuffle_set_select():
 	var school_type = GameManager.selected_school

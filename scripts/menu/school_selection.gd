@@ -20,12 +20,16 @@ func _on_pre_school_pressed() -> void:
 	GameManager.selected_school = "preschool"
 	SetManager.unique_data_path = "res://assets/sets_unique_preschool.json"
 	SetManager.set_count = 3
+	SetManager.played_set_types = []
+	if SetManager.debug_target_set > 3:
+		SetManager.debug_enabled = false
 	SetManager.json_unique_data = SetManager.read_json(SetManager.unique_data_path)
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/mode_selection.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")
 
 func _on_elementary_school_pressed() -> void:
 	GameManager.selected_school = "elementary"
 	SetManager.unique_data_path = "res://assets/sets_unique_elemantary.json"
 	SetManager.set_count = 6
+	SetManager.played_set_types = []
 	SetManager.json_unique_data = SetManager.read_json(SetManager.unique_data_path)
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/mode_selection.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")

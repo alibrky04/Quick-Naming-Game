@@ -50,5 +50,5 @@ func _on_shuffle_item_selected(index: int) -> void:
 		GameManager.do_shuffle = true
 		GameManager.shuffle_mode = shuffle_list[index]
 
-func _on_pre_school_pressed() -> void:
+func _on_button_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dae6ygxu01ldy"]
+[gd_scene load_steps=34 format=3 uid="uid://cxr16oiskjgue"]
 
 [ext_resource type="Script" uid="uid://bfm1i0a0sd0x1" path="res://scripts/menu/mode_selection.gd" id="1_nfhf5"]
 [ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_u61su"]
@@ -107,12 +107,6 @@ icon = ExtResource("5_kvl8s")
 flat = true
 expand_icon = true
 
-[node name="Shadow" type="ColorRect" parent="."]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.501961)
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 778.0
 offset_top = 492.0
@@ -207,7 +201,7 @@ popup/item_2/id = 2
 popup/item_3/text = "M3"
 popup/item_3/id = 3
 
-[node name="PreSchool" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 100)
 offset_left = 778.0
 offset_top = 738.0
@@ -227,7 +221,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_jd4mc")
 icon = ExtResource("8_uxqry")
 expand_icon = true
 
-[node name="Label" type="Label" parent="PreSchool"]
+[node name="Label" type="Label" parent="Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -247,9 +241,15 @@ text = "Devam"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Shadow" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.501961)
+
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="toggled" from="VBoxContainer/Easy/Easy" to="." method="_on_easy_toggled"]
 [connection signal="toggled" from="VBoxContainer/Hard/Hard" to="." method="_on_hard_toggled"]
 [connection signal="item_selected" from="VBoxContainer/Shuffle/Shuffle" to="." method="_on_shuffle_item_selected"]
-[connection signal="pressed" from="PreSchool" to="." method="_on_pre_school_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

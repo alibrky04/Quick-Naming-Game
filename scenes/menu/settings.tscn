@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgyahylrus4ae"]
+[gd_scene load_steps=14 format=3 uid="uid://cgyahylrus4ae"]
 
 [ext_resource type="Script" uid="uid://cif5bvr5wl5e0" path="res://scripts/menu/settings.gd" id="1_dxr1k"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="1_rqcjd"]
 [ext_resource type="Texture2D" uid="uid://b5lo1k3re8wst" path="res://assets/Images/buttons/tick.png" id="3_37860"]
+[ext_resource type="Texture2D" uid="uid://ccwwpy2jafw7a" path="res://assets/Images/buttons/checked.png" id="4_occy7"]
+[ext_resource type="Texture2D" uid="uid://de4fb5g1io8ff" path="res://assets/Images/buttons/unchecked.png" id="5_v208e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxr1k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0t5g5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37860"]
 
@@ -16,6 +20,10 @@ bg_color = Color(0.329412, 0.65098, 0.737255, 0.980392)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_occy7"]
 bg_color = Color(0.329412, 0.65098, 0.737255, 0.784314)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t35ha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fq6v2"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_dxr1k")
@@ -43,31 +51,44 @@ text = "x"
 flat = true
 expand_icon = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 31.0
-offset_top = 81.0
-offset_right = 500.0
-offset_bottom = 372.0
+[node name="Tabs" type="TabContainer" parent="."]
+offset_right = 545.0
+offset_bottom = 960.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0t5g5")
+current_tab = 0
+tabs_rearrange_group = 0
+
+[node name="Oyun" type="MarginContainer" parent="Tabs"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+metadata/_tab_index = 0
+
+[node name="Oyun" type="VBoxContainer" parent="Tabs/Oyun"]
+layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Tabs/Oyun/Oyun"]
 layout_mode = 2
 
-[node name="Speed" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Speed" type="Label" parent="Tabs/Oyun/Oyun/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 50
 text = "Hız:"
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="Tabs/Oyun/Oyun/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "120"
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="Tabs/Oyun/Oyun/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_37860")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_37860")
@@ -77,21 +98,204 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0t5g5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_37860")
 icon = ExtResource("3_37860")
 
-[node name="Profile" type="Label" parent="VBoxContainer"]
+[node name="SpeedControl" type="Label" parent="Tabs/Oyun/Oyun"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Hız Arttırma:"
+
+[node name="SpeedCheck" type="CheckBox" parent="Tabs/Oyun/Oyun/SpeedControl"]
+offset_left = 326.0
+offset_top = 5.0
+offset_right = 382.0
+offset_bottom = 61.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t35ha")
+theme_override_icons/checked = ExtResource("4_occy7")
+theme_override_icons/unchecked = ExtResource("5_v208e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Modes" type="VBoxContainer" parent="Tabs/Oyun/Oyun"]
+layout_mode = 2
+
+[node name="Easy" type="HBoxContainer" parent="Tabs/Oyun/Oyun/Modes"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Tabs/Oyun/Oyun/Modes/Easy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(3.72304e-05, 3.72304e-05, 3.72304e-05, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Kolay"
+
+[node name="Easy" type="CheckBox" parent="Tabs/Oyun/Oyun/Modes/Easy"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t35ha")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t35ha")
+theme_override_icons/checked = ExtResource("4_occy7")
+theme_override_icons/unchecked = ExtResource("5_v208e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hard" type="HBoxContainer" parent="Tabs/Oyun/Oyun/Modes"]
+layout_mode = 2
+theme_override_constants/separation = 105
+alignment = 1
+
+[node name="Label" type="Label" parent="Tabs/Oyun/Oyun/Modes/Hard"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Zor"
+
+[node name="Hard" type="CheckBox" parent="Tabs/Oyun/Oyun/Modes/Hard"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fq6v2")
+theme_override_icons/checked = ExtResource("4_occy7")
+theme_override_icons/unchecked = ExtResource("5_v208e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Shuffle" type="HBoxContainer" parent="Tabs/Oyun/Oyun/Modes"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="Tabs/Oyun/Oyun/Modes/Shuffle"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Karıştır"
+
+[node name="Shuffle" type="OptionButton" parent="Tabs/Oyun/Oyun/Modes/Shuffle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 25
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Hayır"
+popup/item_0/id = 0
+popup/item_1/text = "M1"
+popup/item_1/id = 1
+popup/item_2/text = "M2"
+popup/item_2/id = 2
+popup/item_3/text = "M3"
+popup/item_3/id = 3
+
+[node name="SetType" type="Label" parent="Tabs/Oyun/Oyun"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Set Tipi:"
+
+[node name="OptionButton" type="OptionButton" parent="Tabs/Oyun/Oyun/SetType"]
+layout_mode = 2
+offset_left = 208.0
+offset_top = 4.0
+offset_right = 491.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 40
+selected = 0
+allow_reselect = true
+item_count = 7
+popup/item_0/text = "Rastgele"
+popup/item_0/id = 0
+popup/item_1/text = "Obje"
+popup/item_1/id = 1
+popup/item_2/text = "Şekil"
+popup/item_2/id = 2
+popup/item_3/text = "Renk"
+popup/item_3/id = 3
+popup/item_4/text = "Sayı"
+popup/item_4/id = 4
+popup/item_5/text = "Harf"
+popup/item_5/id = 5
+popup/item_6/text = "Kelime"
+popup/item_6/id = 6
+
+[node name="Skorlar" type="HBoxContainer" parent="Tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Node2D" type="Node2D" parent="Tabs/Skorlar"]
+
+[node name="Scores" type="Button" parent="Tabs/Skorlar/Node2D"]
+offset_left = 79.0
+offset_top = 53.0
+offset_right = 512.0
+offset_bottom = 139.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_rqcjd")
+theme_override_font_sizes/font_size = 50
+text = "Skorlar"
+
+[node name="Diğer" type="MarginContainer" parent="Tabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+metadata/_tab_index = 2
+
+[node name="Diğer" type="VBoxContainer" parent="Tabs/Diğer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Profile" type="Label" parent="Tabs/Diğer/Diğer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 50
 text = "Hesap: Yok"
 
-[node name="Sound" type="Label" parent="VBoxContainer"]
+[node name="Sound" type="Label" parent="Tabs/Diğer/Diğer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.000245483, 0.000245483, 0.000245483, 1)
 theme_override_fonts/font = ExtResource("1_rqcjd")
 theme_override_font_sizes/font_size = 50
 text = "Ses:"
 
-[node name="SoundSlider" type="HSlider" parent="VBoxContainer/Sound"]
+[node name="SoundSlider" type="HSlider" parent="Tabs/Diğer/Diğer/Sound"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 offset_left = 107.0
@@ -100,17 +304,13 @@ offset_right = 507.0
 offset_bottom = 40.0
 step = 5.0
 
-[node name="Scores" type="Button" parent="."]
-offset_left = 190.0
-offset_top = 416.0
-offset_right = 384.0
-offset_bottom = 485.0
-theme_override_fonts/font = ExtResource("1_rqcjd")
-theme_override_font_sizes/font_size = 50
-text = "Skorlar"
-
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
-[connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="VBoxContainer/Sound/SoundSlider" to="." method="_on_sound_slider_value_changed"]
-[connection signal="pressed" from="Scores" to="." method="_on_scores_pressed"]
+[connection signal="text_changed" from="Tabs/Oyun/Oyun/HBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="Tabs/Oyun/Oyun/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Tabs/Oyun/Oyun/SpeedControl/SpeedCheck" to="." method="_on_speed_check_toggled"]
+[connection signal="toggled" from="Tabs/Oyun/Oyun/Modes/Easy/Easy" to="." method="_on_easy_toggled"]
+[connection signal="toggled" from="Tabs/Oyun/Oyun/Modes/Hard/Hard" to="." method="_on_hard_toggled"]
+[connection signal="item_selected" from="Tabs/Oyun/Oyun/Modes/Shuffle/Shuffle" to="." method="_on_shuffle_item_selected"]
+[connection signal="item_selected" from="Tabs/Oyun/Oyun/SetType/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Tabs/Skorlar/Node2D/Scores" to="." method="_on_scores_pressed"]
+[connection signal="value_changed" from="Tabs/Diğer/Diğer/Sound/SoundSlider" to="." method="_on_sound_slider_value_changed"]

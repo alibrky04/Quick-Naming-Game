@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var shadow: ColorRect = $Shadow
 @onready var user_name: HBoxContainer = $UserName
+@onready var text_edit: TextEdit = $UserName/TextEdit
+@onready var login: Button = $Login
 @onready var user_error: Label = $UserError
 
 func _on_home_pressed() -> void:
@@ -25,3 +27,12 @@ func _on_login_pressed() -> void:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/school_selection.tscn")
 	else:
 		user_error.visible = true
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:
+		if text_edit.has_focus():
+			login.emit_signal("pressed")
+			get_viewport().set_input_as_handled()
+		elif login.visible and login.disabled == false:
+			login.emit_signal("pressed")
+			get_viewport().set_input_as_handled()
