@@ -65,6 +65,5 @@ func remove_combining_marks(text: String) -> String:
 			output += c
 	return output
 
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		SQLManager.save_game_settings()
+func _exit_tree() -> void:
+	SQLManager.save_game_settings()

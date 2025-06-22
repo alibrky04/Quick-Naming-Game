@@ -122,6 +122,8 @@ func _on_shuffle_item_selected(index: int) -> void:
 	else:
 		GameManager.do_shuffle = true
 		GameManager.shuffle_mode = shuffle_list[index]
+		option_button.select(0)
+		SetManager.debug_enabled = false
 		
 	option_button.set_block_signals(true)
 	for i in range(option_button.item_count):
@@ -131,7 +133,9 @@ func _on_shuffle_item_selected(index: int) -> void:
 func _on_option_button_item_selected(index: int) -> void:
 	if index > 0:
 		SetManager.debug_enabled = true
-		SetManager.debug_target_set = index
+	else:
+		SetManager.debug_enabled = false
+	SetManager.debug_target_set = index
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:

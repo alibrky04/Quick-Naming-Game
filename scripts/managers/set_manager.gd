@@ -14,7 +14,7 @@ var last_picked = ""
 var shuffled_queue = []
 
 var debug_enabled = false
-var debug_target_set = 1
+var debug_target_set = 0
 
 func _ready():
 	json_unique_data = read_json(unique_data_path)
