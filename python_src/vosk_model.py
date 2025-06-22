@@ -91,9 +91,17 @@ try:
         else:
             result = json.loads(recognizer.PartialResult())
             text = result["partial"]
-            if text and text != last_text:
+
+            if text:
+                if text.startswith(last_text):
+                    new_part = text[len(last_text):].strip()
+                else:
+                    new_part = text  # fallback if alignment breaks
+
+                if new_part:
+                    client_socket.sendall(json.dumps({"text": new_part}).encode() + b"\n")
+
                 last_text = text
-                client_socket.sendall(json.dumps({"text": text}).encode() + b"\n")
 except Exception as e:
     print("An error occurred:", str(e))
 finally:

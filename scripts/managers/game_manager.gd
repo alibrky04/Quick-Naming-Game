@@ -20,6 +20,7 @@ var shuffle_mode = "M1"
 
 var currentItems = []
 var currentProfile = ""
+var recentProfileAction = 0 # 0: Log in, 1: Sign up
 
 @onready var boost_reset: Timer = $BoostReset
 
@@ -27,6 +28,7 @@ signal score_updated(new_score)
 
 func _ready() -> void:
 	calculate_speed()
+	SQLManager.load_game_settings()
 
 func add_points(points: int) -> void:
 	score += points
@@ -62,3 +64,7 @@ func remove_combining_marks(text: String) -> String:
 		if code < 0x0300 or code > 0x036F:
 			output += c
 	return output
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		SQLManager.save_game_settings()

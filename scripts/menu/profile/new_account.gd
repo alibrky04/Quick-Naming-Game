@@ -55,3 +55,6 @@ func _input(event: InputEvent) -> void:
 		if create_button.visible and not create_button.disabled:
 			create_button.emit_signal("pressed")
 			get_viewport().set_input_as_handled()
+
+func _on_button_button_down() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/profile_screen.tscn")

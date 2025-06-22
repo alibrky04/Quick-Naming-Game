@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dv3y81w74ddn5"]
+[gd_scene load_steps=28 format=3 uid="uid://dv3y81w74ddn5"]
 
 [ext_resource type="Script" path="res://scripts/menu/game_selection.gd" id="1_5hamw"]
 [ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_amktt"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_8sxrb"]
 [ext_resource type="Texture2D" uid="uid://bjqtpaugbbixl" path="res://assets/Images/ballon_game/balloon_game.png" id="3_ds4f7"]
+[ext_resource type="Texture2D" uid="uid://b542kmatysis6" path="res://assets/Images/buttons/arrow.png" id="5_j0ipn"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="5_vpt28"]
 [ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="7_amktt"]
 [ext_resource type="Texture2D" uid="uid://c7ju3ushgecce" path="res://assets/Images/mole_game/mole_game.png" id="7_kinxy"]
@@ -62,10 +63,9 @@ theme_override_font_sizes/font_size = 100
 text = "Oynamak istediğin oyunu seç!"
 
 [node name="Home" type="Button" parent="."]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 132.0
-offset_bottom = 132.0
+offset_left = 180.0
+offset_right = 300.0
+offset_bottom = 120.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1bjv0")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xywub")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ediwa")
@@ -78,6 +78,15 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_fly5y")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eugma")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wmkka")
 icon = ExtResource("5_vpt28")
+flat = true
+expand_icon = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 135.0
+offset_right = 254.0
+offset_bottom = 119.0
+rotation = 1.5708
+icon = ExtResource("5_j0ipn")
 flat = true
 expand_icon = true
 
@@ -184,6 +193,7 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/BalloonGameSelection" to="." method="_on_balloon_game_selection_pressed"]
 [connection signal="pressed" from="GridContainer/MoleGameSelection" to="." method="_on_mole_game_selection_pressed"]

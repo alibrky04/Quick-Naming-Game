@@ -20,10 +20,10 @@ driver/enable_input=true
 
 [autoload]
 
+SQLManager="*res://scripts/managers/sql_manager.gd"
 GameManager="*res://scenes/managers/game_manager.tscn"
 AudioManager="*res://scenes/managers/audio_manager.tscn"
 SetManager="*res://scripts/managers/set_manager.gd"
-SQLManager="*res://scripts/managers/sql_manager.gd"
 CloudBackground="*res://scenes/ui/cloud_background.tscn"
 
 [display]

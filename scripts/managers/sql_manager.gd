@@ -59,6 +59,42 @@ var tables = {
 			"not_null": true
 		},
 		"score": {"data_type": "int"}
+	},
+	"saves": {
+		"save_id": {
+			"data_type": "int",
+			"primary_key": true,
+			"not_null": true,
+			"auto_increment": true
+		},
+		"initial_speed": {
+			"data_type": "int",
+			"not_null": true
+		},
+		"set_mode": {
+			"data_type": "text",
+			"not_null": true
+		},
+		"do_shuffle": {
+			"data_type": "int",
+			"not_null": true 
+		},
+		"shuffle_mode": {
+			"data_type": "text",
+			"not_null": true
+		},
+		"can_increase_speed": {
+			"data_type": "int",
+			"not_null": true
+		},
+		"debug_enabled": {
+			"data_type": "int",
+			"not_null": true
+		},
+		"debug_target_set": {
+			"data_type": "int",
+			"not_null": true
+		}
 	}
 }
 
@@ -177,3 +213,34 @@ func get_last_scores(user_name: String, score_number: int) -> Array:
 	else:
 		print("Query failed.")
 		return []
+
+func save_game_settings():
+	var data := {
+		"initial_speed": GameManager.initialSpeed,
+		"set_mode": GameManager.set_mode,
+		"do_shuffle": int(GameManager.do_shuffle),
+		"shuffle_mode": GameManager.shuffle_mode,
+		"can_increase_speed": int(GameManager.can_increase_speed),
+		"debug_enabled": int(SetManager.debug_enabled),
+		"debug_target_set": SetManager.debug_target_set
+	}
+	
+	insert_data("saves", data)
+
+func load_game_settings() -> void:
+	var query := "SELECT * FROM saves ORDER BY save_id DESC LIMIT 1;"
+	var success := database.query(query)
+	
+	if success and not database.query_result.is_empty():
+		var row := database.query_result[0]
+
+		GameManager.initialSpeed = row["initial_speed"]
+		GameManager.set_mode = row["set_mode"]
+		GameManager.do_shuffle = row["do_shuffle"] == 1
+		GameManager.shuffle_mode = row["shuffle_mode"]
+		GameManager.can_increase_speed = row["can_increase_speed"] == 1
+
+		SetManager.debug_enabled = row["debug_enabled"] == 1
+		SetManager.debug_target_set = row["debug_target_set"]
+	else:
+		print("No saved settings found.")

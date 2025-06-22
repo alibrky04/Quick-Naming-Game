@@ -16,7 +16,12 @@ func _on_return_back_signal() -> void:
 	shadow.visible = false
 
 func _on_login_pressed() -> void:
+	GameManager.recentProfileAction = 0
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/login_screen.tscn")
 
 func _on_new_profile_pressed() -> void:
+	GameManager.recentProfileAction = 1
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/new_account.tscn")
+
+func _on_button_button_down() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/main_menu.tscn")

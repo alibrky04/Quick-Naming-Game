@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkhxgvelmnymn"]
+[gd_scene load_steps=10 format=3 uid="uid://bkhxgvelmnymn"]
 
 [ext_resource type="Script" uid="uid://cast1lpvou2s3" path="res://scripts/menu/pause_menu.gd" id="1_n54lc"]
 [ext_resource type="Texture2D" uid="uid://bjjppcup0s2jp" path="res://assets/Images/buttons/dots.png" id="2_msl3b"]
 [ext_resource type="Texture2D" uid="uid://c58gn71wop3v1" path="res://assets/Images/buttons/home_icon.png" id="3_2yk66"]
+[ext_resource type="Texture2D" uid="uid://bv8nygsg3ktf4" path="res://assets/Images/buttons/restart.png" id="3_mb26x"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_mb26x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n54lc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nn8h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkyws"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n54lc"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdkub"]
 
 [node name="PauseMenu" type="Node2D"]
 script = ExtResource("1_n54lc")
@@ -18,46 +21,6 @@ script = ExtResource("1_n54lc")
 offset_right = 540.0
 offset_bottom = 640.0
 color = Color(0.349947, 0.308483, 0.67862, 1)
-
-[node name="ToGameSelect" type="Button" parent="."]
-offset_left = 102.0
-offset_top = 450.0
-offset_right = 227.0
-offset_bottom = 575.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5nn8h")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5nn8h")
-icon = ExtResource("2_msl3b")
-flat = true
-expand_icon = true
-
-[node name="Home" type="Button" parent="."]
-offset_left = 291.0
-offset_top = 450.0
-offset_right = 416.0
-offset_bottom = 575.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xkyws")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xkyws")
-icon = ExtResource("3_2yk66")
-flat = true
-expand_icon = true
 
 [node name="Paused" type="Label" parent="."]
 offset_left = 60.0
@@ -88,6 +51,68 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_n54lc")
 text = "x"
 flat = true
 
-[connection signal="button_down" from="ToGameSelect" to="." method="_on_to_game_select_button_down"]
-[connection signal="button_down" from="Home" to="." method="_on_home_button_down"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 108.0
+offset_top = 465.0
+offset_right = 428.0
+offset_bottom = 565.0
+theme_override_constants/separation = 10
+
+[node name="Restart" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5nn8h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5nn8h")
+icon = ExtResource("3_mb26x")
+flat = true
+expand_icon = true
+
+[node name="ToGameSelect" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xkyws")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xkyws")
+icon = ExtResource("2_msl3b")
+flat = true
+expand_icon = true
+
+[node name="Home" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rdkub")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rdkub")
+icon = ExtResource("3_2yk66")
+flat = true
+expand_icon = true
+
 [connection signal="button_down" from="Cancel" to="." method="_on_cancel_button_down"]
+[connection signal="button_down" from="HBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="button_down" from="HBoxContainer/ToGameSelect" to="." method="_on_to_game_select_button_down"]
+[connection signal="button_down" from="HBoxContainer/Home" to="." method="_on_home_button_down"]

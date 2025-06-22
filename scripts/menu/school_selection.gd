@@ -33,3 +33,11 @@ func _on_elementary_school_pressed() -> void:
 	SetManager.played_set_types = []
 	SetManager.json_unique_data = SetManager.read_json(SetManager.unique_data_path)
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/game_selection.tscn")
+
+func _on_button_button_down() -> void:
+	GameManager.currentProfile = ""
+	
+	if !GameManager.recentProfileAction:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/login_screen.tscn")
+	else:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/new_account.tscn")

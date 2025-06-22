@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bapeplw8u15p1"]
+[gd_scene load_steps=31 format=3 uid="uid://bapeplw8u15p1"]
 
 [ext_resource type="Script" uid="uid://b7jhla7y0v18g" path="res://scripts/menu/profile/login_screen.gd" id="1_vskjx"]
 [ext_resource type="Texture2D" uid="uid://qnweddlcq2tp" path="res://assets/Images/backgrounds/main_menu_background_wide.png" id="2_q6ygs"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bakk34l2mpyq2" path="res://assets/Images/buttons/settings.png" id="3_q6ygs"]
 [ext_resource type="FontFile" uid="uid://mgk5xixvehjg" path="res://assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_08h1j"]
 [ext_resource type="Texture2D" uid="uid://b6ju50y4qggod" path="res://assets/Images/buttons/main_menu_button.png" id="5_1qoin"]
+[ext_resource type="Texture2D" uid="uid://b542kmatysis6" path="res://assets/Images/buttons/arrow.png" id="7_q6ygs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjj4k"]
 
@@ -62,10 +63,9 @@ texture = ExtResource("2_q6ygs")
 centered = false
 
 [node name="Home" type="Button" parent="."]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 132.0
-offset_bottom = 132.0
+offset_left = 180.0
+offset_right = 300.0
+offset_bottom = 120.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hjj4k")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_owf7i")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_3f8a0")
@@ -81,6 +81,15 @@ icon = ExtResource("2_vskjx")
 flat = true
 expand_icon = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 135.0
+offset_right = 254.0
+offset_bottom = 119.0
+rotation = 1.5708
+icon = ExtResource("7_q6ygs")
+flat = true
+expand_icon = true
 
 [node name="Settings" type="Button" parent="."]
 offset_left = 1788.0
@@ -186,5 +195,6 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.501961)
 
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Login" to="." method="_on_login_pressed"]

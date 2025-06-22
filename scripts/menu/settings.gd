@@ -31,6 +31,8 @@ func _ready() -> void:
 	easy.button_pressed = GameManager.set_mode == "easy"
 	hard.button_pressed = GameManager.set_mode == "hard"
 	
+	text_edit.placeholder_text = str(GameManager.initialSpeed)
+	
 	shuffle.set_block_signals(true)
 	
 	if GameManager.selected_school == "preschool":
@@ -49,6 +51,10 @@ func _ready() -> void:
 		option_button.set_item_disabled(4, true)
 		option_button.set_item_disabled(5, true)
 		option_button.set_item_disabled(6, true)
+	
+	if shuffle.get_selected_id() > 0:
+		for i in range(option_button.item_count):
+			option_button.set_item_disabled(i, shuffle.get_selected_id() > 0 and i != 0)
 	
 	if SetManager.debug_enabled:
 		option_button.select(SetManager.debug_target_set)
@@ -116,6 +122,11 @@ func _on_shuffle_item_selected(index: int) -> void:
 	else:
 		GameManager.do_shuffle = true
 		GameManager.shuffle_mode = shuffle_list[index]
+		
+	option_button.set_block_signals(true)
+	for i in range(option_button.item_count):
+		option_button.set_item_disabled(i, index > 0 and i != 0)
+	option_button.set_block_signals(false)
 
 func _on_option_button_item_selected(index: int) -> void:
 	if index > 0:

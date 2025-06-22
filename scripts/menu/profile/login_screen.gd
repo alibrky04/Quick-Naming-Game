@@ -36,3 +36,6 @@ func _input(event: InputEvent) -> void:
 		elif login.visible and login.disabled == false:
 			login.emit_signal("pressed")
 			get_viewport().set_input_as_handled()
+
+func _on_button_button_down() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/profile_screen.tscn")
