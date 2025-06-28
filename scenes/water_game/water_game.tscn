@@ -33,9 +33,10 @@ position = Vector2(960, 920)
 scale = Vector2(0.35, 0.35)
 
 [node name="DropletSpawner" parent="." instance=ExtResource("3_g5kaa")]
-position = Vector2(980, 157)
+position = Vector2(980, 19)
 
 [node name="DropletCloud" type="Node2D" parent="."]
+visible = false
 
 [node name="DropletCloud" type="Sprite2D" parent="DropletCloud"]
 position = Vector2(505, 75)
