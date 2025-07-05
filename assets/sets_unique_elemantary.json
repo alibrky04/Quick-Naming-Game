@@ -10,7 +10,7 @@
 	},
 	"set_3": {
 	  "type": "shape_naming",
-	  "items": ["artı", "üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
+	  "items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
 	},
 	"set_4": {
 	  "type": "number_naming",
@@ -36,7 +36,7 @@
 	},
 	"set_3": {
 	  "type": "shape_naming",
-	  "items": ["artı", "üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
+	  "items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
 	},
 	"set_4": {
 	  "type": "number_naming",

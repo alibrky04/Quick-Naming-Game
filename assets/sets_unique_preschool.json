@@ -10,7 +10,7 @@
 		},
 		"set_3": {
 			"type": "shape_naming",
-			"items": ["üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
+			"items": ["üçgen", "kare", "daire", "yıldız", "kalp"]
 		}
 	},
 	"hard": {
@@ -24,7 +24,7 @@
 		},
 		"set_3": {
 			"type": "shape_naming",
-			"items": ["üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
+			"items": ["üçgen", "kare", "daire", "yıldız", "kalp"]
 		}
 	}
 }
