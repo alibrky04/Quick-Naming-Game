@@ -10,7 +10,7 @@
 	},
 	"set_3": {
 	  "type": "shape_naming",
-	  "items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
+	  "items": ["artı", "üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
 	},
 	"set_4": {
 	  "type": "number_naming",
@@ -18,7 +18,7 @@
 	},
 	"set_5": {
 	  "type": "letter_naming",
-	  "items": ["a", "b", "c", "d", "e", "f", "i", "k", "l", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
+	  "items": ["a", "b", "c", "d", "e", "f", "i", "k", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
 	},
 	"set_6": {
 	  "type": "word_naming",
@@ -36,7 +36,7 @@
 	},
 	"set_3": {
 	  "type": "shape_naming",
-	  "items": ["artı", "üçgen", "kare", "daire", "yıldız", "kalp"]
+	  "items": ["artı", "üçgen", "kare", "yuvarlak", "yıldız", "kalp"]
 	},
 	"set_4": {
 	  "type": "number_naming",
@@ -44,7 +44,7 @@
 	},
 	"set_5": {
 	  "type": "letter_naming",
-	  "items": ["a", "b", "c", "d", "e", "f", "i", "k", "l", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
+	  "items": ["a", "b", "c", "d", "e", "f", "i", "k", "m", "n", "o", "ö", "p", "s", "ş", "t", "u", "ü", "v", "y", "z"]
 	},
 	"set_6": {
 	  "type": "word_naming",

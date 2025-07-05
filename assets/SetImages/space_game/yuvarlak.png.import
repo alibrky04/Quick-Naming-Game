@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5h7or0v2shqh"
-path="res://.godot/imported/fare.png-df2e473adb48404a42ba6f7ab4fc6959.ctex"
+uid="uid://rl561p0cljgw"
+path="res://.godot/imported/yuvarlak.png-5aa585fdf92e33ef37d716cf34314415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/space_game/fare.png"
-dest_files=["res://.godot/imported/fare.png-df2e473adb48404a42ba6f7ab4fc6959.ctex"]
+source_file="res://assets/SetImages/space_game/yuvarlak.png"
+dest_files=["res://.godot/imported/yuvarlak.png-5aa585fdf92e33ef37d716cf34314415.ctex"]
 
 [params]
 
