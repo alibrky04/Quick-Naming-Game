@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rl561p0cljgw"
-path="res://.godot/imported/yuvarlak.png-5aa585fdf92e33ef37d716cf34314415.ctex"
+uid="uid://gm8jjvokavgl"
+path="res://.godot/imported/daire.png-e124e44d00623b7c8c6cf6e44d6c2645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SetImages/space_game/yuvarlak.png"
-dest_files=["res://.godot/imported/yuvarlak.png-5aa585fdf92e33ef37d716cf34314415.ctex"]
+source_file="res://assets/SetImages/space_game/daire.png"
+dest_files=["res://.godot/imported/daire.png-e124e44d00623b7c8c6cf6e44d6c2645.ctex"]
 
 [params]
 
