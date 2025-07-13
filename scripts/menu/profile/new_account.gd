@@ -44,7 +44,7 @@ func _on_create_pressed() -> void:
 		user_error.visible = true
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:
+	if event is InputEventKey and event.pressed and not event.echo and (event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER):
 		for field_name in ["UserName/TextEdit", "Name/TextEdit", "Surname/TextEdit"]:
 			var te = forms.get_node(field_name)
 			if te.has_focus():

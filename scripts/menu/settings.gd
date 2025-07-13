@@ -82,6 +82,9 @@ func _on_text_edit_text_changed() -> void:
 func _on_button_pressed() -> void:
 	if not text_edit.text.is_empty():
 		GameManager.initialSpeed = int(text_edit.text)
+		
+		if GameManager.initialSpeed == 0:
+			GameManager.initialSpeed = 1
 		text_edit.placeholder_text = str(GameManager.initialSpeed)
 
 func _on_scores_pressed() -> void:
@@ -138,10 +141,11 @@ func _on_option_button_item_selected(index: int) -> void:
 	SetManager.debug_target_set = index
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:
-		if text_edit.has_focus():
-			button.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
-		elif button.visible and not button.disabled:
-			button.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
+			if text_edit.has_focus():
+				button.emit_signal("pressed")
+				get_viewport().set_input_as_handled()
+			elif button.visible and not button.disabled:
+				button.emit_signal("pressed")
+				get_viewport().set_input_as_handled()

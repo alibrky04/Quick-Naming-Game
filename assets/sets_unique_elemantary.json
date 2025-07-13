@@ -2,7 +2,7 @@
   "easy": {
 	"set_1": {
 	  "type": "object_naming",
-	  "items": ["nar", "süt", "bal", "çöp", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "çivi", "masa", "gül"]
+	  "items": ["nar", "süt", "bal", "mum", "fil", "çay", "kuş", "top", "toka", "pil", "kedi", "muz", "kova", "masa", "gül"]
 	},
 	"set_2": {
 	  "type": "color_naming",

@@ -29,13 +29,14 @@ func _on_login_pressed() -> void:
 		user_error.visible = true
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ENTER:
-		if text_edit.has_focus():
-			login.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
-		elif login.visible and login.disabled == false:
-			login.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
+			if text_edit.has_focus():
+				login.emit_signal("pressed")
+				get_viewport().set_input_as_handled()
+			elif login.visible and not login.disabled:
+				login.emit_signal("pressed")
+				get_viewport().set_input_as_handled()
 
 func _on_button_button_down() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/profile/profile_screen.tscn")
