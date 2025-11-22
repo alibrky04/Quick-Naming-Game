@@ -37,7 +37,11 @@ func _on_stt_text_signal(word: Variant) -> void:
 		if item.canActivate:
 			var similarity = GameManager.get_similarity(word, item.item)
 			
-			if similarity > GameManager.min_similarity or item.item in word or (item.item == "1" && "bir" in word):
+			var req_similarity = GameManager.min_similarity_long
+			if item.item.length() <= 4:
+				req_similarity = GameManager.min_similarity_short
+			
+			if similarity > req_similarity or item.item in word or (item.item == "1" && "bir" in word):
 				item.is_told = true
 				
 				var droplet_position_x = item.global_position.x

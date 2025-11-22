@@ -2,7 +2,8 @@ extends Node
 
 const staticSpeedBoost = 5
 const games = {1: "balloon_game", 2: "mole_game", 3: "space_game", 4: "water_game"}
-const min_similarity = 0.3
+const min_similarity_short = 0.6
+const min_similarity_long = 0.4
 
 var initialSpeed = 120
 var selectedGame = 1

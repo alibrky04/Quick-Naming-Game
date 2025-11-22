@@ -17,10 +17,13 @@ const MIN_DB = -80.0
 const MAX_DB = 0.0
 
 var shuffle_list = ["Hayır", "M1", "M2", "M3"]
+var active_graph: Node = null
 
 signal return_back_signal()
 
 func _ready() -> void:
+	$Tabs.tab_changed.connect(_on_tab_changed)
+	
 	if GameManager.currentProfile != "":
 		profile.text = "Hesap: " + GameManager.currentProfile
 	
@@ -88,13 +91,17 @@ func _on_button_pressed() -> void:
 		text_edit.placeholder_text = str(GameManager.initialSpeed)
 
 func _on_scores_pressed() -> void:
+	if is_instance_valid(active_graph):
+		active_graph.queue_free()
+
 	if GameManager.currentProfile != "":
 		if SQLManager.get_last_scores(GameManager.currentProfile, 1):
 			var plot = load("res://scenes/ui/plot_interface.tscn").instantiate()
 			
 			self.add_child(plot)
-			
 			plot.chart.global_position = Vector2(735, 350)
+			
+			active_graph = plot
 
 func _on_sound_slider_value_changed(value: float) -> void:
 	var db = lerp(MIN_DB, MAX_DB, value / 100.0)
@@ -149,3 +156,8 @@ func _input(event: InputEvent) -> void:
 			elif button.visible and not button.disabled:
 				button.emit_signal("pressed")
 				get_viewport().set_input_as_handled()
+
+func _on_tab_changed(_tab_index: int) -> void:
+	if is_instance_valid(active_graph):
+		active_graph.queue_free()
+		active_graph = null

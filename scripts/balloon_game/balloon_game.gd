@@ -42,7 +42,11 @@ func _on_stt_text_signal(word: Variant) -> void:
 		if not item.isClickable and item.canActivate:
 			var similarity = GameManager.get_similarity(word, item.item)
 			
-			if similarity > GameManager.min_similarity or item.item in word: 
+			var req_similarity = GameManager.min_similarity_long
+			if item.item.length() <= 4:
+				req_similarity = GameManager.min_similarity_short
+			
+			if similarity > req_similarity or item.item in word: 
 				item.isClickable = true
 				item.pop_balloon()
 				break
