@@ -37,34 +37,35 @@ func _process(delta: float) -> void:
 		remaining_time -= delta
 		progress_bar.value = remaining_time
 
-#func _on_stt_text_signal(word: Variant) -> void:
-	#for item in GameManager.currentItems:
-		#if not item.isClickable and item.canActivate:
-			#if item.item in word or (item.item == "1" && "bir" in word):
-				#item.isClickable = true
-				# item.indicator.visible = true
-				#item.pop_balloon()
-				#break
-
 func _on_stt_text_signal(word: Variant) -> void:
-	if input_cooldown:
-		return
-
-	if str(word).length() > 0:
-		for item in GameManager.currentItems:
-			if not item.isClickable and item.canActivate:
-				
+	for item in GameManager.currentItems:
+		if not item.isClickable and item.canActivate:
+			var similarity = GameManager.get_similarity(word, item.item)
+			
+			if similarity > GameManager.min_similarity or item.item in word: 
 				item.isClickable = true
-				# item.indicator.visible = true
 				item.pop_balloon()
-				
-				_start_input_cooldown()
 				break
 
-func _start_input_cooldown():
-	input_cooldown = true
-	await get_tree().create_timer(0.75).timeout
-	input_cooldown = false
+#func _on_stt_text_signal(word: Variant) -> void:
+	#if input_cooldown:
+		#return
+#
+	#if str(word).length() > 0:
+		#for item in GameManager.currentItems:
+			#if not item.isClickable and item.canActivate:
+				#
+				#item.isClickable = true
+				## item.indicator.visible = true
+				#item.pop_balloon()
+				#
+				#_start_input_cooldown()
+				#break
+#
+#func _start_input_cooldown():
+	#input_cooldown = true
+	#await get_tree().create_timer(0.75).timeout
+	#input_cooldown = false
 
 func _on_game_time_timeout() -> void:
 	balloon_spawner.timer.stop()

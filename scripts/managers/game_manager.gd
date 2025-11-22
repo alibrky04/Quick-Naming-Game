@@ -2,6 +2,7 @@ extends Node
 
 const staticSpeedBoost = 5
 const games = {1: "balloon_game", 2: "mole_game", 3: "space_game", 4: "water_game"}
+const min_similarity = 0.3
 
 var initialSpeed = 120
 var selectedGame = 1
@@ -67,3 +68,32 @@ func remove_combining_marks(text: String) -> String:
 
 func _exit_tree() -> void:
 	SQLManager.save_game_settings()
+
+func get_similarity(string_a: String, string_b: String) -> float:
+	if string_a == string_b:
+		return 1.0
+	if string_a.length() == 0 or string_b.length() == 0:
+		return 0.0
+		
+	var len_a = string_a.length()
+	var len_b = string_b.length()
+	var matrix = []
+	
+	for i in range(len_a + 1):
+		matrix.append([])
+		for j in range(len_b + 1):
+			matrix[i].append(0)
+
+	for i in range(len_a + 1):
+		matrix[i][0] = i
+	for j in range(len_b + 1):
+		matrix[0][j] = j
+		
+	for i in range(1, len_a + 1):
+		for j in range(1, len_b + 1):
+			var cost = 0 if string_a[i - 1] == string_b[j - 1] else 1
+			matrix[i][j] = min(matrix[i - 1][j] + 1, min(matrix[i][j - 1] + 1, matrix[i - 1][j - 1] + cost))
+			
+	var distance = matrix[len_a][len_b]
+	var max_len = max(len_a, len_b)
+	return 1.0 - (float(distance) / float(max_len))

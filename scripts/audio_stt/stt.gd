@@ -11,6 +11,7 @@ var client: StreamPeerTCP = null
 var thread: Thread
 var python_path = vosk_model
 var is_running = false
+var last_processed_text: String = ""
 
 signal connected_signal
 signal text_signal(message)
@@ -42,13 +43,32 @@ func _process(_delta):
 
 	if client and client.get_available_bytes() > 0:
 		var message = client.get_utf8_string(client.get_available_bytes())
-		var parsed_message = JSON.parse_string(message)
-		if parsed_message and parsed_message.has("text"):
-			var text = parsed_message["text"]
-			text = text.strip_edges().to_lower().replace(" ", "")
-			print("Received speech:", text)
-			text = GameManager.remove_combining_marks(text)
-			text_signal.emit(text)
+		
+		var lines = message.split("\n", false)
+		
+		for line in lines:
+			var parsed_message = JSON.parse_string(line)
+			
+			if parsed_message and parsed_message.has("text"):
+				var raw_text = parsed_message["text"]
+				
+				var current_text = raw_text.strip_edges().to_lower()
+				
+				var text_to_emit = ""
+				
+				if current_text.length() < last_processed_text.length() or not current_text.begins_with(last_processed_text):
+					text_to_emit = current_text
+					last_processed_text = current_text
+				
+				else:
+					text_to_emit = current_text.substr(last_processed_text.length())
+					text_to_emit = text_to_emit.strip_edges()
+					last_processed_text = current_text
+				
+				if text_to_emit.length() > 0:
+					text_to_emit = GameManager.remove_combining_marks(text_to_emit)
+					print("New word detected:", text_to_emit)
+					text_signal.emit(text_to_emit)
 
 func _exit_tree():
 	if client:
