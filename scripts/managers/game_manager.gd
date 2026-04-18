@@ -42,8 +42,15 @@ func get_ending_screen() -> void:
 	
 	ending_scene.position = Vector2(690, 220)
 	
+	var count_label_map = {
+		1: 'Balon',
+		2: 'Köstebek',
+		3: 'Meteor',
+		4: 'Damla'
+		}
+	
 	ending_scene.score.text = "Puan: " + str(score)
-	ending_scene.count.text = "Balon Sayısı: " + str(itemCounter)
+	ending_scene.count.text = count_label_map[selectedGame] + " Sayısı: " + str(itemCounter)
 	ending_scene.best_score.text = "En Yüksek Puan: " + str(SQLManager.get_best_score())
 	
 	score = 0
